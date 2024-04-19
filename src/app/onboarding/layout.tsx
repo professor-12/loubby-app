@@ -1,14 +1,25 @@
 import AuthAnimationDisplay from "@/components/AuthAnimationDisplay";
+import Image from "next/image";
+import Link from "next/link";
 import React, { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="min-h-screen flex container mx-auto px-2 bg-background-gray">
-            <div className="hidden lg:flex">
-                <div></div>
+        <div className="min-h-screen  grid lg:grid-cols-12  mx-auto bg-background-gray">
+            <div className="hidden h-screen lg:flex flex-col p-12 bg-slate-gray col-span-8 ">
+                <Link href={"/"}>
+                    <Image
+                        src={"/Logo.svg"}
+                        alt="Logo"
+                        width={100}
+                        height={100}
+                    />
+                </Link>
                 <AuthAnimationDisplay />
             </div>
-            <main>{children}</main>
+            <main className="bg-white flex-1 col-span-4 min-h-screen">
+                {children}
+            </main>
         </div>
     );
 };
