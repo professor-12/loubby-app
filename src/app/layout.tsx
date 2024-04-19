@@ -4,7 +4,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const moserat = Montserrat({ subsets: ["latin"], weight: ["500"] });
+const moserat = Montserrat({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
     title: "Loubby App",
