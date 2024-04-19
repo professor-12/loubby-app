@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const moserat = Montserrat({ subsets: ["latin"]});
+const moserat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Loubby App",
