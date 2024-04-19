@@ -48,7 +48,7 @@ const AuthAnimationDisplay = () => {
         <>
             <span
                 style={{ backgroundColor: item?.color }}
-                className="h-[18rem] bottom-[3.7rem]  left-28 fixed flex items-center justify-center min-w-[18rem] rounded-full"
+                className="h-[18rem] bottom-[4.3rem]  left-28 fixed flex items-center justify-center min-w-[18rem] rounded-full"
             ></span>
             <div className="flex items-center p-14 justify-center h-screen overflow-hidden">
                 <motion.div
@@ -64,14 +64,17 @@ const AuthAnimationDisplay = () => {
                     >
                         {item.title}
                     </h1>
+
                     <div className="flex p-2 justify-between  items-center">
-                        <Image
-                            className="object-contain z-50"
-                            src={item?.svg}
-                            alt=""
-                            width={200}
-                            height={200}
-                        />
+                        <div className="h-auto z-50 min-w-[12rem]">
+                            <Image
+                                className="object-contain z-50"
+                                src={item?.svg}
+                                alt=""
+                                width={200}
+                                height={200}
+                            />
+                        </div>
                         <h1 className="text-2xl ml-24 text-left">
                             {item?.body}
                         </h1>
