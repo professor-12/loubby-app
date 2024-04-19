@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         "background-gray": "#F4F5F7",
         "slate-gray": "#F4F5F7",
+        'muted': "#C6CAD4"
       }
     },
   },

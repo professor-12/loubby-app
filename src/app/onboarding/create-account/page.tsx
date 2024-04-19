@@ -1,9 +1,17 @@
-import React from 'react'
+import { Form, Input } from "@/components/ui/Input/Input";
+import React from "react";
 
 const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+    return (
+        <Form>
+            <div>
+                <Input  />
+                <Input  />
+                <Input  />
+                <Input  />
+            </div>
+        </Form>
+    );
+};
 
-export default page
+export default page;

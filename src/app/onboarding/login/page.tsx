@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
-import Form from "@/components/ui/Form/Form";
 import Link from "next/link";
 import React from "react";
 import Box from "./Box";
 import Lock from "./Lock";
 import ClosedEye from "./ClosedEye";
-import { Input } from "@/components/ui/Input/Input";
-import { redirect } from "next/navigation";
+import { Form, Input } from "@/components/ui/Input/Input";
+import { loginAction } from "@/actions/loginAction";
 
 const page = () => {
     return (
-        <Form action={(formData: FormData) => redirect("/")}>
+        <Form action={loginAction}>
             <div className="space-y-5 px-4">
                 <div>
                     <h1 className="text-xl font-medium">Log in</h1>
@@ -28,7 +27,7 @@ const page = () => {
                             <Box />
                         </span>
 
-                        <Input id="email" type="text" />
+                        <Input name="email" id="email" type="text" />
                     </div>
                 </div>
                 <div className="space-y-1">
@@ -39,7 +38,7 @@ const page = () => {
                         <span>
                             <Lock />
                         </span>
-                        <Input id="password" type="password" />
+                        <Input name="password" id="password" type="password" />
                         <span>
                             <ClosedEye />
                         </span>
