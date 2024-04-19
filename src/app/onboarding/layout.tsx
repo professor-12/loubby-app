@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="min-h-screen  grid lg:grid-cols-12  mx-auto bg-background-gray">
+        <div className="min-h-screen overflow-y-auto grid lg:grid-cols-12  mx-auto bg-background-gray">
             <div className="hidden h-screen lg:flex flex-col p-12 bg-slate-gray col-span-8 ">
                 <Link href={"/"}>
                     <Image
@@ -17,7 +17,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                 </Link>
                 <AuthAnimationDisplay />
             </div>
-            <main className="bg-white justify-center items-center flex flex-1 col-span-4 min-h-screen">
+            <main className="bg-white justify-center items-center flex flex-1 col-span-4  min-h-screen">
                 {children}
             </main>
         </div>

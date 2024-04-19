@@ -20,7 +20,10 @@ export const Form = (
     }
 ) => {
     return (
-        <form {...props} className="w-full lg:w-[80%]  container mx-auto px-4">
+        <form
+            {...props}
+            className="w-full lg:w-[85%] md:w-[65%] sm:w-[70%] container mx-auto px-4"
+        >
             {props?.children}
         </form>
     );
