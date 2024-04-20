@@ -17,7 +17,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                 </Link>
                 <AuthAnimationDisplay />
             </div>
-            <main className="bg-white justify-center items-center flex flex-1 col-span-4  min-h-screen">
+            <main className="bg-white md:justify-center md:items-center pt-12 md:pt-0 flex flex-1 col-span-4  min-h-screen">
                 {children}
             </main>
         </div>
