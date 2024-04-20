@@ -1,13 +1,35 @@
 "use client";
 import { Form, Input, InputWrapper } from "@/components/ui/Input/Input";
 import React, { useRef } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 import Box from "../login/Box";
 import Link from "next/link";
 import { list_of_dial_code } from "@/lib/list_of_dial_code";
 
-const page = () => {
+type InputType = {
+    company_name: string;
+    email: string;
+    first_name: string;
+    last_name: string;
+    phone_no: string;
+    password: string;
+    cpassword: string;
+    check: boolean;
+};
+const Page = () => {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm<InputType>();
+
+    const submit: SubmitHandler<InputType> = (data) => {
+        console.log(data);
+    };
+
     return (
-        <Form action={() => {}}>
+        <Form onSubmit={handleSubmit(submit)}>
             <div className="space-y-7 py-12">
                 <div className="space-y-1">
                     <h1 className="font-medium">Employer Signup</h1>
@@ -16,16 +38,16 @@ const page = () => {
                     </p>
                 </div>
                 <div className="space-y-4">
-                    <InputWrapper htmlFor="email" label="Company name*">
+                    <InputWrapper htmlFor="company_name" label="Company name*">
                         <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
                             <span>
                                 <Box />
                             </span>
-
                             <Input
-                                name="company_name"
+                                {...register("company_name", {
+                                    required: true,
+                                })}
                                 placeholder="Enter your company name"
-                                id="company_name"
                                 type="text"
                             />
                         </div>
@@ -37,9 +59,13 @@ const page = () => {
                             </span>
 
                             <Input
-                                name="email"
+                                {...{
+                                    ...register("email", {
+                                        required: true,
+                                        pattern: /@/,
+                                    }),
+                                }}
                                 placeholder="Enter your company Email"
-                                id="email"
                                 type="email"
                             />
                         </div>
@@ -52,9 +78,10 @@ const page = () => {
                                 </span>
 
                                 <Input
-                                    name="first_name"
+                                    {...register("first_name", {
+                                        required: true,
+                                    })}
                                     placeholder="Enter your company name"
-                                    id="firstname"
                                     type="text"
                                 />
                             </div>
@@ -70,9 +97,10 @@ const page = () => {
                                 </span>
 
                                 <Input
-                                    name="email"
+                                    {...register("last_name", {
+                                        required: true,
+                                    })}
                                     placeholder="Enter your company name"
-                                    id="lastname"
                                     type="text"
                                 />
                             </div>
@@ -97,9 +125,11 @@ const page = () => {
                             </select>
 
                             <Input
-                                name="phone_no"
+                                {...register("phone_no", {
+                                    required: true,
+                                    minLength: 8,
+                                })}
                                 placeholder="Enter your Phone Number"
-                                id="dial_code"
                                 type="tel"
                             />
                         </div>
@@ -115,14 +145,13 @@ const page = () => {
                             </span>
 
                             <Input
-                                name="password"
+                                {...register("password", { required: true })}
                                 placeholder="Enter your last name"
-                                id="password"
                                 type="passwoed"
                             />
                         </div>
                     </InputWrapper>
-                    <InputWrapper htmlFor="cpassword" label="cpassword">
+                    <InputWrapper htmlFor="cpassword" label="Confirm password*">
                         <div className="space-y-1 flex-1">
                             <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
                                 <span>
@@ -130,9 +159,10 @@ const page = () => {
                                 </span>
 
                                 <Input
-                                    name="cpassword"
+                                    {...register("cpassword", {
+                                        required: true,
+                                    })}
                                     placeholder="Enter your company name"
-                                    id="cpassword"
                                     type="password"
                                 />
                             </div>
@@ -140,7 +170,7 @@ const page = () => {
                     </InputWrapper>
 
                     <div className="flex space-x-2">
-                        <input type="checkbox" />
+                        <input {...register("check")} type="checkbox" />
                         <div className="text-sm text-slate-700">
                             I accept the Loubby{" "}
                             <Link
@@ -160,11 +190,13 @@ const page = () => {
                     </div>
 
                     <button
-                        disabled
+                        type="submit"
+                        disabled={false}
                         className="bg-blue-500 w-full text-center text-white p-3 rounded-lg disabled:opacity-50"
                     >
                         create account
                     </button>
+
                     <p className="text-sm text-center text-slate-700">
                         Already have an account?{" "}
                         <Link
@@ -180,4 +212,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

@@ -3,21 +3,29 @@ import React, {
     FormHTMLAttributes,
     InputHTMLAttributes,
     ReactNode,
+    Ref,
 } from "react";
 
-export const Input = (props: InputHTMLAttributes<HTMLInputElement>) => {
-    return (
-        <input
-            {...props}
-            className="bg-transparent text-sm w-full focus:outline-none p-[0.8rem]"
-        />
-    );
-};
+const { forwardRef } = React as any;
+
+export const Input = forwardRef(
+    (props: InputHTMLAttributes<HTMLInputElement>, ref: Ref<any>) => {
+        return (
+            <input
+                ref={ref}
+                {...props}
+                className="bg-transparent text-sm w-full focus:outline-none p-[0.8rem]"
+            />
+        );
+    }
+);
 
 export const Form = (
-    props?: FormHTMLAttributes<HTMLFormElement> & {
-        children: ReactNode;
-    }
+    props?:
+        | FormHTMLAttributes<HTMLFormElement>
+        | {
+              children: ReactNode;
+          }
 ) => {
     return (
         <form
@@ -46,5 +54,5 @@ export const InputWrapper = (
             </label>
             {props.children}
         </div>
-    )
+    );
 };
