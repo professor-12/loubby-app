@@ -17,17 +17,28 @@ type InputType = {
     check: boolean;
 };
 const Page = () => {
+    const password = React.useRef({});
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
     } = useForm<InputType>();
+    const check = watch("check");
+    password.current = watch("password", "");
 
     const submit: SubmitHandler<InputType> = (data) => {
         console.log(data);
     };
 
+    const error_message = {
+        password:
+            "Invalid Password! Should contain upper and lowercase letters and a number.",
+        required: "Required field, Please fill",
+        email: "Invalid email format, Please provide a valid email address",
+        phone_no: "Phone number is not valid",
+        confirm_password: "Please confirm your password",
+    };
     return (
         <Form onSubmit={handleSubmit(submit)}>
             <div className="space-y-7 py-12">
@@ -39,7 +50,11 @@ const Page = () => {
                 </div>
                 <div className="space-y-4">
                     <InputWrapper htmlFor="company_name" label="Company name*">
-                        <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
+                        <div
+                            className={`border ${
+                                errors.company_name && "border-red-600"
+                            } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
+                        >
                             <span>
                                 <Box />
                             </span>
@@ -51,28 +66,45 @@ const Page = () => {
                                 type="text"
                             />
                         </div>
+                        {errors.company_name && (
+                            <span className="text-xs text-red-500">
+                                {error_message?.required}
+                            </span>
+                        )}
                     </InputWrapper>
                     <InputWrapper label="Email" htmlFor="Email*">
-                        <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
+                        <div
+                            className={`border ${
+                                errors.email && "border-red-600"
+                            } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
+                        >
                             <span>
                                 <Box />
                             </span>
 
                             <Input
-                                {...{
-                                    ...register("email", {
-                                        required: true,
-                                        pattern: /@/,
-                                    }),
-                                }}
+                                {...register("email", {
+                                    required: true,
+                                    pattern:
+                                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$/,
+                                })}
                                 placeholder="Enter your company Email"
                                 type="email"
                             />
                         </div>
+                        {errors.email && (
+                            <span className="text-xs text-red-500">
+                                {error_message?.email}
+                            </span>
+                        )}
                     </InputWrapper>
                     <div className="md:flex spae-y-4 md:space-y-0 md:gap-2">
                         <InputWrapper label="First name*" htmlFor="first_name">
-                            <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
+                            <div
+                                className={`border ${
+                                    errors.first_name && "border-red-600"
+                                } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
+                            >
                                 <span>
                                     <Box />
                                 </span>
@@ -85,13 +117,22 @@ const Page = () => {
                                     type="text"
                                 />
                             </div>
+                            {errors.first_name && (
+                                <span className="text-xs text-red-500">
+                                    {error_message?.required}
+                                </span>
+                            )}
                         </InputWrapper>
                         <InputWrapper
                             label="Last name*"
                             htmlFor="last_name"
                             className="space-y-1 flex-1"
                         >
-                            <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
+                            <div
+                                className={`border ${
+                                    errors.last_name && "border-red-600"
+                                } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
+                            >
                                 <span>
                                     <Box />
                                 </span>
@@ -104,6 +145,11 @@ const Page = () => {
                                     type="text"
                                 />
                             </div>
+                            {errors.last_name && (
+                                <span className="text-xs text-red-500">
+                                    {error_message?.required}
+                                </span>
+                            )}
                         </InputWrapper>
                     </div>
                     <InputWrapper
@@ -111,7 +157,11 @@ const Page = () => {
                         htmlFor="dial_code"
                         className="space-y-1"
                     >
-                        <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
+                        <div
+                            className={`border ${
+                                errors.phone_no && "border-red-600"
+                            } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
+                        >
                             <select name="dial_code" id="phone_no">
                                 {list_of_dial_code.map((code) => (
                                     <option
@@ -133,27 +183,50 @@ const Page = () => {
                                 type="tel"
                             />
                         </div>
+                        {errors.phone_no && (
+                            <span className="text-xs text-red-500">
+                                {error_message?.phone_no}
+                            </span>
+                        )}
                     </InputWrapper>
                     <InputWrapper
                         label="Password*"
                         className="space-y-1 flex-1"
                         htmlFor="password"
                     >
-                        <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
+                        <div
+                            className={`border ${
+                                errors.password && "border-red-600"
+                            } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
+                        >
                             <span>
                                 <Box />
                             </span>
 
                             <Input
-                                {...register("password", { required: true })}
+                                {...register("password", {
+                                    required: true,
+                                    pattern:
+                                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
+                                    minLength: 4,
+                                })}
                                 placeholder="Enter your last name"
-                                type="passwoed"
+                                type="password"
                             />
                         </div>
+                        {errors.password && (
+                            <span className="text-xs text-red-500">
+                                {error_message?.password}
+                            </span>
+                        )}
                     </InputWrapper>
                     <InputWrapper htmlFor="cpassword" label="Confirm password*">
                         <div className="space-y-1 flex-1">
-                            <div className="border px-2 flex space-x-1 items-center rounded-md overflow-hidden">
+                            <div
+                                className={`border ${
+                                    errors.cpassword && "border-red-600"
+                                } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
+                            >
                                 <span>
                                     <Box />
                                 </span>
@@ -161,12 +234,20 @@ const Page = () => {
                                 <Input
                                     {...register("cpassword", {
                                         required: true,
+                                        validate: (value) =>
+                                            value === password.current ||
+                                            "The passwords do not match",
                                     })}
                                     placeholder="Enter your company name"
                                     type="password"
                                 />
                             </div>
                         </div>
+                        {errors.cpassword && (
+                            <span className="text-xs text-red-500">
+                                {error_message?.confirm_password}
+                            </span>
+                        )}
                     </InputWrapper>
 
                     <div className="flex space-x-2">
@@ -190,8 +271,8 @@ const Page = () => {
                     </div>
 
                     <button
+                        disabled={!check}
                         type="submit"
-                        disabled={false}
                         className="bg-blue-500 w-full text-center text-white p-3 rounded-lg disabled:opacity-50"
                     >
                         create account

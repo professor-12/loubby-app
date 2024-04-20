@@ -29,6 +29,7 @@ export const Form = (
 ) => {
     return (
         <form
+            method="post"
             {...props}
             className="w-full lg:w-[85%] md:w-[65%] sm:w-[60%] container mx-auto px-4"
         >
@@ -45,11 +46,7 @@ export const InputWrapper = (
 ) => {
     return (
         <div className="space-y-1 flex-1">
-            <label
-                {...props}
-                className="text-sm text-slate-700"
-                htmlFor="cpassword"
-            >
+            <label {...props} className="text-sm text-slate-700">
                 {props.label}
             </label>
             {props.children}
