@@ -47,7 +47,7 @@ const Page = () => {
             return toast.error(res.message);
         } else if (fetchData.status == 200) {
             const res = await fetchData.json();
-            localStorage.setItem("token", res.token);
+            localStorage.setItem("token", JSON.stringify(res.token));
             localStorage.setItem("user", res.user);
             toast.success("Email verified.. Login Success");
             router.push("/dashboard")
