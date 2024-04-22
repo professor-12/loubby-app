@@ -1,11 +1,13 @@
 "use client";
 import { Form, Input, InputWrapper } from "@/components/ui/Input/Input";
-import React, { useRef } from "react";
+import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Box from "../login/Box";
 import Link from "next/link";
-import { list_of_dial_code } from "@/lib/list_of_dial_code";
-
+import { list_of_data } from "@/lib/dialcode";
+import { signUpEmployer } from "@/helpers/employer-signup";
+import { FormatSignUpEmployee } from "@/helpers/format_data";
+import { useRouter } from "next/navigation";
 type InputType = {
     company_name: string;
     email: string;
@@ -15,20 +17,32 @@ type InputType = {
     password: string;
     cpassword: string;
     check: boolean;
+    code: string;
 };
 const Page = () => {
+    const router = useRouter();
     const password = React.useRef({});
     const {
         register,
         handleSubmit,
         watch,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm<InputType>();
+
     const check = watch("check");
     password.current = watch("password", "");
 
-    const submit: SubmitHandler<InputType> = (data) => {
-        console.log(data);
+    const submit: SubmitHandler<InputType> = async (data) => {
+        const formatted_data = FormatSignUpEmployee(data);
+
+        const res = await signUpEmployer(formatted_data);
+
+        if (!res.ok) return;
+        const response = await res.json();
+        if (response.status == "Success") {
+            console.log(res);
+            return router.push("login");
+        }
     };
 
     const error_message = {
@@ -162,14 +176,25 @@ const Page = () => {
                                 errors.phone_no && "border-red-600"
                             } px-2 flex space-x-1 items-center rounded-md overflow-hidden`}
                         >
-                            <select name="dial_code" id="phone_no">
-                                {list_of_dial_code.map((code) => (
+                            <select
+                                {...register("code", { required: true })}
+                                name="dial_code"
+                                className="focus:outline-none"
+                                id="phone_no"
+                            >
+                                {list_of_data.map((code) => (
                                     <option
-                                        className="space-x-2"
-                                        key={code.name}
-                                        value={code.name}
+                                        className="focus:outline-none"
+                                        key={code.value}
+                                        value={
+                                            code.value +
+                                            "_" +
+                                            code.flag +
+                                            "_" +
+                                            code.dial_code
+                                        }
                                     >
-                                        {code.name} {code.code}
+                                        {code.flag} {code.dial_code}
                                     </option>
                                 ))}
                             </select>
@@ -271,11 +296,11 @@ const Page = () => {
                     </div>
 
                     <button
-                        disabled={!check}
+                        disabled={!check || isSubmitting}
                         type="submit"
                         className="bg-blue-500 w-full text-center text-white p-3 rounded-lg disabled:opacity-50"
                     >
-                        create account
+                        {!isSubmitting ? "create account" : "Please wait"}
                     </button>
 
                     <p className="text-sm text-center text-slate-700">
