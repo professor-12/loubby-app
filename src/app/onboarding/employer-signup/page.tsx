@@ -8,6 +8,7 @@ import { list_of_data } from "@/lib/dialcode";
 import { signUpEmployer } from "@/helpers/employer-signup";
 import { FormatSignUpEmployee } from "@/helpers/format_data";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 type InputType = {
     company_name: string;
     email: string;
@@ -26,6 +27,7 @@ const Page = () => {
         register,
         handleSubmit,
         watch,
+        reset,
         formState: { errors, isSubmitting },
     } = useForm<InputType>();
 
@@ -37,10 +39,14 @@ const Page = () => {
 
         const res = await signUpEmployer(formatted_data);
 
-        if (!res.ok) return;
+        if (!res.ok) {
+            toast.error("An error occured try again");
+        }
         const response = await res.json();
         if (response.status == "Success") {
-            console.log(res);
+            toast.loading(
+                "Account created successfully. Kindly verify your email."
+            );
             return router.push("login");
         }
     };
@@ -53,6 +59,7 @@ const Page = () => {
         phone_no: "Phone number is not valid",
         confirm_password: "Please confirm your password",
     };
+
     return (
         <Form onSubmit={handleSubmit(submit)}>
             <div className="space-y-7 py-12">
@@ -233,7 +240,7 @@ const Page = () => {
                                     required: true,
                                     pattern:
                                         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
-                                    minLength: 4,
+                                    minLength: 8,
                                 })}
                                 placeholder="Enter your last name"
                                 type="password"

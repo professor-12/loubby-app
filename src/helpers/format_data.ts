@@ -1,7 +1,6 @@
 export function FormatSignUpEmployee(data:any) {
       const {
             company_name,
-            check,
             code,
             cpassword,
             email,

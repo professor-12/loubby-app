@@ -2,7 +2,6 @@ import AuthAnimationDisplay from "@/components/AuthAnimationDisplay";
 import Image from "next/image";
 import Link from "next/link";
 import React, { ReactNode } from "react";
-
 const Layout = ({ children }: { children: ReactNode }) => {
     return (
         <div className="min-h-screen overflow-y-auto grid lg:grid-cols-12  mx-auto bg-background-gray">
@@ -22,9 +21,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <main className="md:bg-white md:justify-center md:items-center pt-8 md:pt-0 flex flex-1 col-span-4  min-h-screen">
                 {children}
             </main>
+            
         </div>
     );
 };
-
 
 export default Layout;
