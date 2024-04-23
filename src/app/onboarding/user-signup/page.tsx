@@ -25,7 +25,7 @@ const Page = () => {
     const watch_password = useRef({});
     const [password, setPassword] = useState(!!false);
     const [c_password, setC_passcode] = useState(!!false);
-    const router = useRouter()
+    const router = useRouter();
 
     const {
         register,
@@ -35,7 +35,6 @@ const Page = () => {
     } = useForm<IField>();
     const check = watch("check");
     watch_password.current = watch("password", "");
-
 
     const submit = async (data: IField) => {
         let res;
@@ -55,9 +54,9 @@ const Page = () => {
             const error = await response.json();
             return toast.error(error.message);
         }
-        res = await response.json()
-        toast.success(res.message)
-        return router.push("login")
+        res = await response.json();
+        toast.success(res.message);
+        return router.push("login");
     };
 
     return (
@@ -73,7 +72,9 @@ const Page = () => {
                     <div className="flex space-x-2">
                         <InputWrapper htmlFor="first_name" label="First Name*">
                             <div
-                                className={`border ${errors.first_name && "border-red-600"} px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                                className={`border ${
+                                    errors.first_name && "border-red-600"
+                                } px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                             >
                                 <span>
                                     <Box />
@@ -94,7 +95,9 @@ const Page = () => {
                         </InputWrapper>
                         <InputWrapper htmlFor="last_name" label="Last Name*">
                             <div
-                                className={`border ${errors.last_name && "border-red-600"}  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                                className={`border ${
+                                    errors.last_name && "border-red-600"
+                                }  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                             >
                                 <span>
                                     <Box />
@@ -118,7 +121,9 @@ const Page = () => {
                     </div>
                     <InputWrapper label="Email*">
                         <div
-                            className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                            className={`border ${
+                                errors.email && "border-blue-600"
+                            }  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <Input
                                 {...register("email", {
@@ -139,7 +144,9 @@ const Page = () => {
                     </InputWrapper>
                     <InputWrapper label="Phone Number*">
                         <div
-                            className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                            className={`border ${
+                                errors.phone_no && "border-red-600"
+                            }  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <select
                                 {...register("code", { required: true })}
@@ -180,7 +187,9 @@ const Page = () => {
                     </InputWrapper>
                     <InputWrapper label="Password*">
                         <div
-                            className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                            className={`border ${
+                                errors.password && "border-red-600"
+                            } px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <Input
                                 {...register("password", {
@@ -205,7 +214,9 @@ const Page = () => {
                     </InputWrapper>
                     <InputWrapper label="Confirm Password*">
                         <div
-                            className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                            className={`border ${
+                                errors.c_password && "bg-red-600"
+                            }  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <Input
                                 {...register("c_password", {
