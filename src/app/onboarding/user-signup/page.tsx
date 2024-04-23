@@ -1,19 +1,34 @@
 "use client";
 import { Form, Input, InputWrapper } from "@/components/ui/Input/Input";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Box from "../login/Box";
 import { list_of_data } from "@/lib/dialcode";
 import ClosedEye from "../login/ClosedEye";
 import Link from "next/link";
 import OpenEye from "../login/OpenEye";
+import { useForm } from "react-hook-form";
 
+interface IField {
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone_number: string;
+    password: string;
+    c_password: string;
+    check: string;
+}
 const Page = () => {
+    const watch_password = useRef({});
     const [password, setPassword] = useState(!!false);
     const [c_password, setC_passcode] = useState(!!false);
 
-    const toggle = (key: "password" | "c_password") => {
-        console.log(key);
-    };
+    const {
+        register,
+        formState: { errors, isSubmitting },
+        watch,
+    } = useForm<IField>();
+    const check = watch("check");
+    watch_password.current = watch("password", "");
     return (
         <Form>
             <div className="space-y-7 md:px-4">
@@ -25,10 +40,7 @@ const Page = () => {
                 </div>
                 <div className="space-y-5">
                     <div className="flex space-x-2">
-                        <InputWrapper
-                            htmlFor="company_name"
-                            label="First Name*"
-                        >
+                        <InputWrapper htmlFor="first_name" label="First Name*">
                             <div
                                 className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                             >
@@ -36,6 +48,9 @@ const Page = () => {
                                     <Box />
                                 </span>
                                 <Input
+                                    {...register("first_name", {
+                                        required: true,
+                                    })}
                                     placeholder="Enter first name"
                                     type="text"
                                 />
@@ -49,6 +64,11 @@ const Page = () => {
                                     <Box />
                                 </span>
                                 <Input
+                                    {...register("last_name", {
+                                        required: true,
+                                        validate: (thi) =>
+                                            thi.trim().length != 0,
+                                    })}
                                     placeholder="Enter last name"
                                     type="text"
                                 />
@@ -60,6 +80,10 @@ const Page = () => {
                             className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <Input
+                                {...register("email", {
+                                    required: true,
+                                    pattern: /p/,
+                                })}
                                 placeholder="Enter your email"
                                 type="email"
                             />
@@ -101,6 +125,12 @@ const Page = () => {
                             className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <Input
+                                {...register("password", {
+                                    required: true,
+                                    minLength: 8,
+                                    pattern:
+                                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
+                                })}
                                 placeholder="Enter password"
                                 type={!password ? "password" : "text"}
                             />
@@ -114,6 +144,12 @@ const Page = () => {
                             className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <Input
+                                {...register("c_password", {
+                                    minLength: 8,
+                                    required: true,
+                                    validate: (value) =>
+                                        value == watch_password.current,
+                                })}
                                 placeholder="Confirm password"
                                 type={!c_password ? "password" : "text"}
                             />
@@ -123,7 +159,7 @@ const Page = () => {
                         </div>
                     </InputWrapper>
                     <div className="flex space-x-2">
-                        <input type="checkbox" />
+                        <input type="checkbox" {...register("check")} />
                         <div className="text-sm text-slate-700">
                             I accept the Loubby{" "}
                             <Link
@@ -142,10 +178,10 @@ const Page = () => {
                         </div>
                     </div>
                     <button
-                        disabled={true}
+                        disabled={!check || isSubmitting}
                         className="p-3 disabled:bg-opacity-55 bg-blue-500 hover:bg-blue-600 duration-700 text-center text-white w-full rounded-lg"
                     >
-                        create account
+                        {!isSubmitting ? "create account" : "please wait.."}
                     </button>
                 </div>
             </div>
