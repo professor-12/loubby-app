@@ -7,30 +7,61 @@ import ClosedEye from "../login/ClosedEye";
 import Link from "next/link";
 import OpenEye from "../login/OpenEye";
 import { useForm } from "react-hook-form";
+import { Format_User_SignUp_Data } from "@/helpers/format_data_user_signup";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-interface IField {
+export interface IField {
     first_name: string;
     last_name: string;
     email: string;
-    phone_number: string;
     password: string;
     c_password: string;
     check: string;
+    code: string;
+    phone_no: string;
 }
 const Page = () => {
     const watch_password = useRef({});
     const [password, setPassword] = useState(!!false);
     const [c_password, setC_passcode] = useState(!!false);
+    const router = useRouter()
 
     const {
         register,
         formState: { errors, isSubmitting },
         watch,
+        handleSubmit,
     } = useForm<IField>();
     const check = watch("check");
     watch_password.current = watch("password", "");
+
+
+    const submit = async (data: IField) => {
+        let res;
+        const payload = JSON.stringify(Format_User_SignUp_Data(data));
+        const response = await fetch(
+            "https://api.loubby.ai/api/v1/user/signup",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: payload,
+            }
+        );
+
+        if (!response.ok) {
+            const error = await response.json();
+            return toast.error(error.message);
+        }
+        res = await response.json()
+        toast.success(res.message)
+        return router.push("login")
+    };
+
     return (
-        <Form>
+        <Form onSubmit={handleSubmit(submit)}>
             <div className="space-y-7 md:px-4">
                 <div className="space-y-1">
                     <h1 className="font-medium">Candidate Signup</h1>
@@ -42,7 +73,7 @@ const Page = () => {
                     <div className="flex space-x-2">
                         <InputWrapper htmlFor="first_name" label="First Name*">
                             <div
-                                className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                                className={`border ${errors.first_name && "border-red-600"} px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                             >
                                 <span>
                                     <Box />
@@ -55,10 +86,15 @@ const Page = () => {
                                     type="text"
                                 />
                             </div>
+                            {errors.first_name && (
+                                <span className="text-xs text-red-500">
+                                    Field required. Please fill
+                                </span>
+                            )}
                         </InputWrapper>
                         <InputWrapper htmlFor="last_name" label="Last Name*">
                             <div
-                                className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
+                                className={`border ${errors.last_name && "border-red-600"}  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                             >
                                 <span>
                                     <Box />
@@ -73,6 +109,11 @@ const Page = () => {
                                     type="text"
                                 />
                             </div>
+                            {errors.last_name && (
+                                <span className="text-xs text-red-500">
+                                    Field required. Please fill
+                                </span>
+                            )}
                         </InputWrapper>
                     </div>
                     <InputWrapper label="Email*">
@@ -82,18 +123,26 @@ const Page = () => {
                             <Input
                                 {...register("email", {
                                     required: true,
-                                    pattern: /p/,
+                                    pattern:
+                                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$/,
                                 })}
                                 placeholder="Enter your email"
                                 type="email"
                             />
                         </div>
+                        {errors.email && (
+                            <span className="text-xs text-red-500">
+                                Invalid email format, Please provide a valid
+                                email address
+                            </span>
+                        )}
                     </InputWrapper>
                     <InputWrapper label="Phone Number*">
                         <div
                             className={`border  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <select
+                                {...register("code", { required: true })}
                                 name="dial_code"
                                 className="focus:outline-none"
                                 id="phone_no"
@@ -115,10 +164,19 @@ const Page = () => {
                                 ))}
                             </select>
                             <Input
+                                {...register("phone_no", {
+                                    required: true,
+                                    minLength: 8,
+                                })}
                                 placeholder="Enter Phone Number"
                                 type="text"
                             />
                         </div>
+                        {errors.phone_no && (
+                            <span className="text-xs text-red-500">
+                                Phone number is not valid
+                            </span>
+                        )}
                     </InputWrapper>
                     <InputWrapper label="Password*">
                         <div
@@ -138,6 +196,12 @@ const Page = () => {
                                 {password ? <OpenEye /> : <ClosedEye />}
                             </span>
                         </div>
+                        {errors.password && (
+                            <span className="text-xs text-red-500">
+                                Invalid Password! Should contain upper and
+                                lowercase letters and a number.
+                            </span>
+                        )}
                     </InputWrapper>
                     <InputWrapper label="Confirm Password*">
                         <div
@@ -157,6 +221,11 @@ const Page = () => {
                                 {c_password ? <OpenEye /> : <ClosedEye />}
                             </span>
                         </div>
+                        {errors.c_password && (
+                            <span className="text-xs text-red-500">
+                                Please confirm your password
+                            </span>
+                        )}
                     </InputWrapper>
                     <div className="flex space-x-2">
                         <input type="checkbox" {...register("check")} />
@@ -183,6 +252,15 @@ const Page = () => {
                     >
                         {!isSubmitting ? "create account" : "please wait.."}
                     </button>
+                    <p className="text-sm text-center text-slate-700">
+                        Already have an account?{" "}
+                        <Link
+                            href={"login"}
+                            className="text-blue-500 underline"
+                        >
+                            Log in
+                        </Link>
+                    </p>
                 </div>
             </div>
         </Form>
