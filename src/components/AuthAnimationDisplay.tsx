@@ -56,26 +56,26 @@ const AuthAnimationDisplay = () => {
                     animate={{ y: [-250, 0] }}
                     exit={{ y: -50, transition: { duration: 0.2 } }}
                     transition={{ duration: 0.4 }}
-                    className="gap-y-5 flex h-full p-9 flex-col justify-between"
+                    className="gap-y-5 flex h-[80%] p-9 flex-col justify-between"
                 >
                     <h1
                         style={{ color: item?.text_Color }}
-                        className="text-7xl text-center font-bold text-[#CB6015]"
+                        className="lg:text-7xl md:text-4xl text-center font-bold text-[#CB6015]"
                     >
                         {item.title}
                     </h1>
 
                     <div className="flex p-2 justify-between  items-center">
-                        <div className="h-auto z-50 min-w-[12rem]">
+                        <div className="h-auto md:hidden lg:flex z-50 min-w-[12rem]">
                             <Image
-                                className="object-contain z-50"
+                                className="object-contain   z-50"
                                 src={item?.svg}
                                 alt=""
                                 width={200}
                                 height={200}
                             />
                         </div>
-                        <h1 className="text-2xl ml-24 text-left">
+                        <h1 className="lg:text-2xl md:text-lg ml-24 text-left">
                             {item?.body}
                         </h1>
                     </div>

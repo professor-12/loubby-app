@@ -1,10 +1,12 @@
-import { Form, Input } from "@/components/ui/Input/Input";
+"use client";
 import React from "react";
 import Box from "./Box";
 import Note from "./Note";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
+    const router = useRouter();
     return (
         <div className="container space-y-6  px-4 mx-auto md:w-[60%] xl:w-[80%]">
             <div>
@@ -14,7 +16,12 @@ const page = () => {
                 </p>
             </div>
             <div className="space-y-4">
-                <div className="flex justify-between w-full border text-slate-800 border-gray-200 p-4 py-6 rounded-lg">
+                <div
+                    onClick={(_) =>
+                        router.push("employer-signup?from=create-account")
+                    }
+                    className="flex justify-between  w-full border text-slate-800 border-gray-200 p-4 py-6 cursor-pointer rounded-lg"
+                >
                     <div className="flex space-x-3">
                         <div>
                             <span className="flex items-center p-2 bg-background-gray justify-center  rounded-full">
@@ -33,7 +40,10 @@ const page = () => {
                     </div>
                     <div className="w-6 h-6 flex justify-self-end rounded-full border-2" />
                 </div>
-                <div className="flex justify-between w-full border text-slate-800 border-gray-200 p-4 py-6 rounded-lg">
+                <div
+                    onClick={(_) => router.push("user-signup?source=signup")}
+                    className="flex cursor-pointer justify-between w-full border text-slate-800 border-gray-200 p-4 py-6 rounded-lg"
+                >
                     <div className="flex space-x-3">
                         <div className="">
                             <span className="flex items-center bg-background-gray justify-center p-2 rounded-full">
@@ -64,4 +74,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

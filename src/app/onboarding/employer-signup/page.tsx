@@ -1,6 +1,6 @@
 "use client";
 import { Form, Input, InputWrapper } from "@/components/ui/Input/Input";
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Box from "../login/Box";
 import Link from "next/link";
@@ -9,6 +9,8 @@ import { signUpEmployer } from "@/helpers/employer-signup";
 import { FormatSignUpEmployee } from "@/helpers/format_data";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import OpenEye from "../login/OpenEye";
+import ClosedEye from "../login/ClosedEye";
 type InputType = {
     company_name: string;
     email: string;
@@ -34,19 +36,21 @@ const Page = () => {
     const check = watch("check");
     password.current = watch("password", "");
 
+    const [passwordShow, setPasswordShow] = useState(false);
+    const [cpasswordShow, setcPasswordShow] = useState(false);
+
     const submit: SubmitHandler<InputType> = async (data) => {
         const formatted_data = FormatSignUpEmployee(data);
 
         const res = await signUpEmployer(formatted_data);
 
         if (!res.ok) {
-            toast.error("An error occured try again");
+            const response = await res.json();
+            return toast.error(response.message);
         }
         const response = await res.json();
         if (response.status == "Success") {
-            toast.loading(
-                "Account created successfully. Kindly verify your email."
-            );
+            toast.loading(response.message);
             return router.push("login");
         }
     };
@@ -243,8 +247,11 @@ const Page = () => {
                                     minLength: 8,
                                 })}
                                 placeholder="Enter your last name"
-                                type="password"
+                                type={!passwordShow ? "password" : "text"}
                             />
+                            <span onClick={(_) => setPasswordShow((_) => !_)}>
+                                {passwordShow ? <OpenEye /> : <ClosedEye />}
+                            </span>
                         </div>
                         {errors.password && (
                             <span className="text-xs text-red-500">
@@ -271,8 +278,11 @@ const Page = () => {
                                             "The passwords do not match",
                                     })}
                                     placeholder="Enter your company name"
-                                    type="password"
+                                    type={cpasswordShow ? "text" : "password"}
                                 />
+                            <span onClick={(_) => setcPasswordShow((_) => !_)}>
+                                {cpasswordShow ? <OpenEye /> : <ClosedEye />}
+                            </span>
                             </div>
                         </div>
                         {errors.cpassword && (

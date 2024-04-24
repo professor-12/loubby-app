@@ -80,6 +80,7 @@ const Page = () => {
                             name="email"
                             id="email"
                             type="text"
+                            placeholder="Enter email"
                         />
                     </div>
                     {errors.email && (
@@ -98,6 +99,7 @@ const Page = () => {
                             <Lock />
                         </span>
                         <Input
+                            placeholder="Enter password"
                             {...register("password", {
                                 required: true,
                             })}
