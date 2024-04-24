@@ -7,12 +7,12 @@ const Page = () => {
     useEffect(() => {
         const token = localStorage.getItem("token");
         const user = localStorage.getItem("user");
-        if (!token || !user) return router.push("onboarding/login");
+        if (!token && !user) return router.push("onboarding/login");
 
         return router.push("/dashboard");
     }, [router]);
 
-    return null;
+    return null
 };
 
 export default Page;
