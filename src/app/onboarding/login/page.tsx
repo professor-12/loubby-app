@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Box from "./Box";
 import Lock from "./Lock";
 import ClosedEye from "./ClosedEye";
@@ -8,10 +8,19 @@ import { Form, Input } from "@/components/ui/Input/Input";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-interface Zod {
+
+export interface Zod {
     email: string;
     password: string;
 }
+
+const delay = async () => {
+    await new Promise(() => {
+        setTimeout(() => {
+            console.log("first");
+        }, 3000);
+    });
+};
 
 const Page = () => {
     const [passwordType, setPasswordType] = useState(true);
@@ -52,6 +61,7 @@ const Page = () => {
             router.push("/dashboard");
         }
     };
+
     return (
         <Form onSubmit={handleSubmit(submit)}>
             <div className="space-y-5 px-4">
