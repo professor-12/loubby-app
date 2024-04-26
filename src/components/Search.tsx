@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Search = ({ className }: { className: string }) => {
     return (
-        <div className="flex bg-[#F9FAFB] overflow-hidden border-slate-300 border focus:border-blue-400  group rounded-lg space-x-2 lg:min-w-[50%] px-3">
+        <div className="flex bg-[#F9FAFB] w-[69%] overflow-hidden border-slate-300 border focus:border-blue-400  group rounded-lg space-x-2 lg:w-[50%] px-3">
             <Image
                 src={"/searchIcon.svg"}
                 className="bg-transparent"
