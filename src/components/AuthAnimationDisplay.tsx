@@ -48,7 +48,7 @@ const AuthAnimationDisplay = () => {
         <>
             <span
                 style={{ backgroundColor: item?.color }}
-                className="h-[18rem] bottom-[4.3rem]  left-28 fixed flex items-center justify-center min-w-[18rem] rounded-full"
+                className="h-[18rem] bottom-[4rem]  left-24 fixed flex items-center justify-center min-w-[18rem] rounded-full"
             ></span>
             <div className="flex items-center p-14 justify-center h-screen overflow-hidden">
                 <motion.div

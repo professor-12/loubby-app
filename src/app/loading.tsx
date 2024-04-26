@@ -1,7 +1,14 @@
 import React from "react";
 
 const loading = () => {
-    return <div className="max-h-svh flex items-center justify-center">loading</div>;
+    return (
+        <div className="min-h-screen flex items-center justify-center">
+            <div className="text-4xl underline underline-offset-4 font-medium animate-pulse duration-75">
+                Loading
+            </div>
+            <span className="text-4xl">...</span>
+        </div>
+    );
 };
 
 export default loading;
