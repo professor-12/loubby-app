@@ -24,7 +24,7 @@ const TopNavBar = () => {
                         alt="notification"
                     />
                     <span className="absolute bottom-2 left-[.37rem] bg-red-700 text-white flex items-center justify-center text-center h-4 w-4 rounded-full text-xs font-semibold">
-                        0
+                        1
                     </span>
                 </div>
             </div>
