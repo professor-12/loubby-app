@@ -8,6 +8,7 @@ import LoadingCardSkeleton, {
 
 import SummaryCard from "./components/SummaryCard";
 
+
 const Page = () => {
     return (
         <div>
@@ -24,7 +25,7 @@ const Page = () => {
                                 </div>
                             }
                         >
-                            <SummaryCard />
+                        <SummaryCard  data={()=> {}}/>
                         </Suspense>
                         <div className="col-span-3 space-y-2">
                             <div>
