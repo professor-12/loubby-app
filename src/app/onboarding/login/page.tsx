@@ -14,16 +14,8 @@ export interface Zod {
     password: string;
 }
 
-const delay = async () => {
-    await new Promise(() => {
-        setTimeout(() => {
-            console.log("first");
-        }, 3000);
-    });
-};
-
 const Page = () => {
-    const [passwordType, setPasswordType] = useState(true);
+    const [passwordType, setPasswordType] = useState(true); 
     const router = useRouter();
     const {
         register,
@@ -55,6 +47,7 @@ const Page = () => {
             return toast.error(res.message);
         } else if (fetchData.status == 200) {
             const res = await fetchData.json();
+
             localStorage.setItem("token", JSON.stringify(res.token));
             localStorage.setItem("user", JSON.stringify(res.user));
             toast.success("Email verified.. Login Success");
