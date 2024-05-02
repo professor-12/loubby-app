@@ -6,7 +6,7 @@ import Lock from "./Lock";
 import ClosedEye from "./ClosedEye";
 import { Form, Input } from "@/components/ui/Input/Input";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 export interface Zod {
@@ -15,7 +15,7 @@ export interface Zod {
 }
 
 const Page = () => {
-    const [passwordType, setPasswordType] = useState(true); 
+    const [passwordType, setPasswordType] = useState(true);
     const router = useRouter();
     const {
         register,
@@ -27,6 +27,7 @@ const Page = () => {
     const toggle = () => {
         setPasswordType((prev) => !prev);
     };
+    
     const submit = async (payload: Zod) => {
         const fetchData = await fetch(
             "https://api.loubby.ai/api/v1/employer/login",
@@ -44,13 +45,22 @@ const Page = () => {
 
         if (!fetchData.ok) {
             const res = await fetchData.json();
-            return toast.error(res.message);
+            return toast.error(res.message) as any;
         } else if (fetchData.status == 200) {
             const res = await fetchData.json();
 
-            localStorage.setItem("token", JSON.stringify(res.token));
+            localStorage.setItem("token", res.token);
             localStorage.setItem("user", JSON.stringify(res.user));
-            toast.success("Email verified.. Login Success");
+            toast.success(res.message, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             router.push("/dashboard");
         }
     };

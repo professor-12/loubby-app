@@ -13,7 +13,7 @@ const Header = () => {
                     </p>
                 </div>
                 <div className="flex gap-4 justify-between md:justify-start items-center flex-wrap">
-                    <button className="bg-white md:w-auto w-full p-[0.5rem] text-sm font-medium px-3 rounded-lg">
+                    <button className="bg-white sm:w-auto w-full p-[0.5rem] text-sm font-medium px-3 rounded-lg">
                         Hire Talents
                     </button>
                     <p className="text-white text-sm underline">

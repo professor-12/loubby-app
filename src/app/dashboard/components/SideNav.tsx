@@ -26,13 +26,13 @@ const navLinks = [
                 name: "Conversations",
             },
             {
-                link: "/conversations",
+                link: "/onversations",
                 img: "/search.svg",
                 color: "",
                 name: "Talent Marketplace",
             },
             {
-                link: "/conversations",
+                link: "/nversations",
                 img: "/pipe.svg",
                 color: "",
                 name: "Pipeline",

@@ -11,7 +11,6 @@ const Page = () => {
         if (!token && !user) return router.push("onboarding/login");
         return router.push("/dashboard");
     }, [router]);
-
     return loading();
 };
 

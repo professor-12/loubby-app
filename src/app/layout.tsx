@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 
 const moserat = Montserrat({ subsets: ["latin"] });
 
@@ -18,11 +21,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${moserat.className}`}>
-                <main>{children}</main>
-                <Toaster
-                    position="top-right"
-                    toastOptions={{ duration: 4000 }}
-                />
+                <main>
+                    {children}
+                </main>
+                <ToastContainer />
             </body>
         </html>
     );
