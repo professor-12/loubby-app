@@ -2,6 +2,7 @@ import React from "react";
 import SummaryCard from "./SummaryCard";
 import { helpFetch } from "@/hooks/useFetch";
 
+const detail = ["New Matches", "Jobs listed", "Upcoming interviews"];
 const Summary = async () => {
     const get = helpFetch;
     const namingishardlol = localStorage.getItem("token") as string;
@@ -25,7 +26,13 @@ const Summary = async () => {
     return (
         <div className="grid w-full  md:grid-cols-3 gap-3">
             {simultaneous.map(({ data }, index) => {
-                return <div key={index}>{data.length}</div>;
+                return (
+                    <SummaryCard
+                        title={detail[index]}
+                        amount={data.length}
+                        key={index}
+                    ></SummaryCard>
+                );
             })}
         </div>
     );
