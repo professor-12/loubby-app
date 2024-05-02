@@ -6,7 +6,7 @@ import Lock from "./Lock";
 import ClosedEye from "./ClosedEye";
 import { Form, Input } from "@/components/ui/Input/Input";
 import { useForm } from "react-hook-form";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 export interface Zod {
@@ -15,7 +15,7 @@ export interface Zod {
 }
 
 const Page = () => {
-    const [passwordType, setPasswordType] = useState(true); 
+    const [passwordType, setPasswordType] = useState(true);
     const router = useRouter();
     const {
         register,
@@ -27,6 +27,7 @@ const Page = () => {
     const toggle = () => {
         setPasswordType((prev) => !prev);
     };
+    
     const submit = async (payload: Zod) => {
         const fetchData = await fetch(
             "https://api.loubby.ai/api/v1/employer/login",
@@ -48,7 +49,7 @@ const Page = () => {
         } else if (fetchData.status == 200) {
             const res = await fetchData.json();
 
-            localStorage.setItem("token", JSON.stringify(res.token));
+            localStorage.setItem("token", res.token);
             localStorage.setItem("user", JSON.stringify(res.user));
             toast.success(res.message, {
                 position: "top-right",
@@ -59,7 +60,6 @@ const Page = () => {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-                
             });
             router.push("/dashboard");
         }

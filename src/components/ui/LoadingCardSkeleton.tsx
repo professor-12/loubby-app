@@ -3,7 +3,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const LoadingCardSkeleton = () => {
     return (
-        <div className="white min-h-[12rem] bg-white flex-1   rounded-lg p-4 shadow shadow-slate-200/40 space-y-2">
+        <div className="white min-h-[8rem] bg-white flex-1   rounded-lg p-4 shadow shadow-slate-200/40 space-y-2">
             <div>
                 <Skeleton height={38} width={38} borderRadius={12} />
             </div>
@@ -19,7 +19,7 @@ const LoadingCardSkeleton = () => {
 
 export const LoadinBigCard = () => {
     return (
-        <div className="white bg-white flex-1   rounded-lg p-4 shadow shadow-slate-200/40 space-y-1">
+        <div className="white bg-white flex-1 max-h-[8rem]   rounded-lg p-4 shadow shadow-slate-200/40 space-y-1">
             <div>
                 <Skeleton height={100} width={100} borderRadius={"100%"} />
             </div>

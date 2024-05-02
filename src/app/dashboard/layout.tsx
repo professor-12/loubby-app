@@ -1,10 +1,9 @@
+"use client";
 import React, { ReactNode } from "react";
 import SideBar from "./components/sideBar";
 import TopNavBar from "./components/TopNavBar";
-
-export const metadata = {
-    title: "dasboard",
-};
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 
 const layout = ({ children }: { children: ReactNode }) => {
     return (
@@ -17,7 +16,9 @@ const layout = ({ children }: { children: ReactNode }) => {
             </div>
             <section className="space-y-1 flex flex-col w-full min-h-screen">
                 <div>
-                    <nav className="bg-white flex items-center h-14 w-full"><TopNavBar/></nav>
+                    <nav className="bg-white flex items-center h-14 w-full">
+                        <TopNavBar />
+                    </nav>
                     <div className="w-fulll h-[0.3rem] bg-border"></div>
                 </div>
                 <div className="p-4  h-full w-full bg-dashboard">
