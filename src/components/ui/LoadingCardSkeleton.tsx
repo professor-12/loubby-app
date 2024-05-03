@@ -19,7 +19,7 @@ const LoadingCardSkeleton = () => {
 
 export const LoadinBigCard = () => {
     return (
-        <div className="white bg-white flex-1 max-h-[8rem]   rounded-lg p-4 shadow shadow-slate-200/40 space-y-1">
+        <div className="bg-white flex-1 max-h-[18rem]   rounded-lg p-1 md:p-4 shadow shadow-slate-200/40 space-y-1">
             <div>
                 <Skeleton height={100} width={100} borderRadius={"100%"} />
             </div>
