@@ -11,8 +11,8 @@ const SummaryCard = async ({
     amount: number;
 }) => {
     return (
-        <div className="white bg-white  space-y-2  md:h-[8rem] flex justify-between items-center  rounded-lg p-3 md:p-4 md:py-5 shadow shadow-slate-200/40">
-            <div className="flex gap-2 md:flex-col items-center">
+        <div className="white bg-white  space-y-2  md:h-[8rem] flex md:flex-col md:justify-start justify-between items-center md:items-start  rounded-lg p-3 md:p-4 md:py-5 shadow shadow-slate-200/40">
+            <div className="flex gap-2 md:flex-col md:items-start items-center">
                 <button className="bg-blue-100 rounded p-2 w-auto flex">
                     <ThunderSvg />
                 </button>
