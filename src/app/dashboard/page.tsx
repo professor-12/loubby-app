@@ -93,7 +93,7 @@ const Page = () => {
         <div>
             <Header />
             <div className="flex py-4 space-x-3">
-                <div className="w-full md:max-w-[68%]">
+                <div className="w-full lg:max-w-[68%]">
                     <div className="space-y-4">
                         <Summary />
                         <div className="col-span-3 space-y-2">
@@ -106,7 +106,7 @@ const Page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="md:flex  flex-1 h-auto  hidden">
+                <div className="lg:flex  flex-1 h-auto  hidden">
                     <LoadinBigCard />
                 </div>
             </div>
