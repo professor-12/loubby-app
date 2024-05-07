@@ -3,8 +3,9 @@ import Image from "next/image";
 import React from "react";
 import { useSelector } from "react-redux";
 import { TbPlus } from "react-icons/tb";
-
+import { useRouter } from "next/navigation";
 const LatestPost = () => {
+    const route = useRouter();
     const { data } = useSelector((state: any) => state.job);
     const results = data?.results;
     if (results?.length == 0) {
@@ -26,7 +27,10 @@ const LatestPost = () => {
                         Create a job post to easily find and manage candidates
                     </p>
                 </div>
-                <button className="text-cener flex text-white space-x-1 bg-[#1A73E8] p-2 rounded-lg px-4">
+                <button
+                    onClick={() => route.push("dashboard/jobs/joblisting")}
+                    className="text-cener flex text-white space-x-1 bg-[#1A73E8] p-2 rounded-lg px-4"
+                >
                     <TbPlus className="text-xl" />{" "}
                     <span className="text-sm">Post a Job</span>{" "}
                 </button>
