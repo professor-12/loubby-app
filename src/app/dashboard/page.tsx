@@ -11,6 +11,8 @@ import { getUser } from "@/store/slices/userReducer";
 import { fetchJobs } from "@/store/slices/jobSlice";
 import { fetchInterView } from "@/store/slices/interviewSlice";
 import { helperFetch } from "@/lib/utils/helpFetch";
+import GoodForYou from "./components/goodfit/GoodForYou";
+import UpComingSchedule from "./components/UpComingSchedule";
 const LatestPosting = dynamic(
     () => import("./components/LatestPost/LatestPosting"),
     {
@@ -39,7 +41,6 @@ const Page = () => {
         );
         dispatch(fetchJobs(data));
     }, [dispatch]);
-
     const Interview = useCallback(async () => {
         const token = localStorage.getItem!("token") as string;
         const getInterView = await helperFetch(
@@ -75,20 +76,20 @@ const Page = () => {
                 <div className="w-full lg:max-w-[68%]">
                     <div className="space-y-4">
                         <Summary />
-
-                        <div className="col-span-3 space-y-2">
+                        <div className="col-span-3 space-y-4">
                             <div>
                                 <Suspense fallback={<LoadingCardSkeleton />}>
                                     <LatestPosting />
                                 </Suspense>
                             </div>
                             <div>
-                                <LoadingCardSkeleton />
+                                <GoodForYou />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="lg:flex  flex-1 h-auto  hidden">
+                <div className="lg:flex flex-col gap-6 flex-1 h-auto  hidden">
+                    <UpComingSchedule />
                     <LoadingCardSkeleton />
                 </div>
             </div>
