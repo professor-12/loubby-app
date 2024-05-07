@@ -87,7 +87,8 @@ const Page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:flex  flex-1 h-auto  hidden">
+                <div className="lg:flex flex-col gap-6 flex-1 h-auto  hidden">
+                    <LoadingCardSkeleton />
                     <LoadingCardSkeleton />
                 </div>
             </div>

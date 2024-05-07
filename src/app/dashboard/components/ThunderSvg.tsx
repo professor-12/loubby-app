@@ -10,9 +10,10 @@ const ThunderSvg = ({ color }: { color?:string}) => {
           stroke-linecap="round"
           stroke-linejoin="round"
           height="15"
+          style={{color}}
           width="15"
           xmlns="http://www.w3.org/2000/svg"
-          className={`text-blue-500 h-[.8rem] w-[.8rem]`}
+          className={`h-[.8rem] w-[.8rem]`}
       >
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"></path>
