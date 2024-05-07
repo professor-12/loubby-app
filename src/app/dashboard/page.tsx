@@ -12,6 +12,7 @@ import { fetchJobs } from "@/store/slices/jobSlice";
 import { fetchInterView } from "@/store/slices/interviewSlice";
 import { helperFetch } from "@/lib/utils/helpFetch";
 import GoodForYou from "./components/goodfit/GoodForYou";
+import UpComingSchedule from "./components/UpComingSchedule";
 const LatestPosting = dynamic(
     () => import("./components/LatestPost/LatestPosting"),
     {
@@ -88,7 +89,7 @@ const Page = () => {
                     </div>
                 </div>
                 <div className="lg:flex flex-col gap-6 flex-1 h-auto  hidden">
-                    <LoadingCardSkeleton />
+                    <UpComingSchedule />
                     <LoadingCardSkeleton />
                 </div>
             </div>

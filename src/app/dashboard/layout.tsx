@@ -13,8 +13,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
     }, []);
     return (
         <Provider store={store}>
-            <main className="h-screen overflow-y-auto bg-[#F9FAFB] flex">
-                <div className="h-full flex">
+            <main className="min-h-screen overflow-y-auto bg-[#F9FAFB] flex">
+                <div className="flex">
                     <aside className="lg:inline-block h-full hidden  md:w-[16rem] p-[1rem]  bg-white">
                         <SideBar />
                     </aside>
