@@ -1,11 +1,16 @@
 "use client";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import SideBar from "./components/sideBar";
 import TopNavBar from "./components/TopNavBar";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
+import { redirect } from "next/navigation"
 
-const layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
+    useEffect(() => {
+        const token = localStorage.getItem("token") 
+        if (!token) redirect("/onboarding/login")
+    },[])
     return (
         <Provider store={store}>
             <main className="h-screen bg-[#F9FAFB] flex">
@@ -30,5 +35,4 @@ const layout = ({ children }: { children: ReactNode }) => {
         </Provider>
     );
 };
-
-export default layout;
+export default Layout;
