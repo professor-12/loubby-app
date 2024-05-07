@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect } from "react";
+import React, { Suspense, useCallback, useEffect } from "react";
 import Header from "./components/Header";
 import "react-loading-skeleton/dist/skeleton.css";
 import LoadingCardSkeleton, {
@@ -7,35 +7,17 @@ import LoadingCardSkeleton, {
 } from "@/components/ui/LoadingCardSkeleton";
 import dynamic from "next/dynamic";
 import { useDispatch, useSelector } from "react-redux";
-import { redirect } from "next/navigation";
 import { getUser } from "@/store/slices/userReducer";
 import { fetchJobs } from "@/store/slices/jobSlice";
 import { fetchInterView } from "@/store/slices/interviewSlice";
-
-const helperFetch = async (url: string, token?: string, method?: string) => {
-    let request: Response | any;
-    if (token) {
-        console.log(token);
-        request = await fetch(url, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            method: method ?? "GET",
-        });
-    } else {
-        request = await fetch(url, {
-            method: method ?? "GET",
-        });
+import { helperFetch } from "@/lib/utils/helpFetch";
+const LatestPosting = dynamic(
+    () => import("./components/LatestPost/LatestPosting"),
+    {
+        ssr: false,
+        loading: (_) => <LoadingCardSkeleton />,
     }
-    if (!request.ok) {
-        const respost = await request.json();
-        return { status: request.status, message: respost.message };
-    }
-
-    return request.json();
-};
-
+);
 const Summary = dynamic(() => import("./components/Summary"), {
     ssr: false,
     loading: (_) => (
@@ -65,7 +47,7 @@ const Page = () => {
             token
         );
 
-        dispatch(fetchInterView(getInterView))
+        dispatch(fetchInterView(getInterView));
     }, [dispatch]);
 
     useEffect(() => {
@@ -79,13 +61,10 @@ const Page = () => {
                     },
                 }
             );
-            if (!token || !response.ok) {
-                return redirect("/login");
-            }
             dispatch!(getUser(await response.json()));
         };
         fetchDetails();
-        Interview()
+        Interview();
         getJob();
     }, [dispatch, getJob, Interview]);
 
@@ -96,9 +75,12 @@ const Page = () => {
                 <div className="w-full lg:max-w-[68%]">
                     <div className="space-y-4">
                         <Summary />
+
                         <div className="col-span-3 space-y-2">
                             <div>
-                                <LoadingCardSkeleton />
+                                <Suspense fallback={<LoadingCardSkeleton />}>
+                                    <LatestPosting />
+                                </Suspense>
                             </div>
                             <div>
                                 <LoadingCardSkeleton />
@@ -107,7 +89,7 @@ const Page = () => {
                     </div>
                 </div>
                 <div className="lg:flex  flex-1 h-auto  hidden">
-                    <LoadinBigCard />
+                    <LoadingCardSkeleton />
                 </div>
             </div>
         </div>

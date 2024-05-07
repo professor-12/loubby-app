@@ -1,9 +1,13 @@
-"use client"
-import React from "react";
-import { useSelector } from "react-redux";
-
+"use client";
+import React, { useEffect, useState } from "react";
 const Header = () => {
-    const {user} = useSelector((state: any) => state?.user)
+    const [user, setUser] = useState(null) as any;
+
+    useEffect(() => {
+        setUser(() => JSON.parse(localStorage.getItem("user") as any));
+    }, []);
+
+    console.log(user)
 
     return (
         <div className="bg-[url('/d.png')] flex  bg-no-repeat bg-[-79rem]  min-h-[11rem]  overflow-hidden rounded-lg">
