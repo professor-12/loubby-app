@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${moserat.className}`}>
+            <body className={`${moserat.className} overflow-x-hidden`}>
                 <main>{children}</main>
                 <ToastContainer />
             </body>

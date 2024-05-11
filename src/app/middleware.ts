@@ -1,9 +1,12 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import { MiddlewareConfig, NextRequest, NextResponse  } from "next/server"
-
-const publicRoutes = [""]
-
-export async function middleware(req: NextRequest, res: NextResponse, next: () => any) {
-       
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+ 
+// This function can be marked `async` if using `await` inside
+export function middleware(request: NextRequest) {
+  return NextResponse.redirect(new URL('/home', request.url))
+}
+ 
+// See "Matching Paths" below to learn more
+export const config = {
+  matcher: '/dashboard/*',
 }
