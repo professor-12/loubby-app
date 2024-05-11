@@ -13,6 +13,7 @@ import { fetchInterView } from "@/store/slices/interviewSlice";
 import { helperFetch } from "@/lib/utils/helpFetch";
 import GoodForYou from "./components/goodfit/GoodForYou";
 import UpComingSchedule from "./components/UpComingSchedule";
+import PipeLineSummary from "./components/PipeLineSummary";
 const LatestPosting = dynamic(
     () => import("./components/LatestPost/LatestPosting"),
     {
@@ -72,7 +73,7 @@ const Page = () => {
     return (
         <div>
             <Header />
-            <div className="flex py-4 space-x-3">
+            <div className="flex flex-col lg:flex-row py-4 space-y-3 md:space-y-0 lg:space-x-3">
                 <div className="w-full lg:max-w-[68%]">
                     <div className="space-y-4">
                         <Summary />
@@ -88,9 +89,9 @@ const Page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:flex flex-col gap-6 flex-1 h-auto  hidden">
+                <div className="lg:flex  lg:max-w-[39%] flex-col space-y-3 flex-1 h-auto">
                     <UpComingSchedule />
-                    <LoadingCardSkeleton />
+                    <PipeLineSummary/>
                 </div>
             </div>
         </div>
