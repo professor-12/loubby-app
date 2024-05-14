@@ -1,4 +1,4 @@
-import { IField } from "@/app/onboarding/user-signup/page"
+import { IField } from "@/types/auth"
 
 export const Format_User_SignUp_Data = (data: IField) => {
       const { code, email, first_name, last_name, password, phone_no: phone_number } = data
