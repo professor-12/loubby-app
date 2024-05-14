@@ -48,9 +48,9 @@ const AuthAnimationDisplay = () => {
         <>
             <span
                 style={{ backgroundColor: item?.color }}
-                className="h-[18rem] bottom-[4rem]  left-24 fixed flex items-center justify-center min-w-[18rem] rounded-full"
+                className="xl:h-[18rem] h-[12rem] w-[12rem] bottom-[4rem]  left-24 fixed flex items-center justify-center xl:min-w-[18rem] rounded-full"
             ></span>
-            <div className="flex items-center p-14 justify-center h-screen overflow-hidden">
+            <div className="flex items-center p-10 xl:p-14 justify-center h-screen overflow-hidden">
                 <motion.div
                     key={index}
                     animate={{ y: [-250, 0] }}
@@ -60,7 +60,7 @@ const AuthAnimationDisplay = () => {
                 >
                     <h1
                         style={{ color: item?.text_Color }}
-                        className="lg:text-7xl md:text-4xl text-center font-bold text-[#CB6015]"
+                        className="xl:text-7xl md:text-5xl text-center font-bold text-[#CB6015]"
                     >
                         {item.title}
                     </h1>
@@ -75,7 +75,7 @@ const AuthAnimationDisplay = () => {
                                 height={200}
                             />
                         </div>
-                        <h1 className="lg:text-2xl md:text-lg ml-24 text-left">
+                        <h1 className="xl:text-2xl  ml-24 text-left">
                             {item?.body}
                         </h1>
                     </div>

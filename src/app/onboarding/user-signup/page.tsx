@@ -8,25 +8,16 @@ import Link from "next/link";
 import OpenEye from "../login/OpenEye";
 import { useForm } from "react-hook-form";
 import { Format_User_SignUp_Data } from "@/helpers/format_data_user_signup";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { signup } from "@/lib/auth.action";
+import { IField } from "@/types/auth";
 
-export interface IField {
-    first_name: string;
-    last_name: string;
-    email: string;
-    password: string;
-    c_password: string;
-    check: string;
-    code: string;
-    phone_no: string;
-}
 const Page = () => {
     const watch_password = useRef({});
     const [password, setPassword] = useState(!!false);
     const [c_password, setC_passcode] = useState(!!false);
     const router = useRouter();
-
     const {
         register,
         formState: { errors, isSubmitting },
@@ -35,21 +26,10 @@ const Page = () => {
     } = useForm<IField>();
     const check = watch("check");
     watch_password.current = watch("password", "");
-
     const submit = async (data: IField) => {
         let res;
         const payload = JSON.stringify(Format_User_SignUp_Data(data));
-        const response = await fetch(
-            "https://api.loubby.ai/api/v1/user/signup",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: payload,
-            }
-        );
-
+        const response = await signup<typeof payload>(payload);
         if (!response.ok) {
             const error = await response.json();
             return toast.error(error.message);
@@ -215,7 +195,7 @@ const Page = () => {
                     <InputWrapper label="Confirm Password*">
                         <div
                             className={`border ${
-                                errors.c_password && "bg-red-600"
+                                errors.c_password && "border-red-600"
                             }  px-2 flex space-x-1 items-center rounded-lg overflow-hidden`}
                         >
                             <Input

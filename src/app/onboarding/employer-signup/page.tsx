@@ -8,20 +8,11 @@ import { list_of_data } from "@/lib/dialcode";
 import { signUpEmployer } from "@/helpers/employer-signup";
 import { FormatSignUpEmployee } from "@/helpers/format_data";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import { toast }  from "react-toastify";
 import OpenEye from "../login/OpenEye";
 import ClosedEye from "../login/ClosedEye";
-type InputType = {
-    company_name: string;
-    email: string;
-    first_name: string;
-    last_name: string;
-    phone_no: string;
-    password: string;
-    cpassword: string;
-    check: boolean;
-    code: string;
-};
+import { InputType } from "@/types/auth";
+
 const Page = () => {
     const router = useRouter();
     const password = React.useRef({});
@@ -280,9 +271,15 @@ const Page = () => {
                                     placeholder="Enter your company name"
                                     type={cpasswordShow ? "text" : "password"}
                                 />
-                            <span onClick={(_) => setcPasswordShow((_) => !_)}>
-                                {cpasswordShow ? <OpenEye /> : <ClosedEye />}
-                            </span>
+                                <span
+                                    onClick={(_) => setcPasswordShow((_) => !_)}
+                                >
+                                    {cpasswordShow ? (
+                                        <OpenEye />
+                                    ) : (
+                                        <ClosedEye />
+                                    )}
+                                </span>
                             </div>
                         </div>
                         {errors.cpassword && (

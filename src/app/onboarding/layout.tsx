@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { ReactNode } from "react";
 const Layout = ({ children }: { children: ReactNode }) => {
-
     return (
         <div className="min-h-screen overflow-y-auto lg:grid lg:grid-cols-12  mx-auto bg-background-gray">
             <div className="lg:flex lg:min-h-screen flex-col p-6  bg-slate-gray col-span-8 ">
