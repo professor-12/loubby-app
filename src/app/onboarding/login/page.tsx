@@ -8,6 +8,7 @@ import { Form, Input } from "@/components/ui/Input/Input";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { login } from "@/lib/auth.action";
 
 export interface Zod {
     email: string;
@@ -27,28 +28,14 @@ const Page = () => {
     const toggle = () => {
         setPasswordType((prev) => !prev);
     };
-    
-    const submit = async (payload: Zod) => {
-        const fetchData = await fetch(
-            "https://api.loubby.ai/api/v1/employer/login",
-            {
-                method: "POST",
-                body: JSON.stringify({
-                    email: payload.email.trim(),
-                    user_password: payload.password.trim(),
-                }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }
-        );
 
+    const submit = async (payload: Zod) => {
+        const fetchData = await login(payload);
         if (!fetchData.ok) {
             const res = await fetchData.json();
             return toast.error(res.message) as any;
         } else if (fetchData.status == 200) {
             const res = await fetchData.json();
-
             localStorage.setItem("token", res.token);
             localStorage.setItem("user", JSON.stringify(res.user));
             toast.success(res.message, {

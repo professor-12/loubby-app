@@ -14,7 +14,7 @@ const page = () => {
                 </p>
             </div>
             <Steps />
-            <div className="container lg:w-[59%] mx-auto py-6 lg:p-12">
+            <div className="container xl:w-[59%] mx-auto py-6  lg:px-12">
                 <JobDetails />
             </div>
         </div>
