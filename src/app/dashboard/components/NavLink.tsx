@@ -14,7 +14,8 @@ const NavLink = ({
     name?: string;
 }) => {
     const pathName = usePathname();
-    const active = pathName == link;
+    console.log(pathName);
+    const active = pathName === link;
     return (
         <li className={`hover:bg-active  rounded ${active && "bg-active"}`}>
             <div className="p-3 px-5">

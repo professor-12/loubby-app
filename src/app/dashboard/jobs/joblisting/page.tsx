@@ -1,6 +1,7 @@
 import React from "react";
 import Steps from "./components/Steps";
 import JobDetails from "./components/JobDetails";
+import JobListingForm from "./components/JobListingForm";
 
 const page = () => {
     return (
@@ -16,6 +17,9 @@ const page = () => {
             <Steps />
             <div className="container xl:w-[59%] mx-auto py-6  lg:px-12">
                 <JobDetails />
+            </div>
+            <div className="xl:w-[56%] container mx-auto  p-3 md:p-6 bg-white rounded-md overflow-y-clip">
+                <JobListingForm />
             </div>
         </div>
     );
