@@ -74,14 +74,12 @@ const Page = () => {
         <div>
             <Header />
             <div className="flex flex-col lg:flex-row py-4 space-y-3 md:space-y-0 lg:space-x-3">
-                <div className="w-full lg:max-w-[68%]">
+                <div className="w-full  lg:max-w-[68%]">
                     <div className="space-y-4">
                         <Summary />
                         <div className="col-span-3 space-y-4">
                             <div>
-                                <Suspense fallback={<LoadingCardSkeleton />}>
-                                    <LatestPosting />
-                                </Suspense>
+                                <LatestPosting />
                             </div>
                             <div>
                                 <GoodForYou />
@@ -91,7 +89,7 @@ const Page = () => {
                 </div>
                 <div className="lg:flex  lg:max-w-[39%] flex-col space-y-3 flex-1 h-auto">
                     <UpComingSchedule />
-                    <PipeLineSummary/>
+                    <PipeLineSummary />
                 </div>
             </div>
         </div>

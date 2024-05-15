@@ -23,7 +23,7 @@ const LatestPost = () => {
                     <h1 className="font-semibold">
                         It All Starts From a Job Post!
                     </h1>
-                    <p className="text-xs  text-slate-700">
+                    <p className="text-xs  text-small-p-mute">
                         Create a job post to easily find and manage candidates
                     </p>
                 </div>

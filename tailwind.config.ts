@@ -17,6 +17,7 @@ const config: Config = {
         "primary-light-blue": "#BAD8FF",
         "p-muted": "#98a2b3",
         "active": "#EAF3FF",
+        "small-p-mute": "#667085"
       },
       backgroundImage: {
         dashBoard: "url('/dashboardBanner (1).png",

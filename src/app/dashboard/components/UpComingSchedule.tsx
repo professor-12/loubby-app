@@ -15,7 +15,7 @@ const UpComingSchedule = () => {
                         />
                     </div>
                     <h1 className="font-semibold">No recent schedule</h1>
-                    <p className="text-xs  text-slate-700">
+                    <p className="text-xs  text-small-p-mute">
                         When you schedule an <br /> interview, it&apos;ll show
                         here
                     </p>

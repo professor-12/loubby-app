@@ -14,12 +14,8 @@ export async function login(payload:Zod): Promise<Response> {
                   },
             }
       );
-
-
       return response
-      
 }
-
 
 export async function signup<T>(payload:T | any) {
       const response = await fetch(
