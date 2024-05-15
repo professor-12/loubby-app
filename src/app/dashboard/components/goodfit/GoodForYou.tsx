@@ -22,7 +22,7 @@ const GoodForYou = () => {
                     />
                 </div>
                 <h1 className="font-semibold">No Matches Yet</h1>
-                <p className="text-xs  text-slate-700">
+                <p className="text-xs  text-small-p-mute">
                     No candidate matches just yet. Create a job post to use our
                     revolutionary AI matching
                 </p>
