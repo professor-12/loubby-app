@@ -6,7 +6,7 @@ import { IoMdCheckmark } from "react-icons/io";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import SideNav from "./SideNav";
-const SideBar = ({ type }: { type?: "sm" | "lg" }) => {
+const SideBar = ({ type, close }: { type?: "sm" | "lg"; close?(): any }) => {
     const [dropDown, setDropDown] = useState(false);
     return (
         <motion.div
@@ -17,7 +17,7 @@ const SideBar = ({ type }: { type?: "sm" | "lg" }) => {
             exit={{ x: -270 }}
             className={`${
                 type === "sm"
-                    ? "fixed top-0 z-[100000] p-4 md:p-3 bg-white bottom-0 w-[33%]"
+                    ? "fixed top-0 z-[100000] p-4 md:p-3 bg-white bottom-0 sm:w-[33%]"
                     : ""
             }`}
         >

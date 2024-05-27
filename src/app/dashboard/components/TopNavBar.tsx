@@ -3,16 +3,15 @@ import Image from "next/image";
 import React from "react";
 
 const TopNavBar = ({ setOpen }: { setOpen: any }) => {
-    console.log(setOpen);
     return (
         <div className="flex w-full px-4 justify-between items-center">
             <div
                 onClick={() => setOpen(!false)}
-                className="cursor-pointer lg:hidden"
+                className="cursor-pointer mr-2 lg:hidden"
             >
                 <Image
                     src="/Menu.svg"
-                    width={30}
+                    width={35}
                     height={30}
                     alt="Menu Button"
                 />
