@@ -38,14 +38,15 @@ export const Form = (
     );
 };
 
-export const InputWrapper = (
-    props: React.LabelHTMLAttributes<HTMLLabelElement> & {
-        children?: React.ReactNode;
-        label: string;
-    }
-) => {
+interface CustomInputWrapper
+    extends React.LabelHTMLAttributes<HTMLLabelElement> {
+    children?: React.ReactNode;
+    label: string;
+    className?: string;
+}
+export const InputWrapper = (props: CustomInputWrapper) => {
     return (
-        <div className="space-y-1 flex-1">
+        <div className={`${props?.className} space-y-1 flex-1`}>
             <label {...props} className="text-sm text-slate-700">
                 {props.label}
             </label>

@@ -22,7 +22,7 @@ const config: Config = {
         
       },
       backgroundImage: {
-        dashBoard: "url('/dashboardBanner (1).png",
+        dashBoard: "url('/dashboardBanner (1).png')",
       },
       screens: {
         "md": "600px",
