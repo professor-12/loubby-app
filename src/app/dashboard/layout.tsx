@@ -13,8 +13,8 @@ const MobileSideBar = dynamic(() => import("./components/MobileSideNav"), {
 });
 
 const Layout = ({ children }: { children: ReactNode }) => {
-    const [openNavBar, setOpenNavBar] = useState(true);
-    console.log(openNavBar);
+    const [openNavBar, setOpenNavBar] = useState(!true);
+
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) redirect("/onboarding/login");
