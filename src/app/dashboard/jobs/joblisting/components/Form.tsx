@@ -20,12 +20,12 @@ const Form = () => {
     return (
         <form className="my-3 py-4 md:p-2">
             <div className="space-y-2">
-                <h1 className="text-[0.85rem]">
+                <h1 className="text-[0.85rem] text-small-p-mute">
                     This is optional, you can choose to manually fill your job
                     info
                 </h1>
                 <div
-                    className="flex flex-col gap-3 border border-slate-500/30 rounded-md p-4 items-center justify-center cursor-pointer"
+                    className="flex flex-col gap-3 border border-muted-border rounded-lg p-4 items-center justify-center cursor-pointer"
                     {...getRootProps()}
                 >
                     <input {...getInputProps()} />
@@ -78,7 +78,7 @@ const Form = () => {
                             <a className="text-blue-700 text-[0.65rem] font-semibold">
                                 click to upload job details
                             </a>
-                            <span className="text-[0.7rem]">
+                            <span className="text-[0.7rem] font-medium text-small-p-mute">
                                 or drag and drop doc,docx,pdf
                             </span>
                         </div>
@@ -87,6 +87,7 @@ const Form = () => {
                         </span>
                     </div>
                 </div>
+                <div></div>
             </div>
         </form>
     );

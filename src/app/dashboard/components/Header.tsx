@@ -7,8 +7,6 @@ const Header = () => {
         setUser(() => JSON.parse(localStorage.getItem("user") as any));
     }, []);
 
-    console.log(user)
-
     return (
         <div className="bg-[url('/d.png')] flex  bg-no-repeat bg-[-79rem]  min-h-[11rem]  overflow-hidden rounded-lg">
             <div className="bg-blue-500 w-full flex justify-between flex-col bg-opacity-65 p-6">

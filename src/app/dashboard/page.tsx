@@ -2,9 +2,7 @@
 import React, { Suspense, useCallback, useEffect } from "react";
 import Header from "./components/Header";
 import "react-loading-skeleton/dist/skeleton.css";
-import LoadingCardSkeleton, {
-    LoadinBigCard,
-} from "@/components/ui/LoadingCardSkeleton";
+import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
 import dynamic from "next/dynamic";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "@/store/slices/userReducer";

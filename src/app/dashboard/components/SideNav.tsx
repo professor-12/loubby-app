@@ -73,7 +73,7 @@ const navLinks = [
 const SideNav = () => {
     const [open, setOpen] = useState(false);
     return (
-        <nav className="space-y-4">
+        <nav className="space-y-4 ">
             <div>
                 <div className="my-5 space-y-2">
                     <h1 className="text-xs  text-p-muted">General</h1>

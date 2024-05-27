@@ -3,13 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { RxCaretDown } from "react-icons/rx";
 import { IoMdCheckmark } from "react-icons/io";
-
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import SideNav from "./SideNav";
-const SideBar = () => {
+const SideBar = ({ type, close }: { type?: "sm" | "lg"; close?(): any }) => {
     const [dropDown, setDropDown] = useState(false);
     return (
-        <div className="full">
+        <motion.div
+            animate={{
+                x: type == "sm" ? [-200, 0] : 0,
+                transition: { type: "just" },
+            }}
+            exit={{ x: -270 }}
+            className={`${
+                type === "sm"
+                    ? "fixed top-0 z-[100000] p-4 md:p-3 bg-white bottom-0 sm:w-[33%]"
+                    : ""
+            }`}
+        >
             <Link href={"/"}>
                 <Image src={"Logo.svg"} alt="" width={110} height={100} />
             </Link>
@@ -91,10 +102,9 @@ const SideBar = () => {
                 )}
             </div>
             <div>
-                
                 <SideNav />
             </div>
-        </div>
+        </motion.div>
     );
 };
 
