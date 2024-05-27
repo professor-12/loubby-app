@@ -18,6 +18,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${moserat.className} overflow-x-hidden`}>
+                <div id="portal"></div>
                 <main>{children}</main>
                 <ToastContainer />
             </body>

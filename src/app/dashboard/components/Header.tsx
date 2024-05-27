@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const Header = () => {
     const [user, setUser] = useState(null) as any;
 
+    
     useEffect(() => {
         setUser(() => JSON.parse(localStorage.getItem("user") as any));
     }, []);

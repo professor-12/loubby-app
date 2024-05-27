@@ -10,7 +10,7 @@ export interface ThirdPArtyNumberCountry {
       code: string;
       dial_code: string;
 }
-export interface SignUpData {
+export interface SignUpData{
       company_name: String;
       first_name: string;
       last_name: string;
