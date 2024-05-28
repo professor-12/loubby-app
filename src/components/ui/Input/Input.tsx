@@ -4,9 +4,13 @@ import React, {
     InputHTMLAttributes,
     ReactNode,
     Ref,
+    useRef,
+    useState,
 } from "react";
 
 const { forwardRef } = React as any;
+
+import { ImCheckboxChecked } from "react-icons/im";
 
 export const Input = forwardRef(
     (props: InputHTMLAttributes<HTMLInputElement>, ref: Ref<any>) => {
@@ -52,5 +56,26 @@ export const InputWrapper = (props: CustomInputWrapper) => {
             </label>
             {props.children}
         </div>
+    );
+};
+
+export const CheckBox = (
+    props: React.HTMLAttributes<HTMLInputElement> & { name?: string }
+) => {
+    const [checked, setChecked] = useState(false);
+    return (
+        <label htmlFor="check" className="flex">
+            <div className="border border-muted-border rounded-md w-6 h-6 hover:bg-[#cccccc] overflow-hidden cursor-pointer relative">
+                {checked && <ImCheckboxChecked className="text-blue-500 w-" />}
+                <input
+                    id="check"
+                    onChange={(e) => setChecked(e.target.checked)}
+                    {...props}
+                    type="checkbox"
+                    className="w-full h-full bg-transparent border-none outline-none checkbox cursor-pointer"
+                />
+            </div>
+            <h1>{props?.name}</h1>
+        </label>
     );
 };

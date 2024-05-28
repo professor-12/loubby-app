@@ -35,7 +35,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                 </div>
                 <section className="space-y-1 flex flex-col w-full min-h-screen">
                     <div>
-                        <nav className="bg-white flex items-center h-14 w-full">
+                        <nav className="bg-white flex items-center h-14 w-full sticky top-0">
                             <TopNavBar setOpen={setOpenNavBar} />
                         </nav>
                         <div className="w-fulll h-[0.3rem] bg-border" />

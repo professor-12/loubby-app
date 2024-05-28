@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { ReactNode } from "react";
+import React from "react";
 
 const NavLink = ({
     link,
@@ -13,8 +13,7 @@ const NavLink = ({
     svg: string;
     name?: string;
 }) => {
-    const pathName = usePathname();
-    console.log(pathName);
+    const pathName = usePathname() ?? "/dashboard";
     const active = pathName === link;
     return (
         <li className={`hover:bg-active  rounded ${active && "bg-active"}`}>
