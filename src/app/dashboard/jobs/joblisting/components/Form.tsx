@@ -1,21 +1,24 @@
 "use client";
-import { Input } from "@/components/ui/Input/Input";
-import React, { useCallback } from "react";
-import { useDropzone } from "react-dropzone";
+import { CheckBox, Input, InputWrapper } from "@/components/ui/Input/Input";
+import React, { useCallback, useRef } from "react";
+
+import DragndDropInput from "./DragndDropInput";
+import dynamic from "next/dynamic";
+import { list_of_data } from "@/lib/dialcode";
+import Image from "next/image";
+
+const MarkdownEditor = dynamic(() => import("./MdEditor"), { ssr: false });
+
 const Form = () => {
     const onDrop = useCallback((acceptedFiles: any) => {
         console.log(acceptedFiles);
     }, []);
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
-        onDrop,
-        accept: {
-            "application/pdf": [],
-            "application/msword": [],
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-                [],
-            "text/plain": [],
-        },
-    });
+
+    const ref = useRef() as any;
+
+    const DropDownValue = list_of_data.filter(
+        ({ value }) => value.includes(ref?.current?.target?.value) || true
+    );
 
     return (
         <form className="my-3 py-4 md:p-2">
@@ -24,70 +27,45 @@ const Form = () => {
                     This is optional, you can choose to manually fill your job
                     info
                 </h1>
-                <div
-                    className="flex flex-col gap-3 border border-muted-border rounded-lg p-4 items-center justify-center cursor-pointer"
-                    {...getRootProps()}
-                >
-                    <input {...getInputProps()} />
-                    <svg
-                        width="30"
-                        height="30"
-                        viewBox="0 0 36 36"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                <DragndDropInput onDrop={onDrop as any} />
+                <div className="py-1 space-y-6">
+                    <InputWrapper
+                        className="space-y-2"
+                        htmlFor="first_name"
+                        label="Job title *"
                     >
-                        <rect
-                            x="2"
-                            y="2"
-                            width="32"
-                            height="32"
-                            rx="16"
-                            fill="#BAD8FF"
-                        />
-                        <g clip-path="url(#clip0_7172_23312)">
-                            <path
-                                d="M20.6676 20.6665L18.001 17.9998M18.001 17.9998L15.3343 20.6665M18.001 17.9998V23.9998M23.5943 22.2598C24.2445 21.9053 24.7582 21.3444 25.0542 20.6656C25.3502 19.9867 25.4118 19.2286 25.2291 18.511C25.0464 17.7933 24.6299 17.1568 24.0454 16.7021C23.4609 16.2474 22.7415 16.0003 22.001 15.9998H21.161C20.9592 15.2193 20.5831 14.4947 20.0609 13.8805C19.5388 13.2663 18.8842 12.7784 18.1463 12.4536C17.4085 12.1287 16.6067 11.9754 15.801 12.0051C14.9954 12.0348 14.207 12.2467 13.4951 12.6249C12.7831 13.0032 12.1662 13.5379 11.6907 14.1889C11.2152 14.8399 10.8934 15.5902 10.7496 16.3834C10.6058 17.1767 10.6437 17.9922 10.8604 18.7687C11.0772 19.5452 11.4671 20.2624 12.001 20.8665"
-                                stroke="#1A73E8"
-                                strokeWidth="1.33333"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                        <div className="border border-muted-boder rounded-xl">
+                            <Input
+                                placeholder="Senior UI/UX Designer"
+                                type="text"
                             />
-                        </g>
-                        <rect
-                            x="2"
-                            y="2"
-                            width="32"
-                            height="32"
-                            rx="16"
-                            stroke="#EAF3FF"
-                            strokeWidth="4"
-                        />
-                        <defs>
-                            <clipPath id="clip0_7172_23312">
-                                <rect
-                                    width="16"
-                                    height="16"
-                                    fill="white"
-                                    transform="translate(10 10)"
-                                />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <div className="w-full text-center space-y-1">
-                        <div className="text-center space-x-1">
-                            <a className="text-blue-700 text-[0.65rem] font-semibold">
-                                click to upload job details
-                            </a>
-                            <span className="text-[0.7rem] font-medium text-small-p-mute">
-                                or drag and drop doc,docx,pdf
-                            </span>
                         </div>
-                        <span className="text-[#1a73e8] text-center text-[0.65rem] font-semibold">
-                            auto-fill form by uploading document
-                        </span>
-                    </div>
+                    </InputWrapper>
+
+                    <InputWrapper
+                        className="space-y-3 relative"
+                        label="Location *"
+                    >
+                        <div className="border border-muted-boder rounded-xl flex px-2 items-center">
+                            <svg
+                                stroke="currentColor"
+                                fill="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 1024 1024"
+                                height="20"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path>
+                            </svg>
+                            <Input
+                                placeholder="Search Location e.g. United State"
+                                type="text"
+                            />
+                        </div>
+                    </InputWrapper>
+                    <CheckBox />
                 </div>
-                <div></div>
             </div>
         </form>
     );

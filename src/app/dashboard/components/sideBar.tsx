@@ -22,7 +22,7 @@ const SideBar = ({ type, close }: { type?: "sm" | "lg"; close?(): any }) => {
             }`}
         >
             <Link href={"/"}>
-                <Image src={"Logo.svg"} alt="" width={110} height={100} />
+                <Image src={"/Logo.svg"} alt="" width={110} height={100} />
             </Link>
             <div
                 onClick={(e) => {
