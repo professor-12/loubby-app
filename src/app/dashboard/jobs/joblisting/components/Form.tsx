@@ -1,11 +1,12 @@
 "use client";
 import { CheckBox, Input, InputWrapper } from "@/components/ui/Input/Input";
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 
 import DragndDropInput from "./DragndDropInput";
 import dynamic from "next/dynamic";
 import { list_of_data } from "@/lib/dialcode";
 import Image from "next/image";
+import Tiptap from "./MdEditor";
 
 const MarkdownEditor = dynamic(() => import("./MdEditor"), { ssr: false });
 
@@ -19,6 +20,15 @@ const Form = () => {
     const DropDownValue = list_of_data.filter(
         ({ value }) => value.includes(ref?.current?.target?.value) || true
     );
+
+    const experience = [
+        { name: "entry", value: "Entery Level" },
+        { name: "junior", value: "Junior Level" },
+        { name: "middle", value: "Middle Level" },
+        { name: "Senior", value: "Senior Level" },
+        { name: "director", value: "Director Level" },
+        { name: "vp", value: "VP and above" },
+    ] as const;
 
     return (
         <form className="my-3 py-4 md:p-2">
@@ -40,6 +50,9 @@ const Form = () => {
                                 type="text"
                             />
                         </div>
+                    </InputWrapper>
+                    <InputWrapper label="Description" htmlFor="description">
+                        <Tiptap />
                     </InputWrapper>
 
                     <InputWrapper
@@ -63,8 +76,69 @@ const Form = () => {
                                 type="text"
                             />
                         </div>
+                        <label
+                            htmlFor="remote"
+                            className="group flex items-center space-x-2"
+                        >
+                            <CheckBox id="remote" />
+                            <span className="text-sm">Open For Remote</span>
+                        </label>
                     </InputWrapper>
-                    <CheckBox />
+                    <InputWrapper label="Job Type *">
+                        <select
+                            name=""
+                            id=""
+                            className="border rounded-lg text-slate-600 text-sm block w-full focus:outline-none p-2"
+                        >
+                            <option value="" className="text-black">
+                                Select an Option
+                            </option>
+                            <option value="" className="text-black">
+                                Full Time
+                            </option>
+                            <option value="" className="text-black">
+                                Part Time
+                            </option>
+                            <option value="" className="text-black">
+                                Contract
+                            </option>
+                            <option value="" className="text-black">
+                                Internship
+                            </option>
+                        </select>
+                    </InputWrapper>
+                    <InputWrapper
+                        className="space-y-1"
+                        label="Experience Level *"
+                    >
+                        {experience.map(({ name, value }) => {
+                            return (
+                                <label
+                                    key={name}
+                                    htmlFor={name}
+                                    className="group text-sm flex items-center space-x-2"
+                                >
+                                    <CheckBox id={name} />
+                                    <span className="text-xs font-medium text-slate-800">
+                                        {value}
+                                    </span>
+                                </label>
+                            );
+                        })}
+                    </InputWrapper>
+                    <InputWrapper
+                        className="text-xs"
+                        label="Number of Open positions"
+                    >
+                        <div className="border rounded-lg">
+                            <Input
+                                className="p-2"
+                                type="number"
+                                placeholder="1"
+                                min="0"
+                            />
+                        </div>
+                    </InputWrapper>
                 </div>
             </div>
         </form>

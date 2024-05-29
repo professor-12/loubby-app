@@ -13,8 +13,8 @@ const NavLink = ({
     svg: string;
     name?: string;
 }) => {
-    const pathName = usePathname() ?? "/dashboard";
-    const active = pathName === link;
+    const pathName = usePathname();
+    const active = pathName.split("/")[2] === link.split("/")[2] ?? "dashboard";
     return (
         <li className={`hover:bg-active  rounded ${active && "bg-active"}`}>
             <div className="p-3 px-5">
@@ -27,7 +27,7 @@ const NavLink = ({
                     </span>
                     <p
                         className={`text-[0.85rem] text-slate-600 ${
-                            active && "text-blue-700"
+                            active && "text-blue-800"
                         }`}
                     >
                         {name}
