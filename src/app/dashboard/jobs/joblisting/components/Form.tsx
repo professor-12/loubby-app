@@ -1,11 +1,11 @@
 "use client";
 import { CheckBox, Input, InputWrapper } from "@/components/ui/Input/Input";
 import React, { useCallback, useRef, useState } from "react";
+import { LuUsers2 } from "react-icons/lu";
 
 import DragndDropInput from "./DragndDropInput";
 import dynamic from "next/dynamic";
 import { list_of_data } from "@/lib/dialcode";
-import Image from "next/image";
 import Tiptap from "./MdEditor";
 
 const MarkdownEditor = dynamic(() => import("./MdEditor"), { ssr: false });
@@ -130,13 +130,19 @@ const Form = () => {
                         className="text-xs"
                         label="Number of Open positions"
                     >
-                        <div className="border rounded-lg">
+                        <div className="border flex rounded-lg items-center px-3">
+                            <LuUsers2 className="text-2xl text-slate-600" />
                             <Input
-                                className="p-2"
+                                className="h-10"
                                 type="number"
                                 placeholder="1"
                                 min="0"
                             />
+                        </div>
+                    </InputWrapper>
+                    <InputWrapper label="Application Deadline *">
+                        <div className="border flex rounded-lg items-center">
+                            <Input type="date" className="h-12" />
                         </div>
                     </InputWrapper>
                 </div>
