@@ -7,6 +7,7 @@ import DragndDropInput from "./DragndDropInput";
 import dynamic from "next/dynamic";
 import { list_of_data } from "@/lib/dialcode";
 import Tiptap from "./MdEditor";
+import SkillsInput from "./SkillsInput";
 
 const MarkdownEditor = dynamic(() => import("./MdEditor"), { ssr: false });
 
@@ -142,8 +143,17 @@ const Form = () => {
                     </InputWrapper>
                     <InputWrapper label="Application Deadline *">
                         <div className="border flex rounded-lg items-center">
+                            <Input type="date" className="h-10" />
+                        </div>
+                    </InputWrapper>
+                    <InputWrapper label="Additional information">
+                        This should be markdown
+                        <div className="border flex rounded-lg items-center">
                             <Input type="date" className="h-12" />
                         </div>
+                    </InputWrapper>
+                    <InputWrapper label="Skills *">
+                        <SkillsInput />
                     </InputWrapper>
                 </div>
             </div>

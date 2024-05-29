@@ -83,3 +83,9 @@ export const CheckBox = (
         </div>
     );
 };
+
+// const ToogleButton = () => {
+//     const [open, close] = useState(false);
+
+//     return <div className="flex items-center "><span className="bg-blue-600"/></div>;
+// };
