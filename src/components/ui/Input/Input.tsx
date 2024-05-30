@@ -12,17 +12,18 @@ const { forwardRef } = React as any;
 
 import { ImCheckboxChecked } from "react-icons/im";
 
-export const Input = forwardRef(
-    (props: InputHTMLAttributes<HTMLInputElement>, ref: Ref<any>) => {
-        return (
-            <input
-                ref={ref}
-                {...props}
-                className="bg-transparent text-sm w-full focus:outline-none p-[0.8rem]"
-            />
-        );
-    }
-);
+export const Input: React.FC<InputHTMLAttributes<HTMLInputElement>> =
+    forwardRef(
+        (props: InputHTMLAttributes<HTMLInputElement>, ref: Ref<any>) => {
+            return (
+                <input
+                    ref={ref}
+                    {...props}
+                    className={`${props?.className} bg-transparent text-sm w-full focus:outline-none p-[0.8rem]`}
+                />
+            );
+        }
+    );
 
 export const Form = (
     props?:
@@ -64,18 +65,21 @@ export const CheckBox = (
 ) => {
     const [checked, setChecked] = useState(false);
     return (
-        <label htmlFor="check" className="flex">
-            <div className="border border-muted-border rounded-md w-6 h-6 hover:bg-[#cccccc] overflow-hidden cursor-pointer relative">
-                {checked && <ImCheckboxChecked className="text-blue-500 w-" />}
-                <input
-                    id="check"
-                    onChange={(e) => setChecked(e.target.checked)}
-                    {...props}
-                    type="checkbox"
-                    className="w-full h-full bg-transparent border-none outline-none checkbox cursor-pointer"
-                />
-            </div>
+        <div
+            className={` ${
+                !checked && "border flex border-muted-border"
+            } rounded-md w-[1.4rem] h-[1.4rem] group-hover:bg-[#cccccc] overflow-hidden cursor-pointer relative`}
+        >
+            {checked && (
+                <ImCheckboxChecked className="text-blue-500 w-full h-full z-[12] bg-white" />
+            )}
+            <input
+                onChange={(e) => setChecked(e.target.checked)}
+                {...props}
+                type="checkbox"
+                className="w-full absolute inset-0 h-full bg-transparent z-[13] border-none outline-none checkbox cursor-pointer"
+            />
             <h1>{props?.name}</h1>
-        </label>
+        </div>
     );
 };

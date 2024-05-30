@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
+    "@tiptap/pm": "^2.4.0",
+    "@tiptap/react": "^2.4.0",
+    "@tiptap/starter-kit": "^2.4.0",
     "@uiw/react-md-editor": "^4.0.4",
     "chart.js": "^4.4.2",
     "class-variance-authority": "^0.7.0",

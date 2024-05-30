@@ -18,10 +18,12 @@ const Header = () => {
                         Welcome to your remote talent hiring dashboard
                     </p>
                 </div>
-                <div className="flex  gap-4 justify-between lg:justify-start items-center flex-wrap">
-                    <button className="bg-white sm:w-auto w-full p-[0.5rem] text-sm font-medium px-3 rounded-lg">
+                <div className="flex flex-wrap md:flex-nowrap  gap-4 justify-between lg:justify-start items-center">
+                    <div className="w-full md:w-auto">
+                    <button className="bg-white text-nowrap w-full p-[0.5rem] text-sm font-medium px-3 rounded-lg">
                         Hire Talents
                     </button>
+                    </div>
                     <div className="flex md:justify-start gap-3 justify-between px-6 md:px-0 w-full items-center">
                         <p className="text-white text-xs md:text-sm underline">
                             Browse Talent
