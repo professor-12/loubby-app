@@ -86,14 +86,23 @@ export const CheckBox = (
 
 export const ToggleButton = () => {
     const [checked, setChecked] = useState(false);
-    console.log(checked)
+    console.log(checked);
     return (
         <motion.div
             onClick={(e) => setChecked((e) => !e)}
-            animate={{ backgroundColor: checked ? "#1a73e8" : "#cccc", transition: { duration: .2 } }}
+            animate={{
+                backgroundColor: checked ? "#1a73e8" : "#cccc",
+                transition: { duration: 0.2 },
+            }}
             className={`w-[2.6rem] h-[1.3rem] duration-500  rounded-full flex bg-[#cccc] cursor-pointer`}
         >
-            <motion.div animate={{translateX: checked ? "1.2rem" : "0rem" , transition: {duration:.3} }}    className={`h-full border w-[1.4rem] bg-white rounded-full`} />
+            <motion.div
+                animate={{
+                    translateX: checked ? "1.2rem" : "0rem",
+                    transition: { duration: 0.3 },
+                }}
+                className={`h-full border w-[1.4rem] bg-white rounded-full`}
+            />
         </motion.div>
     );
 };

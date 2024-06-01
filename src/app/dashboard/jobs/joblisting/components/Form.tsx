@@ -9,45 +9,54 @@ import React, { useCallback, useRef, useState } from "react";
 import { LuUsers2 } from "react-icons/lu";
 
 import DragndDropInput from "./DragndDropInput";
-import dynamic from "next/dynamic";
-import { list_of_data } from "@/lib/dialcode";
-import Tiptap from "./MdEditor";
+
 import SkillsInput from "./SkillsInput";
+import { useRouter } from "next/navigation";
+import { experience, otherFields } from "@/lib/utils";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-const MarkdownEditor = dynamic(() => import("./MdEditor"), { ssr: false });
+interface Inputs {
+    jobTitle: string;
+    jobDescription: string;
+    location: string;
+    jobType: string;
+    experience: string;
+    numberofOpenPosition: number;
+    deadLine: string;
+    additionalInformation: string;
+    skills: string[];
+    perksPublic: boolean;
+    currency: string;
+    frequency: string;
+    rate: string;
+    otherPerks: string;
+}
 
+const validation = {
+    required: true,
+};
 const Form = () => {
+    const { push } = useRouter();
     const onDrop = useCallback((acceptedFiles: any) => {
         console.log(acceptedFiles);
     }, []);
 
-    const ref = useRef() as any;
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm<Inputs>();
 
-    const DropDownValue = list_of_data.filter(
-        ({ value }) => value.includes(ref?.current?.target?.value) || true // This is for testing not the real Logic!!!
-    );
-
-    const experience = [
-        { name: "entry", value: "Entery Level" },
-        { name: "junior", value: "Junior Level" },
-        { name: "middle", value: "Middle Level" },
-        { name: "Senior", value: "Senior Level" },
-        { name: "director", value: "Director Level" },
-        { name: "vp", value: "VP and above" },
-    ] as const;
-
-    const otherFields = [
-        { name: "Bonus target", value: "bonus" },
-        { name: "401K", value: "401K" },
-        { name: "Vision insurance", value: "Vision insurance" },
-        { name: "Medical insurance", value: "Medical insurance" },
-        { name: "Disability insurance", value: "insurance" },
-        { name: "Dental insurance", value: "Stock options" },
-        { name: "Stock options", value: "Stock insurance" },
-    ] as const;
-
+    const onSubmit = (e: any) => {
+        console.log(e);
+    };
     return (
-        <form className="my-3 py-4 md:p-2">
+        <form
+            className="my-3 py-4 md:p-2"
+            method="post"
+            onSubmit={handleSubmit(onSubmit)}
+        >
             <div className="space-y-2">
                 <h1 className="text-[0.85rem] text-small-p-mute">
                     This is optional, you can choose to manually fill your job
@@ -55,6 +64,7 @@ const Form = () => {
                 </h1>
                 <DragndDropInput onDrop={onDrop as any} />
                 <div className="py-1 space-y-6">
+                    {/* Job Title */}
                     <InputWrapper
                         className="space-y-2"
                         htmlFor="first_name"
@@ -62,15 +72,20 @@ const Form = () => {
                     >
                         <div className="border border-muted-boder rounded-xl">
                             <Input
+                                {...register("jobTitle", { required: true })}
                                 placeholder="Senior UI/UX Designer"
                                 type="text"
                             />
                         </div>
                     </InputWrapper>
-                    <InputWrapper label="Description" htmlFor="description">
-                        <Tiptap />
+                    {/* Job Description */}
+                    <InputWrapper label="Job description" htmlFor="description">
+                        <textarea
+                            {...register("jobDescription")}
+                            className="border p-2  block w-full rounded-lg focus:outline-none focus:border-blue-600"
+                        ></textarea>
                     </InputWrapper>
-
+                    {/* Location */}
                     <InputWrapper
                         className="space-y-3 relative"
                         label="Location *"
@@ -90,6 +105,7 @@ const Form = () => {
                             <Input
                                 placeholder="Search Location e.g. United State"
                                 type="text"
+                                {...register("location")}
                             />
                         </div>
                         <label
@@ -100,29 +116,20 @@ const Form = () => {
                             <span className="text-sm">Open For Remote</span>
                         </label>
                     </InputWrapper>
+                    {/* Job Type */}
                     <InputWrapper label="Job Type *">
                         <select
-                            name=""
-                            id=""
+                            {...register("jobType")}
                             className="border rounded-lg text-slate-600 text-sm block w-full focus:outline-none p-2"
                         >
-                            <option value="" className="text-black">
-                                Select an Option
-                            </option>
-                            <option value="" className="text-black">
-                                Full Time
-                            </option>
-                            <option value="" className="text-black">
-                                Part Time
-                            </option>
-                            <option value="" className="text-black">
-                                Contract
-                            </option>
-                            <option value="" className="text-black">
-                                Internship
-                            </option>
+                            <option value="">Select frequency</option>
+                            <option value="Hourly">Hourly</option>
+                            <option value="Biweekly">Biweekly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Yearly">Yearly</option>
                         </select>
                     </InputWrapper>
+                    {/* Experience Level */}
                     <InputWrapper
                         className="space-y-1"
                         label="Experience Level *"
@@ -142,6 +149,7 @@ const Form = () => {
                             );
                         })}
                     </InputWrapper>
+                    {/* Nubmer of Open Position */}
                     <InputWrapper
                         className="text-xs"
                         label="Number of Open positions"
@@ -149,6 +157,7 @@ const Form = () => {
                         <div className="border flex rounded-lg items-center px-3">
                             <LuUsers2 className="text-2xl text-slate-600" />
                             <Input
+                                {...register("numberofOpenPosition")}
                                 className="h-10"
                                 type="number"
                                 placeholder="1"
@@ -156,17 +165,24 @@ const Form = () => {
                             />
                         </div>
                     </InputWrapper>
+                    {/* Application DeapLine */}
                     <InputWrapper label="Application Deadline *">
                         <div className="border flex rounded-lg items-center">
-                            <Input type="date" className="h-10" />
+                            <Input
+                                {...register("deadLine")}
+                                type="date"
+                                className="h-10"
+                            />
                         </div>
                     </InputWrapper>
+                    {/* Additional Information */}
                     <InputWrapper label="Additional information">
-                        This should be markdown
-                        <div className="border flex rounded-lg items-center">
-                            <Input type="date" className="h-12" />
-                        </div>
+                        <textarea
+                            {...register("additionalInformation")}
+                            className="w-full block p-3 rounded-lg border focus:outline-none focus:border-blue-500"
+                        ></textarea>
                     </InputWrapper>
+                    {/* Skills */}
                     <InputWrapper label="Skills *">
                         <SkillsInput />
                     </InputWrapper>
@@ -181,37 +197,34 @@ const Form = () => {
                         </div>
                     </div>
                     <div className="flex lg:flex-row flex-col w-full  lg:items-center  gap-4">
+                        {/* Currency */}
                         <InputWrapper
                             className="space-y-3 flex flex-col"
                             label="Currency"
                         >
                             <select
-                                name="salaryCurrency"
-                                id="salaryCurrency"
+                                {...register("currency")}
                                 className="block w-full border p-3 rounded-lg text-sm focus:border-blue-400 focus:outline-none"
                             >
                                 <option value="NGN">NGN ₦</option>
                                 <option value="USD">USD $</option>
                             </select>
                         </InputWrapper>
+                        {/* frequency */}
                         <InputWrapper className="space-y-2" label="Frequency">
-                            <select
-                                className="block w-full border p-3 rounded-lg text-sm focus:border-blue-400 focus:outline-none"
-                                title="USD $"
-                            >
-                                <option>Select frequency</option>
-                                <option>Hourly</option>
-                                <option>Select frequency</option>
-                                <option>Bi weekly</option>
-                                <option>Monthly</option>
-                                <option>Yearly</option>
+                            <select className="block w-full border p-3 rounded-lg text-sm focus:border-blue-400 focus:outline-none">
+                                <option value="">Select frequency</option>
+                                <option value="Hourly">Hourly</option>
+                                <option value="Biweekly">Biweekly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Yearly">Yearly</option>
                             </select>
                         </InputWrapper>
+                        {/* Rate */}
                         <InputWrapper className="space-y-2" label="Rate *">
                             <select
+                                {...register("rate")}
                                 className="block w-full border p-3 rounded-lg text-sm focus:border-blue-400 focus:outline-none"
-                                name="jobSalary"
-                                id="rate"
                             >
                                 <option value="">Select rate</option>
                                 <option value="$0 - 500">$0 - 500</option>
@@ -248,12 +261,12 @@ const Form = () => {
                             );
                         })}
                     </div>
+                    {/* Other Perks */}
                     <InputWrapper className="text-sm" label="Other perks">
                         <div className="w-full">
                             <textarea
+                                {...register("otherPerks")}
                                 className="border focus:border-blue-600 focus:outline-none rounded-lg p-2 min-w-full"
-                                name=""
-                                id=""
                             ></textarea>
                         </div>
                     </InputWrapper>
@@ -268,15 +281,13 @@ const Form = () => {
                         </button>
                         <div className="space-x-2">
                             <button
+                                onClick={(_) => push("/dashboard/jobs")}
                                 type="button"
                                 className="border px-3 p-2 text-[#344054] rounded-lg"
                             >
                                 Cancel
                             </button>
-                            <button
-                                type="button"
-                                className="rounded-lg p-3 bg-blue-600 py-2 text-white font-medium"
-                            >
+                            <button className="rounded-lg p-3 bg-blue-600 py-2 text-white font-medium">
                                 Next
                             </button>
                         </div>
