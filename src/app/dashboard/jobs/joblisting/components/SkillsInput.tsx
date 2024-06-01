@@ -28,7 +28,7 @@ const SkillsInput: React.FC<InputHTMLAttributes<HTMLInputElement>> = ({
     };
     return (
         <div className="space-y-1">
-            <span className="text-xs block font-medium">
+            <span className="text-xs block font-medium text-[#667085]">
                 Press enter to add Skill *
             </span>
             <div className="border rounded-lg">

@@ -1,5 +1,10 @@
 "use client";
-import { CheckBox, Input, InputWrapper } from "@/components/ui/Input/Input";
+import {
+    CheckBox,
+    Input,
+    InputWrapper,
+    ToggleButton,
+} from "@/components/ui/Input/Input";
 import React, { useCallback, useRef, useState } from "react";
 import { LuUsers2 } from "react-icons/lu";
 
@@ -19,7 +24,7 @@ const Form = () => {
     const ref = useRef() as any;
 
     const DropDownValue = list_of_data.filter(
-        ({ value }) => value.includes(ref?.current?.target?.value) || true
+        ({ value }) => value.includes(ref?.current?.target?.value) || true // This is for testing not the real Logic!!!
     );
 
     const experience = [
@@ -29,6 +34,16 @@ const Form = () => {
         { name: "Senior", value: "Senior Level" },
         { name: "director", value: "Director Level" },
         { name: "vp", value: "VP and above" },
+    ] as const;
+
+    const otherFields = [
+        { name: "Bonus target", value: "bonus" },
+        { name: "401K", value: "401K" },
+        { name: "Vision insurance", value: "Vision insurance" },
+        { name: "Medical insurance", value: "Medical insurance" },
+        { name: "Disability insurance", value: "insurance" },
+        { name: "Dental insurance", value: "Stock options" },
+        { name: "Stock options", value: "Stock insurance" },
     ] as const;
 
     return (
@@ -155,6 +170,117 @@ const Form = () => {
                     <InputWrapper label="Skills *">
                         <SkillsInput />
                     </InputWrapper>
+                    <div className="flex gap-2">
+                        <ToggleButton />
+                        <div className="text-xs text-slate-800 ">
+                            <p className="font-medium">Make the perks public</p>
+                            <p className="text-[#667085] text-[0.69rem]">
+                                Candidates will get to enjoy these benefits when
+                                they apply
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex lg:flex-row flex-col w-full  lg:items-center  gap-4">
+                        <InputWrapper
+                            className="space-y-3 flex flex-col"
+                            label="Currency"
+                        >
+                            <select
+                                name="salaryCurrency"
+                                id="salaryCurrency"
+                                className="block w-full border p-3 rounded-lg text-sm focus:border-blue-400 focus:outline-none"
+                            >
+                                <option value="NGN">NGN ₦</option>
+                                <option value="USD">USD $</option>
+                            </select>
+                        </InputWrapper>
+                        <InputWrapper className="space-y-2" label="Frequency">
+                            <select
+                                className="block w-full border p-3 rounded-lg text-sm focus:border-blue-400 focus:outline-none"
+                                title="USD $"
+                            >
+                                <option>Select frequency</option>
+                                <option>Hourly</option>
+                                <option>Select frequency</option>
+                                <option>Bi weekly</option>
+                                <option>Monthly</option>
+                                <option>Yearly</option>
+                            </select>
+                        </InputWrapper>
+                        <InputWrapper className="space-y-2" label="Rate *">
+                            <select
+                                className="block w-full border p-3 rounded-lg text-sm focus:border-blue-400 focus:outline-none"
+                                name="jobSalary"
+                                id="rate"
+                            >
+                                <option value="">Select rate</option>
+                                <option value="$0 - 500">$0 - 500</option>
+                                <option value="$500 - 1000">$500 - 1000</option>
+                                <option value="$1000 - 2000">
+                                    $1000 - 2000
+                                </option>
+                                <option value="$2000 - 5000">
+                                    $2000 - 5000
+                                </option>
+                                <option value="$5000 - 15000">
+                                    $5000 - 15000
+                                </option>
+                                <option value="$15000 and above">
+                                    $15000 and above
+                                </option>
+                                <option value="Negotiable">Negotiable</option>
+                            </select>
+                        </InputWrapper>
+                    </div>
+                    <div className="space-y-1">
+                        {otherFields.map(({ name, value }) => {
+                            return (
+                                <label
+                                    key={name}
+                                    htmlFor={name}
+                                    className="group text-sm flex items-center space-x-2"
+                                >
+                                    <CheckBox id={name} />
+                                    <span className="text-xs font-medium text-slate-800">
+                                        {name}
+                                    </span>
+                                </label>
+                            );
+                        })}
+                    </div>
+                    <InputWrapper className="text-sm" label="Other perks">
+                        <div className="w-full">
+                            <textarea
+                                className="border focus:border-blue-600 focus:outline-none rounded-lg p-2 min-w-full"
+                                name=""
+                                id=""
+                            ></textarea>
+                        </div>
+                    </InputWrapper>
+                </div>
+                <div>
+                    <div className="border-t py-4 flex justify-between items-center my-4 mt-8">
+                        <button
+                            type="button"
+                            className="text-[#344054] border rounded-lg p-3 py-2"
+                        >
+                            Save to draft
+                        </button>
+                        <div className="space-x-2">
+                            <button
+                                type="button"
+                                className="border px-3 p-2 text-[#344054] rounded-lg"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="button"
+                                className="rounded-lg p-3 bg-blue-600 py-2 text-white font-medium"
+                            >
+                                Next
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>

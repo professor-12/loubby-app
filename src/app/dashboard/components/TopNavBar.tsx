@@ -19,7 +19,7 @@ const TopNavBar = ({ setOpen }: { setOpen: any }) => {
             <Search className="border" />
             <div className="space-x-3 items-center flex">
                 <div className="flex space-x-5">
-                    <button className="bg-gradient-to-r text-nowrap hidden lg:flex font-medium from-[#BB95C5] to-[#7DC3CB] hover:backdrop-grayscale rounded-lg p-2 text-sm px-3 text-center gradient text-white ">
+                    <button className="bg-gradient-to-r text-nowrap hidden lg:flex font-medium from-[#BB95C5] to-[#7DC3CB] hover:backdrop-grayscale rounded-lg p-2 text-sm px-3 bg-gradient-animate text-center gradient text-white ">
                         Refer a Company
                     </button>
                     <div className="bg-blue-600 h-8 w-8 rounded-lg text-center flex items-center justify-center text-white">

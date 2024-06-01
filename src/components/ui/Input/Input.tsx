@@ -7,6 +7,7 @@ import React, {
     useRef,
     useState,
 } from "react";
+import { motion } from "framer-motion";
 
 const { forwardRef } = React as any;
 
@@ -59,7 +60,6 @@ export const InputWrapper = (props: CustomInputWrapper) => {
         </div>
     );
 };
-
 export const CheckBox = (
     props: React.HTMLAttributes<HTMLInputElement> & { name?: string }
 ) => {
@@ -81,6 +81,20 @@ export const CheckBox = (
             />
             <h1>{props?.name}</h1>
         </div>
+    );
+};
+
+export const ToggleButton = () => {
+    const [checked, setChecked] = useState(false);
+    console.log(checked)
+    return (
+        <motion.div
+            onClick={(e) => setChecked((e) => !e)}
+            animate={{ backgroundColor: checked ? "#1a73e8" : "#cccc", transition: { duration: .2 } }}
+            className={`w-[2.6rem] h-[1.3rem] duration-500  rounded-full flex bg-[#cccc] cursor-pointer`}
+        >
+            <motion.div animate={{translateX: checked ? "1.2rem" : "0rem" , transition: {duration:.3} }}    className={`h-full border w-[1.4rem] bg-white rounded-full`} />
+        </motion.div>
     );
 };
 

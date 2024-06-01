@@ -30,3 +30,12 @@
     color: white;
     font-weight: bold;
 } */
+
+.bg-gradient-animate {
+    background-size: 120% 100%;
+}
+
+.bg-gradient-animate:hover {
+    background-position: 50% 50%;
+    background: black;
+}
