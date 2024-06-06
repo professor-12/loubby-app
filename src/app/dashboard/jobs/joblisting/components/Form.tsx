@@ -14,6 +14,7 @@ import SkillsInput from "./SkillsInput";
 import { useRouter } from "next/navigation";
 import { experience, otherFields } from "@/lib/utils";
 import { useForm, SubmitHandler } from "react-hook-form";
+import readFileContent from "@/helpers/writeFille";
 
 interface Inputs {
     jobTitle: string;
@@ -36,8 +37,18 @@ const validation = {
     required: true,
 };
 const Form = () => {
+    const [nameofFile, setNanmeofFile] = useState<string>("");
     const { push } = useRouter();
     const onDrop = useCallback((acceptedFiles: any) => {
+        setNanmeofFile!(acceptedFiles[0].name);
+        if (acceptedFiles[0]) {
+            const file = new FileReader();
+            file.onload = (e) => {
+                console.log(e.target?.result?.toString());
+            };
+            file.readAsText(acceptedFiles[0]);
+        }
+
         console.log(acceptedFiles);
     }, []);
 
@@ -62,7 +73,10 @@ const Form = () => {
                     This is optional, you can choose to manually fill your job
                     info
                 </h1>
-                <DragndDropInput onDrop={onDrop as any} />
+                <DragndDropInput
+                    nameofFile={nameofFile}
+                    onDrop={onDrop as any}
+                />
                 <div className="py-1 space-y-6">
                     {/* Job Title */}
                     <InputWrapper

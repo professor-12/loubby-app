@@ -1,4 +1,5 @@
-import { Zod } from "@/app/onboarding/login/page";
+import { Zod } from "@/app/onboarding/login/page" // Lol this Zod is made By Me!!!!;
+
 
 export async function login(payload:Zod): Promise<Response> {
       const response =  await fetch(
@@ -16,6 +17,7 @@ export async function login(payload:Zod): Promise<Response> {
       );
       return response
 }
+
 
 export async function signup<T>(payload:T | any) {
       const response = await fetch(

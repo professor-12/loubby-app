@@ -1,7 +1,7 @@
 "use client";
 import React, { ReactNode, useEffect, useState } from "react";
 import SideBar from "./components/sideBar";
-import TopNavBar from "./components/TopNavBar";
+import TopNavBar from "./components/TopNav/TopNavBar";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import { redirect } from "next/navigation";

@@ -1,7 +1,13 @@
 import React from "react";
 import { useDropzone } from "react-dropzone";
 
-const DragndDropInput = ({ onDrop }: { onDrop(): any }) => {
+const DragndDropInput = ({
+    onDrop,
+    nameofFile,
+}: {
+    onDrop(): any;
+    nameofFile?: string;
+}) => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         accept: {
@@ -75,6 +81,7 @@ const DragndDropInput = ({ onDrop }: { onDrop(): any }) => {
                     auto-fill form by uploading document
                 </span>
             </div>
+            <p>{nameofFile}</p>
         </div>
     );
 };

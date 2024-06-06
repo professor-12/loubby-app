@@ -1,6 +1,7 @@
 import Search from "@/components/Search";
 import Image from "next/image";
 import React from "react";
+import HeaderButton from "./HeaderButton";
 
 const TopNavBar = ({ setOpen }: { setOpen: any }) => {
     return (
@@ -22,9 +23,7 @@ const TopNavBar = ({ setOpen }: { setOpen: any }) => {
                     <button className="bg-gradient-to-r text-nowrap hidden lg:flex font-medium from-[#BB95C5] to-[#7DC3CB] hover:backdrop-grayscale rounded-lg p-2 text-sm px-3 bg-gradient-animate text-center gradient text-white ">
                         Refer a Company
                     </button>
-                    <div className="bg-blue-600 h-8 w-8 rounded-lg text-center flex items-center justify-center text-white">
-                        +
-                    </div>
+                    <HeaderButton />
                 </div>
                 <Image src={"/profileImg.svg"} alt="" width={30} height={30} />
                 <div className="relative">
