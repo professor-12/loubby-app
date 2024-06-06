@@ -2,6 +2,7 @@ import Search from "@/components/Search";
 import Image from "next/image";
 import React from "react";
 import HeaderButton from "./HeaderButton";
+import ProfileOptionMenu from "./ProfileOptionMenu";
 
 const TopNavBar = ({ setOpen }: { setOpen: any }) => {
     return (
@@ -25,7 +26,7 @@ const TopNavBar = ({ setOpen }: { setOpen: any }) => {
                     </button>
                     <HeaderButton />
                 </div>
-                <Image src={"/profileImg.svg"} alt="" width={30} height={30} />
+                <ProfileOptionMenu /> {/* Do not forget */}
                 <div className="relative">
                     <Image
                         src={"/Notification.svg"}

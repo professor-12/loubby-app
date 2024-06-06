@@ -26,10 +26,9 @@ export const DropDownChild = ({
 }: {
     link: string;
     name: string;
-    svg: boolean;
-    img: string | React.ReactNode;
+    svg?: boolean;
+    img?: string | React.ReactNode;
 }) => {
-    console.log(props);
     return (
         <div className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start bg-white">
             <div className="space-x-2 w-full flex items-center">
@@ -42,7 +41,9 @@ export const DropDownChild = ({
                         width={20}
                     />
                 )}
-                <p className="text-[0.7rem]    font-medium">{name}</p>
+                <p className="text-[0.7rem]    font-medium text-nowrap">
+                    {name}
+                </p>
             </div>
         </div>
     );
