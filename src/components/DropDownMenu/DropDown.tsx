@@ -8,7 +8,7 @@ const DropDown: React.FC<{
 }> = ({ children, className }) => {
     return (
         <div
-            className={`${className} absolute bg-white py-1 rounded-md top-0 right-0 shadow`}
+            className={`${className} space-y-[0.14rem] absolute bg-[#f2f4f7] rounded-md top-0 right-0 shadow`}
         >
             {children}
         </div>
@@ -31,7 +31,7 @@ export const DropDownChild = ({
 }) => {
     console.log(props);
     return (
-        <div className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start">
+        <div className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start bg-white">
             <div className="space-x-2 w-full flex items-center">
                 {svg ? (
                     img
