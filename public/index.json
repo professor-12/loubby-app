@@ -1,0 +1,325 @@
+{
+    "formDetails": {
+        "jobTitle": "Researcher - Impact of Instructional Resources on Academic Performance",
+        "jobdescription": "Description",
+        "jobDescEditorState": {
+            "_immutable": {
+                "allowUndo": true,
+                "currentContent": {
+                    "entityMap": {},
+                    "blockMap": {
+                        "chbn3": {
+                            "key": "chbn3",
+                            "type": "unstyled",
+                            "text": "",
+                            "characterList": [],
+                            "depth": 0,
+                            "data": {}
+                        }
+                    },
+                    "selectionBefore": {
+                        "anchorKey": "chbn3",
+                        "anchorOffset": 0,
+                        "focusKey": "chbn3",
+                        "focusOffset": 0,
+                        "isBackward": false,
+                        "hasFocus": false
+                    },
+                    "selectionAfter": {
+                        "anchorKey": "chbn3",
+                        "anchorOffset": 0,
+                        "focusKey": "chbn3",
+                        "focusOffset": 0,
+                        "isBackward": false,
+                        "hasFocus": false
+                    }
+                },
+                "decorator": null,
+                "directionMap": {
+                    "chbn3": "LTR"
+                },
+                "forceSelection": false,
+                "inCompositionMode": false,
+                "inlineStyleOverride": null,
+                "lastChangeType": null,
+                "nativelyRenderedContent": null,
+                "redoStack": [],
+                "selection": {
+                    "anchorKey": "chbn3",
+                    "anchorOffset": 0,
+                    "focusKey": "chbn3",
+                    "focusOffset": 0,
+                    "isBackward": false,
+                    "hasFocus": false
+                },
+                "treeMap": {
+                    "chbn3": [
+                        {
+                            "start": 0,
+                            "end": 0,
+                            "decoratorKey": null,
+                            "leaves": [
+                                {
+                                    "start": 0,
+                                    "end": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "undoStack": []
+            }
+        },
+        "jobType": "Contract",
+        "jobLocation": [
+            "Nigeria"
+        ],
+        "jobSalary": "Negotiable",
+        "rateCurrency": "",
+        "jobSalaryMin": "",
+        "jobSalaryMax": "",
+        "salaryCurrency": "USD",
+        "jobRate": "Monthly",
+        "applicationDeadline": "2024-09-01",
+        "numberOfPositions": 1,
+        "openToRemote": false,
+        "approval": {
+            "dueDate": "2024-06-01"
+        },
+        "approvers": [],
+        "perks": {
+            "bonusTarget": false,
+            "dentalInsurance": false,
+            "disabilityInsurance": false,
+            "fourZeroOneK": false,
+            "medicalInsurance": true,
+            "stockOptions": false,
+            "visionInsurance": false
+        },
+        "applicationForm": {
+            "applicationData": [
+                {
+                    "label": "First Name",
+                    "type": "Short text",
+                    "required": true,
+                    "enabled": true,
+                    "id": "e387c372-fdb0-4f71-acb5-93943b906489"
+                },
+                {
+                    "label": "Last Name",
+                    "type": "Short text",
+                    "required": true,
+                    "enabled": true,
+                    "id": "3190b81a-4077-401a-92b9-6c0ff63a0605"
+                },
+                {
+                    "label": "Headline",
+                    "type": "Short text",
+                    "required": true,
+                    "enabled": true,
+                    "id": "6a4e1b23-cb17-47b2-a5dd-c78d65536598"
+                },
+                {
+                    "label": "Email Address",
+                    "type": "Short text",
+                    "required": true,
+                    "enabled": true,
+                    "id": "b10935d9-dabe-4937-9515-cc985b5adafe"
+                },
+                {
+                    "label": "Phone Number",
+                    "type": "Number",
+                    "required": true,
+                    "enabled": true,
+                    "id": "9de2aabd-974d-4c8e-9e76-50cd88100535"
+                },
+                {
+                    "label": "Location",
+                    "type": "Address",
+                    "required": true,
+                    "enabled": true,
+                    "id": "64d5ee93-10ed-4502-a579-4123fe1f24f1"
+                }
+            ],
+            "isCustom": false,
+            "saveTemplate": false,
+            "templateName": "",
+            "mustBeLoggedIn": false
+        },
+        "scorecard": {
+            "scorecardData": [
+                {
+                    "id": "41d6a840-3e0d-4690-999a-4c0149fa7011",
+                    "name": "Communication Skills",
+                    "values": [
+                        "How easily is the candidate able to articulate complex ideas?",
+                        "How well is the candidate able to understand and respond to complex questions?",
+                        "Did the candidate ask clarifying and quality questions when necessary?"
+                    ]
+                },
+                {
+                    "id": "c1932cb3-bbf4-4966-b0f3-64bf82995cb4",
+                    "name": "Relevant Experience",
+                    "values": [
+                        "How relevant is the candidate’s past experience to the role?",
+                        "Has the candidate done projects in the past that are related to the role?",
+                        "How in-depth is the candidate’s technical know-how?"
+                    ]
+                },
+                {
+                    "id": "1d2aaf28-5034-4a05-a18c-0ecf9c14bfaf",
+                    "name": "Culture Fit",
+                    "values": [
+                        "Is the candidate open to learning new things (with proven track record)?",
+                        "How well does the candidate know about the company?",
+                        "Would you be excited to have this candidate on your team?"
+                    ]
+                }
+            ],
+            "enableScorecard": true,
+            "templateName": "",
+            "saveTemplate": false
+        },
+        "reference": {
+            "referenceData": [
+                {
+                    "label": "Email Address",
+                    "type": "Short text",
+                    "required": true,
+                    "enabled": true,
+                    "id": "81397881-ba10-4f0d-b5b8-5fac4b992a9c"
+                },
+                {
+                    "label": "Full Name",
+                    "type": "Short text",
+                    "required": true,
+                    "enabled": true,
+                    "id": "af60e1f9-e57d-4a62-a3dd-f874fadf5ce3"
+                },
+                {
+                    "label": "Job Title",
+                    "type": "Short text",
+                    "required": false,
+                    "enabled": true,
+                    "id": "69f8d326-ea00-42dc-b36b-866807f68f3c"
+                }
+            ],
+            "enableReference": true,
+            "numberOfRef": 1,
+            "saveTemplate": false,
+            "templateName": "",
+            "referenceMessage": "Hello {{Full Name}}, Hope you're doing great. {{Candidate Name}} is applying for a role at {{Company Name}} and he picked you as a referral. How was your previous experience working with him. It would be great if you could say a few thing. Thanks"
+        },
+        "otherPerks": "",
+        "isPerkPublic": true,
+        "averageTimeToHire": "2 weeks",
+        "numberOfInterviews": 1,
+        "interviewStages": [
+            {
+                "id": "a0b700b7-b326-40f2-aea1-4885921cff4c",
+                "order": 0,
+                "selectedStageName": "phone_interview",
+                "selectedType": "calendar",
+                "selectedTypeValue": "",
+                "type": {
+                    "id": "phone_interview",
+                    "name": "Phone Interview",
+                    "subs": [
+                        {
+                            "id": "calendar",
+                            "text": "Calendar",
+                            "emailMessage": "the phone interview stage which would require a scheduled time for the call"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "7085d410-3bd4-45ad-bc72-ba7367858491",
+                "order": 1,
+                "selectedStageName": "first_round",
+                "selectedType": "live_video",
+                "selectedTypeValue": "",
+                "type": {
+                    "id": "first_round",
+                    "name": "First Round",
+                    "subs": [
+                        {
+                            "id": "live_video",
+                            "text": "Live Video",
+                            "emailMessage": "the first round, this stage would require a live video in order to move to the next stage"
+                        },
+                        {
+                            "id": "one_way_video",
+                            "text": "One Way Video",
+                            "emailMessage": "the first round, this stage which would require you to perform a one way video which would be used to move you to the next stage"
+                        },
+                        {
+                            "id": "calendar",
+                            "text": "Calendar",
+                            "emailMessage": "the first round, this stage which would require you to create a scheduled time to move to the next stage"
+                        },
+                        {
+                            "id": "ai_interview",
+                            "text": "AI Interview",
+                            "emailMessage": "the first round, this stage which would require a live interview with an AI which would be used to move you to the next stage"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "8e352560-1aea-4d21-92ba-cf7baf1be91a",
+                "order": 2,
+                "selectedStageName": "hiring_manager",
+                "selectedType": "live_video",
+                "selectedTypeValue": "",
+                "type": {
+                    "id": "hiring_manager",
+                    "name": "Hiring Manager",
+                    "subs": [
+                        {
+                            "id": "live_video",
+                            "text": "Live Video",
+                            "emailMessage": "The hiring manager stage, this stage would require a live video with the hiring manager"
+                        },
+                        {
+                            "id": "one_way_video",
+                            "text": "One Way Video",
+                            "emailMessage": "The hiring manager stage, this stage which would require you to perform a one way video with hiring manager"
+                        },
+                        {
+                            "id": "calendar",
+                            "text": "Calendar",
+                            "emailMessage": "The hiring manager stage, this stage which would require you to create a scheduled time with hiring manager"
+                        }
+                    ]
+                }
+            }
+        ],
+        "prepMaterials": "",
+        "prepFiles": [],
+        "collaborators": [
+            {
+                "user_id": "661e9a5084f434d5613d5380",
+                "role": "interviewer",
+                "id": "661e9a5084f434d5613d5380",
+                "first_name": "Emmanuel ",
+                "last_name": "Badejo ",
+                "email": "badejoemmanuel805@gmail.com"
+            }
+        ],
+        "additionalInformation": "",
+        "jobSkills": [
+            "Educational Research",
+            "Data Collection",
+            "Statistical Analysis",
+            "Report Writing",
+            "Curriculum Development",
+            "Quantitative Research",
+            "Use of Educational Technology"
+        ],
+        "experienceLevel": [
+            "middleLevel",
+            "seniorLevel"
+        ]
+    }
+}
