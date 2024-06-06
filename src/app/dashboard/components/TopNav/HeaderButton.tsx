@@ -1,11 +1,17 @@
 "use client";
 import DropDown, { DropDownChild } from "@/components/DropDownMenu/DropDown";
 import { headerLinks } from "@/lib/utils";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const HeaderButton = () => {
     const [openModal, setOpenModal] = useState(false);
-
+    useEffect(() => {
+        Notification.requestPermission().then((e) => {
+            if (e === "granted") {
+                new Notification("Just Trying a notification" , {body: "Dey PLay"});
+            }
+        });
+    }, []);
     return (
         <button
             onBlur={(e) => {
@@ -29,7 +35,7 @@ const HeaderButton = () => {
                     height="15"
                     width="15"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{color: "rgb(255, 255, 255);"}}
+                    style={{ color: "rgb(255, 255, 255);" }}
                 >
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
                 </svg>
