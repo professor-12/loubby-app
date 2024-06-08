@@ -5,13 +5,7 @@ import React, { useEffect, useState } from "react";
 
 const HeaderButton = () => {
     const [openModal, setOpenModal] = useState(false);
-    useEffect(() => {
-        Notification.requestPermission().then((e) => {
-            if (e === "granted") {
-                new Notification("Just Trying a notification" , {body: "Dey PLay"});
-            }
-        });
-    }, []);
+
     return (
         <button
             onBlur={(e) => {
