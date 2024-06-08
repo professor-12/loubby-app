@@ -70,14 +70,14 @@ const DragndDropInput = ({
             </svg>
             <div className="w-full text-center space-y-1">
                 <div className="text-center space-x-1">
-                    <a className="text-blue-700 md:text-sm text-[0.65rem] font-semibold">
+                    <a className="text-blue-700 md:text-[0.77rem] text-[0.65rem] font-semibold">
                         click to upload job details
                     </a>
-                    <span className="text-[0.7rem] md:text-sm font-medium text-small-p-mute">
+                    <span className="text-[0.7rem] md:text-[0.77rem] font-medium text-small-p-mute">
                         or drag and drop doc,docx,pdf
                     </span>
                 </div>
-                <span className="text-[#1a73e8] md:text-sm text-center text-[0.65rem] font-semibold">
+                <span className="text-[#1a73e8] md:text-[0.77rem] text-center text-[0.65rem] font-semibold">
                     auto-fill form by uploading document
                 </span>
             </div>

@@ -8,14 +8,20 @@ const ProfileOptionMenu = () => {
     const [openModal, setOpenModal] = useState(false);
     return (
         <button
-            className="relative cursor-pointer"
+            className="relative cursor-pointer w-8 h-8"
             onClick={() => setOpenModal(true)}
             onBlur={(e) => {
                 e.stopPropagation();
                 setOpenModal(false);
             }}
         >
-            <Image src={"/profileImg.svg"} alt="" width={30} height={30} />
+            <Image
+                src={"/profileImg.svg"}
+                alt=""
+                className="w-full"
+                width={30}
+                height={30}
+            />
             {openModal && (
                 <DropDown>
                     {ProfileLinks.map(({ img, link, name }) => {
