@@ -10,10 +10,6 @@ const InterViewSlice = createSlice({
       }
 })
 
-
-
-
-
 export default InterViewSlice.reducer
 
 export const { fetchInterView } = InterViewSlice.actions
