@@ -1,8 +1,10 @@
 import React from "react";
+import { useGetJobListing } from "../ContextApi/Provider";
 
 type StepType = {
     name: string;
-    id: number | string;
+    id?: number | string;
+    step: number | string;
 };
 
 const Steps = ({ steps }: { steps: Array<StepType> }) => {
@@ -22,22 +24,27 @@ export default Steps;
 const Step = ({
     name,
     index,
-    id,
+    step,
 }: {
     name: String;
     index: number;
-    id: string | number;
+    step: string | number;
 }) => {
-    const active = 2 == id;
-
+    const { currentStep } = useGetJobListing();
+    const active = currentStep == step;
+    const stepCompleted =
+        (currentStep as number) > (step as number) || currentStep === "done";
     return (
         <div
             className="flex cursor-pointer items-center justify-center  rounded-full"
-            key={id}
+            key={step}
         >
             <div className={`flex items-center space-x-2`}>
                 <span
-                    className={`text-xs flex  ${!active ? "bg-[#F2F4F7]" : "bg-[#eaf3ff]" }  xl:w-6  xl:h-6 w-3 h-3 p-[0.55rem] rounded-full items-center justify-center text-center`}
+                    className={`${
+                        !active ? "bg-[#F2F4F7]" : "bg-[#eaf3ff]" 
+                    }  ${stepCompleted
+                        && "bg-blue-700/70 text-white"} text-xs flex   xl:w-6  xl:h-6 w-3 h-3 p-[0.55rem] rounded-full items-center justify-center text-center`}
                 >
                     {index + 1}
                 </span>

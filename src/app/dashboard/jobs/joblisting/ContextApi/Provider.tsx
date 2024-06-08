@@ -1,11 +1,7 @@
 "use client";
-import React, {
-    createContext,
-    useContext,
-    useState,
-} from "react";
+import React, { createContext, useContext, useState } from "react";
 
-type G = React.SetStateAction<number>;
+type G = React.SetStateAction<number | "done">;
 
 interface IStore<T> {
     currentStep?: number | "done";
@@ -22,7 +18,7 @@ export const useGetJobListing = () => {
 };
 
 const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [currentStep, setcurrentStep] = useState(1);
+    const [currentStep, setcurrentStep] = useState<number | "done">(-7+8);
 
     return (
         <store.Provider value={{ currentStep, setcurrentStep }}>

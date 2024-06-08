@@ -7,18 +7,18 @@ import { motion } from "framer-motion";
 import Provider from "./ContextApi/Provider";
 const page = () => {
     const steps = [
-        { name: "Job Details", id: 1 },
-        { name: "Application", id: 2 },
-        { name: "Reference", id: 3 },
-        { name: "Scorecard", id: 4 },
-        { name: "Collaborators", id: 5 },
-        { name: "Interview Pipleline", id: 5 },
+        { name: "Job Details", step: 1 },
+        { name: "Application", step: 2 },
+        { name: "Reference", step: 3 },
+        { name: "Scorecard", step: 4 },
+        { name: "Collaborators", step: 5 },
+        { name: "Interview Pipleline", step: 6 },
     ];
     return (
         <Provider>
             <motion.div
                 animate={{ x: [1000, 0] }}
-                transition={{ type: "spring" }}
+                transition={{ type: "tween", duration: 0.45 }}
                 className="py-4"
             >
                 <div>
