@@ -38,11 +38,11 @@ const HeaderButton = () => {
                 {openModal && (
                     <>
                         <DropDown className="min-w-[15rem]">
-                            {headerLinks.map(({ name, img }) => {
+                            {headerLinks.map(({ name, img , link}) => {
                                 return (
                                     <DropDownChild
                                         key={name}
-                                        link="/about"
+                                        link={link}
                                         name={name}
                                         svg
                                         img={img}
