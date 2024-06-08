@@ -5,13 +5,7 @@ import React, { useEffect, useState } from "react";
 
 const HeaderButton = () => {
     const [openModal, setOpenModal] = useState(false);
-    useEffect(() => {
-        Notification.requestPermission().then((e) => {
-            if (e === "granted") {
-                new Notification("Just Trying a notification" , {body: "Dey PLay"});
-            }
-        });
-    }, []);
+
     return (
         <button
             onBlur={(e) => {
@@ -44,11 +38,11 @@ const HeaderButton = () => {
                 {openModal && (
                     <>
                         <DropDown className="min-w-[15rem]">
-                            {headerLinks.map(({ name, img }) => {
+                            {headerLinks.map(({ name, img , link}) => {
                                 return (
                                     <DropDownChild
                                         key={name}
-                                        link="/about"
+                                        link={link}
                                         name={name}
                                         svg
                                         img={img}

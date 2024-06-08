@@ -18,7 +18,6 @@ export const useSlideAnimation = (
     }, [index, slideShow.length, duration]);
     useEffect(() => {
         const interval = start();
-
         return () => {
             clearInterval(interval);
         };

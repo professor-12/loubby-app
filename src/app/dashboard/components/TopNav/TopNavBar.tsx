@@ -1,8 +1,10 @@
+"use client";
 import Search from "@/components/Search";
 import Image from "next/image";
 import React from "react";
 import HeaderButton from "./HeaderButton";
 import ProfileOptionMenu from "./ProfileOptionMenu";
+import { motion } from "framer-motion";
 
 const TopNavBar = ({ setOpen }: { setOpen: any }) => {
     return (
@@ -21,9 +23,9 @@ const TopNavBar = ({ setOpen }: { setOpen: any }) => {
             <Search className="border" />
             <div className="space-x-3 items-center flex">
                 <div className="flex space-x-5">
-                    <button className="bg-gradient-to-r text-nowrap hidden lg:flex font-medium from-[#BB95C5] to-[#7DC3CB] hover:backdrop-grayscale rounded-lg p-2 text-sm px-3 bg-gradient-animate text-center gradient text-white ">
+                    <motion.button className="text-nowrap hidden lg:flex font-medium   rounded-lg p-2 text-sm px-3  text-center  text-white  bg-gradient-animate">
                         Refer a Company
-                    </button>
+                    </motion.button>
                     <HeaderButton />
                 </div>
                 <ProfileOptionMenu /> {/* Do not forget */}

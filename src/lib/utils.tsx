@@ -43,7 +43,7 @@ export const headerLinks = [
             </svg>
         ),
         name: "Add Profile Detail",
-        link: "",
+        link: "/dashboard/profile/candidatesDetails",
     },
     {
         img: (
@@ -63,7 +63,7 @@ export const headerLinks = [
             </svg>
         ),
         name: "Add Job",
-        link: "",
+        link: "/dashboard/jobs/joblisting",
     },
     {
         img: (
@@ -83,7 +83,7 @@ export const headerLinks = [
             </svg>
         ),
         name: "Add Schedule",
-        link: "",
+        link: "/dashboard/schedule",
     },
     {
         img: (
@@ -102,7 +102,7 @@ export const headerLinks = [
             </svg>
         ),
         name: "Add Talent Pool",
-        link: "",
+        link: "/dashboard/talent-pool/create",
     },
     {
         img: (
@@ -121,7 +121,7 @@ export const headerLinks = [
             </svg>
         ),
         name: "Add Score Template",
-        link: "",
+        link: "/dashboard/settings/templates/scorecard?state=create",
     },
     {
         img: (

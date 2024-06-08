@@ -2,9 +2,6 @@
 import React, { InputHTMLAttributes, useState } from "react";
 
 import { motion } from "framer-motion";
-interface ListOfSkills {
-    skills: string;
-}
 
 const SkillsInput: React.FC<InputHTMLAttributes<HTMLInputElement>> = ({
     className,
@@ -12,14 +9,12 @@ const SkillsInput: React.FC<InputHTMLAttributes<HTMLInputElement>> = ({
 }) => {
     const [input, setUserInput] = useState("");
     const [skills, setSkills] = useState<{ name: string; id: number }[]>([]);
-
     const handleAddSkills = () => {
         if (input.trim().length === 0) return;
         setSkills((prevState) => {
             return [...prevState, { name: input, id: prevState.length + 1 }];
         });
         setUserInput("");
-        console.log("first");
     };
 
     const handleRemoveSkills = (idToDELETE: string | number) => {

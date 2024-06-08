@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const DropDown: React.FC<{
@@ -29,8 +29,14 @@ export const DropDownChild = ({
     svg?: boolean;
     img?: string | React.ReactNode;
 }) => {
+    const router = useRouter();
     return (
-        <div className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start bg-white">
+        <div
+            className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start bg-white"
+            onClick={() => {
+                router.push(link);
+            }}
+        >
             <div className="space-x-2 w-full flex items-center">
                 {svg ? (
                     img

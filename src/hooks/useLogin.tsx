@@ -1,7 +1,4 @@
 "use client";
-import { headers } from "next/headers";
-import React from "react";
-
 const useLogin = (
     url: URL,
     payload?: Object,
