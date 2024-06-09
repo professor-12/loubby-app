@@ -57,6 +57,7 @@ const draft = (
 );
 const HeaderJob = () => {
     const [direction, setDirection] = useState<"r" | "l">("r");
+    const router = useRouter();
     const NavList = [
         { name: "Active", id: 1, Svg: active },
         { name: "Inactive", id: 2, Svg: inactive },
@@ -73,7 +74,12 @@ const HeaderJob = () => {
                         View and manage your jobs
                     </p>
                 </div>
-                <button className="bg-[#1a73e8] px-3 text-white  rounded-lg items-center cursor-pointer p-[0.3rem] space-x-1">
+                <button
+                    onClick={() => {
+                        router.push("jobs/joblisting");
+                    }}
+                    className="bg-[#1a73e8] px-3 text-white  rounded-lg items-center cursor-pointer p-[0.3rem] space-x-1"
+                >
                     <span className="ml-2">+</span>{" "}
                     <span className="text-xs text-center text-white ">
                         Post a Job
@@ -94,8 +100,7 @@ const HeaderJob = () => {
 
 export default HeaderJob;
 
-export const TabLink = (
-{
+export const TabLink = ({
     id,
     name,
     Svg,
@@ -109,7 +114,7 @@ export const TabLink = (
     const active = params.get("tab") === name;
 
     const handleChangeTab = () => {
-        route.push(`?tab=${name}`); 
+        route.push(`?tab=${name}`);
     };
     return (
         <div
