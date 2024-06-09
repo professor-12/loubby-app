@@ -25,11 +25,7 @@ const NavLink = ({
                     <span className="">
                         <Image src={svg} width={20} height={20} alt="" />
                     </span>
-                    <p
-                        className={`text-[0.85rem] text-slate-600 ${
-                            active && "text-blue-800"
-                        }`}
-                    >
+                    <p className={`${active && "text-blue-500"} text-[0.85rem] text-slate-600 `}>
                         {name}
                     </p>
                 </Link>

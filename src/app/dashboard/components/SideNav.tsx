@@ -14,7 +14,7 @@ const navLinks = [
                 name: "Dashboard",
             },
             {
-                link: "/dashboard/jobs",
+                link: "/dashboard/jobs?tab=Active",
                 img: "/job.svg",
                 color: "",
                 name: "Jobs",
