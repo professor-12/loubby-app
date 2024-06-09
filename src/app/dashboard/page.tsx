@@ -69,7 +69,7 @@ const Page = () => {
     }, [dispatch, getJob, Interview]);
 
     return (
-        <div>
+        <div className="m-4">
             <Header />
             <div className="flex flex-col lg:flex-row py-4 space-y-3 md:space-y-0 lg:space-x-3">
                 <div className="w-full  lg:max-w-[68%]">
