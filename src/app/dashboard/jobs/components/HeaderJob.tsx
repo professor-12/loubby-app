@@ -1,6 +1,6 @@
 "use client";
 import { AnimatePresence, animate, motion } from "framer-motion";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
 const active = (
@@ -111,7 +111,7 @@ export const TabLink = ({
 }) => {
     const params = useSearchParams();
     const route = useRouter();
-    const active = params.get("tab") === name;
+    const active = (params.get("tab") ?? "Active") === name;
 
     const handleChangeTab = () => {
         route.push(`?tab=${name}`);
@@ -122,9 +122,9 @@ export const TabLink = ({
             className="text-[#667085] cursor-pointer space-y-3 md:space-y-2"
             key={id}
         >
-            <div className="flex items-center space-x-4">
+            <button className="flex items-center space-x-4">
                 <span>{Svg}</span> <span>{name}</span>
-            </div>
+            </button>
             <AnimatePresence>
                 {active && (
                     <motion.div
