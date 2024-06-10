@@ -1,12 +1,11 @@
-import React from "react";
-import HeaderJob from "./components/HeaderJob";
+"use client";
+import React, { useEffect } from "react";
+import Main from "./components/Main";
 
-const page = () => {
+const Page = () => {
     return (
-        <div>
-            <HeaderJob />
-        </div>
+        <Main/>
     );
 };
 
-export default page;
+export default Page;
