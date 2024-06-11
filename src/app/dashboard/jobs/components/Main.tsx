@@ -1,19 +1,12 @@
 import React from "react";
 import HeaderJob from "./HeaderJob";
+import TabContainer from "./TabContainer";
 
-const fetchData = async (token: string, url: string): Promise<any> => {
-    const request = await fetch(url, {
-        headers: {
-            Authorization: "Bearer " + token,
-        },
-    });
-
-    return await request.json();
-};
 const Main = () => {
     return (
-        <div>
+        <div className="bg-dark-slate pb-5 min-h-[90vh]">
             <HeaderJob />
+            <TabContainer />
         </div>
     );
 };

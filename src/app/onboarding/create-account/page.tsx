@@ -1,26 +1,21 @@
-"use client";
 import React from "react";
 import Box from "./Box";
 import Note from "./Note";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Button from "./Button";
 
 const Page = () => {
-    const router = useRouter();
     return (
-        <div className="container space-y-6  px-4 mx-auto md:w-[60%] xl:w-[80%]">
+        <div className="container  select-none space-y-6  px-4 mx-auto md:w-[60%] xl:w-[80%]">
             <div>
                 <h1 className="text-xl font-medium">Create an account</h1>
                 <p className="text-sm text-slate-700">
                     Get access to lots of talent and more
                 </p>
-            </div>
+            </div> 
             <div className="space-y-4">
-                <div
-                    onClick={(_) =>
-                        router.push("employer-signup?from=create-account")
-                    }
+                <Button
                     className="flex justify-between  w-full border text-slate-800 border-gray-200 p-4 py-6 cursor-pointer rounded-lg"
+                    link="employer-signup?from=create-account"
                 >
                     <div className="flex space-x-3">
                         <div>
@@ -39,15 +34,15 @@ const Page = () => {
                         </div>
                     </div>
                     <div className="w-6 h-6 flex justify-self-end rounded-full border-2" />
-                </div>
-                <div
-                    onClick={(_) => router.push("user-signup?source=signup")}
-                    className="flex cursor-pointer justify-between w-full border text-slate-800 border-gray-200 p-4 py-6 rounded-lg"
+                </Button>
+                <Button
+                    className="flex justify-between  w-full border text-slate-800 border-gray-200 p-4 py-6 cursor-pointer rounded-lg"
+                    link="user-signup?source=signup"
                 >
                     <div className="flex space-x-3">
                         <div className="">
                             <span className="flex items-center bg-background-gray justify-center p-2 rounded-full">
-                                <Note />
+                                <Box />
                             </span>
                         </div>
                         <div>
@@ -60,16 +55,20 @@ const Page = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="w-6 h-6 flex justify-self-end rounded-full border-2" />
-                </div>
+
+                    <div className="max-w-6 max-h-6 min-h-6 min-w-6 flex justify-self-end  rounded-full border-2" />
+                </Button>
             </div>
 
-            <p className="text-center text-sm text-slate-700">
+            <div className="text-center text-sm text-slate-700 mx-auto flex justify-center gap-1">
                 Already have an account?{" "}
-                <Link className="text-sm text-blue-500" href="login">
+                <Button
+                    className="text-sm text-blue-500 cursor-pointer"
+                    link="login"
+                >
                     Login
-                </Link>
-            </p>
+                </Button>
+            </div>
         </div>
     );
 };
