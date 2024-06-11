@@ -1,7 +1,10 @@
-export const helpFetch =  async (url: string, token: string) => {
+export const helpFetch = async (url: string, token: string, method?: "POST" | "GET" | "Put" | "DELET" | "PATCH" , headers?: Object ) => {
+      let header = {
+            Authorization: 'Bearer ' + token,
+            ...headers
+      }
       return await fetch(url, {
-            headers: {
-                  Authorization: 'Bearer ' + token
-            }
+            headers: {...header as any},
+            method
       })
 }
