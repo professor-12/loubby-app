@@ -1,17 +1,20 @@
 import Image from "next/image";
 import React from "react";
 
-const JobListCard = () => {
+const JobListCard = ({ data }: { data: any }) => {
+    console.log(data);
     return (
         <div className="bg-white p-3 py-6 pb-7 border border-[#eaecf0]  rounded-[0.7rem] md:space-y-3 space-y-1 md:text-sm text-xs shadow-sm">
             <div className="flex justify-between">
-                <p> Academic Resera</p>
+                <p>{data?.jobTitle}</p>
                 <span className="rotate-90 tracking-wider font-semibold  text-slate-600 cursor-pointer select-none">
                     ...
                 </span>
             </div>
             <div>
-                <p className="lg:text-md text-slate-500">Negotiable/Monthly</p>
+                <p className="lg:text-md text-slate-500">
+                    {data?.jobSalary}/{data.jobRate}
+                </p>
             </div>
             <div className="space-y-2">
                 <span className="text-[#027a48] text-xs bg-[#ecfdf3] p-1  px-2 rounded-full">
@@ -26,7 +29,7 @@ const JobListCard = () => {
                         alt="ApplicantImage"
                     />
                     <span className="text-neutral-500">
-                        <span>0</span> applicant
+                        <span>{data?.JobApplications.length}</span> applicant
                     </span>
                 </div>
                 <div className="flex space-x-2 text-sm">

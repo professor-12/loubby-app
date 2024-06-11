@@ -64,7 +64,7 @@ const HeaderJob = () => {
         { name: "Draft", id: 3, Svg: draft },
     ];
     return (
-        <div className="bg-white min-h-32 p-5 pt-4 pb-0 space-y-7 flex flex-col justify-between">
+        <div className="bg-white min-h-32 p-5 pt-4 pb-0 space-y-7 flex flex-col justify-between sticky top-0 z-50">
             <div className="flex justify-between  items-end">
                 <div>
                     <h1 className="md:text-lg xl:text-xl font-medium">

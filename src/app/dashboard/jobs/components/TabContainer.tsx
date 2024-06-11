@@ -11,12 +11,11 @@ const DynamicTab = dynamic(() => import("./Tab"), {
     loading: (_) => <span>Loafinsddc</span>,
 });
 
-
 export type TabMode = "Active" | "Inactive" | "Draft";
 
 const TabContainer = () => {
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         helpFetch(
             "https://api.loubby.ai/api/v1/employer/listing/?pages=1&pageSize=120&category=active",
@@ -30,9 +29,8 @@ const TabContainer = () => {
 
     return (
         <div className="p-3">
-            <div className="h-3 w-full flex "/>
-                <DynamicTab/>
-      
+            <div className="h-3 w-full flex " />
+            <DynamicTab />
         </div>
     );
 };

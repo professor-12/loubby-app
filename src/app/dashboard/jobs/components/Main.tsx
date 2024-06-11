@@ -4,7 +4,7 @@ import TabContainer from "./TabContainer";
 
 const Main = () => {
     return (
-        <div>
+        <div className="bg-dark-slate pb-5 min-h-[90vh]">
             <HeaderJob />
             <TabContainer />
         </div>

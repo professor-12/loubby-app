@@ -10,7 +10,7 @@ const Tab = () => {
     const data = useSelector((state: any) => state.jobList)[mode];
 
     return (
-        <motion.div className="" exit={{}} animate={{}}>
+        <motion.div className=""  exit={{}} animate={{}}>
             <ActiveTab data={data} />
         </motion.div>
     );
