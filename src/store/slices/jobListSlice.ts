@@ -7,7 +7,12 @@ const JobListSlice = createSlice({
       reducers: {
             getActiveJobs(state, { payload }) {
                   return {
-                        ...state, active: { ...payload }
+                        ...state, Active: { ...payload }
+                  }
+            },
+            getInactiveJobs(state,{payload}) {
+                  return {
+                        ...state , Inactive: { ...payload }
                   }
             }
       }
