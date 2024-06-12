@@ -46,7 +46,7 @@ const JobListCard = ({ data }: { data: any }) => {
                 </div>
                 <div className="p-2 text-[#dc6803] font-medium">0 matches</div>
             </div>
-            <button className="text-white text-center p-1 rounded-md w-full bg-blue-600/90">
+            <button className="text-white text-center p-2 rounded-md w-full bg-blue-600/90">
                 View
             </button>
         </div>
