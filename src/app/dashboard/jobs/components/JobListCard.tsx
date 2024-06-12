@@ -2,11 +2,11 @@ import Image from "next/image";
 import React from "react";
 
 const JobListCard = ({ data }: { data: any }) => {
-    console.log(data);
+    
     return (
         <div className="bg-white p-3 py-6 pb-7 border border-[#eaecf0]  rounded-[0.7rem] md:space-y-3 space-y-1 md:text-sm text-xs shadow-sm">
             <div className="flex justify-between">
-                <p>{data?.jobTitle}</p>
+                <p className="text-nowrap lg:text-sm text-xs">{data?.jobTitle}</p>
                 <span className="rotate-90 tracking-wider font-semibold  text-slate-600 cursor-pointer select-none">
                     ...
                 </span>
@@ -46,7 +46,7 @@ const JobListCard = ({ data }: { data: any }) => {
                 </div>
                 <div className="p-2 text-[#dc6803] font-medium">0 matches</div>
             </div>
-            <button className="text-white text-center p-1 rounded-md w-full bg-blue-600/90">
+            <button className="text-white text-center lg:p-[0.36rem] p-[0.35rem] rounded-md w-full bg-blue-600/90">
                 View
             </button>
         </div>

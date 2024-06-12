@@ -8,7 +8,7 @@ const ProfileOptionMenu = () => {
     const [openModal, setOpenModal] = useState(false);
     return (
         <button
-            className="relative cursor-pointer w-8 h-8"
+            className="relative cursor-pointer w-8 h-8 z-[999]"
             onClick={() => setOpenModal(true)}
             onBlur={(e) => {
                 e.stopPropagation();

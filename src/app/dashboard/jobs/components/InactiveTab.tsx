@@ -1,22 +1,23 @@
-"use client";
 import React from "react";
 import JobListCard from "./JobListCard";
 import EmptyJob from "./EmptyJob";
 import { motion } from "framer-motion";
 import { useStoreContext } from "./JobContextapi/store";
-
-const ActiveTab = ({ data }: { data: any }) => {
+const InactiveTab = ({ data }: { data: any }) => {
     const { direction } = useStoreContext() as any;
     const jobs = data?.results;
-    if (jobs?.length == 0) {
+
+    if ((jobs?.length as number) == 0) {
         return <EmptyJob />;
     }
     return (
         <motion.div
-            className="grid gap-3 md:gap-6 lg:grid-cols-2 xl:grid-cols-5 md:grid-cols-3  grid-cols-1 overflow-y-auto overflow-x-hidden"
-            initial={{ x: direction === "r" ? 1000 : -450 }}
+            initial={{
+                x: direction === "r" ? -450 : 1000,
+            }}
             transition={{ type: "just" }}
             animate={{ x: 0 }}
+            className="grid gap-4 md:gap-6 xl:grid-cols-5 md:grid-cols-3  grid-cols-1 overflow-y-auto"
         >
             {jobs?.map((job: any) => {
                 return <JobListCard data={job} key={job.id} />;
@@ -25,4 +26,4 @@ const ActiveTab = ({ data }: { data: any }) => {
     );
 };
 
-export default ActiveTab;
+export default InactiveTab;

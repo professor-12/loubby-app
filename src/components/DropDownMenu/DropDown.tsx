@@ -2,15 +2,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-
-
 const DropDown: React.FC<{
     children: React.ReactNode;
     className?: string;
 }> = ({ children, className }) => {
     return (
         <div
-            className={`${className} space-y-[0.14rem] absolute bg-[#f2f4f7] rounded-md top-0 right-0 shadow`}
+            className={`${className} space-y-[0.14rem] absolute bg-[#f2f4f7] rounded-md top-0 right-0 shadow z-[200000]`}
         >
             {children}
         </div>
@@ -34,7 +32,7 @@ export const DropDownChild = ({
     const router = useRouter();
     return (
         <div
-            className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start bg-white"
+            className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start z-[99] bg-white"
             onClick={() => {
                 router.push(link);
             }}

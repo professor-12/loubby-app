@@ -22,4 +22,4 @@ const JobListSlice = createSlice({
 export default JobListSlice.reducer
 
 
-export const { getActiveJobs } = JobListSlice.actions
+export const { getActiveJobs , getInactiveJobs } = JobListSlice.actions

@@ -1,15 +1,17 @@
 "use client";
 import { helpFetch } from "@/hooks/useFetch";
-import { getActiveJobs } from "@/store/slices/jobListSlice";
-import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { getActiveJobs, getInactiveJobs } from "@/store/slices/jobListSlice";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import dynamic from "next/dynamic";
+import { BaseUrl } from "@/lib/constants/BaseURL";
 
 const DynamicTab = dynamic(() => import("./Tab"), {
     ssr: false,
     loading: (_) => <span>Loafinsddc</span>,
 });
+
+const Base = BaseUrl;
 
 export type TabMode = "Active" | "Inactive" | "Draft";
 
@@ -18,7 +20,15 @@ const TabContainer = () => {
 
     useEffect(() => {
         helpFetch(
-            "https://api.loubby.ai/api/v1/employer/listing/?pages=1&pageSize=120&category=active",
+            `${Base}employer/listing/?pages=1&pageSize=25&category=inactive`,
+            localStorage.getItem("token") as string
+        )
+            .then((e) => e.json())
+            .then((r) => {
+                dispatch(getInactiveJobs(r?.data));
+            });
+        helpFetch(
+            `${Base}employer/listing/?pages=1&pageSize=120&category=active`,
             localStorage.getItem("token") as string
         )
             .then((e) => e.json())
@@ -29,7 +39,7 @@ const TabContainer = () => {
 
     return (
         <div className="p-3">
-            <div className="h-3 w-full flex " />
+            <div className="h-3 w-full flex" />
             <DynamicTab />
         </div>
     );
