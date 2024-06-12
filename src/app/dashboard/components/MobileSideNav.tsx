@@ -34,7 +34,7 @@ export const BackDrop: React.FC<{ onClick(): any }> = ({
             animate={{ opacity: [0.5, 1] }}
             exit={{ opacity: 0 }}
             onClick={() => onClick()}
-            className="flex fixed justify-center inset-0 bg-slate-900 bg-opacity-50 backdrop-blur-[15px] z-50 cursor-pointer"
+            className="flex fixed justify-center inset-0 bg-slate-900 bg-opacity-50 backdrop-blur-[15px] z-[52] cursor-pointer"
         ></motion.div>,
         portalElement
     );

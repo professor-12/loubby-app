@@ -64,8 +64,7 @@ const NavList = [
 ];
 const HeaderJob = () => {
     const { direction, setDirection } = useStoreContext() as any
-    
-    console.log(direction);
+
     const router = useRouter();
     return (
         <div className="bg-white min-h-32 p-5 pt-4 pb-0 space-y-7 flex flex-col justify-between sticky top-0 z-50">
