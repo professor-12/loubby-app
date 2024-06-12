@@ -1,7 +1,9 @@
 "use client";
+import { ChildProcessWithoutNullStreams } from "child_process";
 import { AnimatePresence, animate, motion } from "framer-motion";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
+import { useStoreContext } from "./JobContextapi/store";
 
 const active = (
     <svg
@@ -55,14 +57,16 @@ const draft = (
         />
     </svg>
 );
+const NavList = [
+    { name: "Active", id: 1, Svg: active },
+    { name: "Inactive", id: 2, Svg: inactive },
+    { name: "Draft", id: 3, Svg: draft },
+];
 const HeaderJob = () => {
-    const [direction, setDirection] = useState<"r" | "l">("r");
+    const { direction, setDirection } = useStoreContext() as any
+    
+    console.log(direction);
     const router = useRouter();
-    const NavList = [
-        { name: "Active", id: 1, Svg: active },
-        { name: "Inactive", id: 2, Svg: inactive },
-        { name: "Draft", id: 3, Svg: draft },
-    ];
     return (
         <div className="bg-white min-h-32 p-5 pt-4 pb-0 space-y-7 flex flex-col justify-between sticky top-0 z-50">
             <div className="flex justify-between  items-end">
@@ -89,7 +93,14 @@ const HeaderJob = () => {
             <div className="">
                 <div className="flex space-x-7 lg:text-sm text-xs">
                     {NavList.map((item) => {
-                        return <TabLink key={item.id} {...item} />;
+                        return (
+                            <TabLink
+                                setDirection={setDirection}
+                                navLink={NavList}
+                                key={item.id}
+                                {...item}
+                            />
+                        );
                     })}
                     {/*TODO  this as to be a separate component  */}
                 </div>
@@ -104,16 +115,29 @@ export const TabLink = ({
     id,
     name,
     Svg,
+    navLink,
+    setDirection,
 }: {
     id: string | number;
     name: string;
     Svg: React.ReactNode;
+    navLink: any[];
+    setDirection: any;
 }) => {
     const params = useSearchParams();
     const route = useRouter();
     const active = (params.get("tab") ?? "Active") === name;
+    const value = navLink.find((item) => item.name == params.get("tab"))?.id;
 
     const handleChangeTab = () => {
+        console.log(id,value)
+        if (id === value) setDirection(null)
+        if (id > value) {
+            setDirection("r");
+        } if (value > id) {
+            setDirection("l");
+        }
+
         route.push(`?tab=${name}`);
     };
     return (

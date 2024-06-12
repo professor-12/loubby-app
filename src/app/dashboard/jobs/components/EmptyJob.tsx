@@ -1,9 +1,17 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Button from "@/app/onboarding/create-account/Button";
+import { motion } from "framer-motion";
+import { useStoreContext } from "./JobContextapi/store";
 const EmptyJob = () => {
+    const { direction } = useStoreContext();
     return (
-        <div className="mx-auto h-[60vh]  my-auto flex flex-col items-center justify-center space-y-3">
+        <motion.div
+            className="mx-auto h-[60vh]  my-auto flex flex-col items-center justify-center"
+            initial={{ x: direction === "r" ? 1000 : -500 }}
+            animate={{ x: 0, transition: { ease: "easeInOut" } }}
+        >
             <Image
                 src="/latestpost.svg"
                 width={170}
@@ -20,13 +28,13 @@ const EmptyJob = () => {
                 </p>
             </div>
             <Button
-                className="bg-blue-500 rounded-md p-1 px-4 space-x-2 text-white"
+                className="bg-blue-500 mt-4 rounded-md p-1 px-4 space-x-2 text-white cursor-pointer"
                 link="/dashboard/jobs/joblisting"
             >
                 <span className="text-md">+</span>
                 <span className="text-sm">Create New</span>
             </Button>
-        </div>
+        </motion.div>
     );
 };
 

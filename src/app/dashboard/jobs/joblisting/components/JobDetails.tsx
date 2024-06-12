@@ -3,7 +3,7 @@ import React from "react";
 
 const JobDetails = () => {
     return (
-        <div className="space-y-1">
+        <div className="space-y-1  px-2">
             <h1 className="text-sm font-medium text-[#344054]">Job Details</h1>
             <p className="text-xs md:text-sm text-[#667085]">
                 Our AI uses these information to match your post with the best
