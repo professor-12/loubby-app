@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const moserat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${moserat.className} overflow-x-hidden`}>
+            <body
+                className={`overflow-hidden ${moserat.className} overflow-x-hidden`}
+            >
                 <div id="portal" className="lg:hidden"></div>
                 <main>{children}</main>
                 <ToastContainer />

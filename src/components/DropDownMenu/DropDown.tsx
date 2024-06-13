@@ -8,7 +8,7 @@ const DropDown: React.FC<{
 }> = ({ children, className }) => {
     return (
         <div
-            className={`${className} space-y-[0.14rem] absolute bg-[#f2f4f7] rounded-md top-0 right-0 shadow z-[200000]`}
+            className={`${className} space-y-[0.14rem] absolute bg-[#f2f4f7] rounded-md top-0 right-0 shadow`}
         >
             {children}
         </div>
@@ -32,7 +32,7 @@ export const DropDownChild = ({
     const router = useRouter();
     return (
         <div
-            className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start z-[99] bg-white"
+            className="w-full text-start flex px-3  p-2 hover:bg-[#bad8ff]  rounded justify-start  bg-white z-[70]"
             onClick={() => {
                 router.push(link);
             }}

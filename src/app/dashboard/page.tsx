@@ -1,7 +1,7 @@
 "use client";
 import React, { Suspense, useCallback, useEffect } from "react";
 import Header from "./components/Header";
-import "react-loading-skeleton/dist/skeleton.css";
+
 import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
 import dynamic from "next/dynamic";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,53 +23,56 @@ const Summary = dynamic(() => import("./components/Summary"), {
     ssr: false,
     loading: (_) => (
         <div className="grid w-full md:grid-cols-3 gap-3">
-            <LoadingCardSkeleton />
-            <LoadingCardSkeleton />
-            <LoadingCardSkeleton />
+            {new Array(3).fill(null).map((_, i) => {
+                return <LoadingCardSkeleton key={i + "loadin_comp"} />;
+            })}
         </div>
     ),
 });
 
 const Page = () => {
     const dispatch = useDispatch();
-    const getJob = useCallback(async () => {
+    const getJob = async () => {
         const token = localStorage!.getItem!("token");
-        let data = await helperFetch(
+        return await helperFetch(
             "https://api.loubby.ai/api/v1/employer/listing/",
             token as string
         );
-        dispatch(fetchJobs(data));
-    }, [dispatch]);
-    const Interview = useCallback(async () => {
+    };
+
+    const Interview = async () => {
         const token = localStorage.getItem!("token") as string;
-        const getInterView = await helperFetch(
+        return await helperFetch(
             "https://api.loubby.ai/api/v1/shared/events/all",
             token
         );
+    };
 
-        dispatch(fetchInterView(getInterView));
-    }, [dispatch]);
+    const fetchDetails = async () => {
+        const token = localStorage.getItem!("token") as string;
+        return await helperFetch(
+            "https://api.loubby.ai/api/v1/user/details/",
+            token
+        );
+    };
+
+    const fetchSummary = async () => {
+        const [a, b, c] = await Promise.all([
+            fetchDetails(),
+            Interview(),
+            getJob(),
+        ]);
+        dispatch(fetchJobs(c));
+        dispatch(fetchInterView(b));
+        dispatch(getUser(a));
+    };
 
     useEffect(() => {
-        const fetchDetails = async () => {
-            const token = localStorage!.getItem!("token") as string;
-            const response = await fetch(
-                "https://api.loubby.ai/api/v1/user/details",
-                {
-                    headers: {
-                        Authorization: "Bearer " + token,
-                    },
-                }
-            );
-            dispatch!(getUser(await response.json()));
-        };
-        fetchDetails();
-        Interview();
-        getJob();
-    }, [dispatch, getJob, Interview]);
+        fetchSummary();
+    }, []);
 
     return (
-        <div className="m-4">
+        <div className="p-4 w-full  overflow-y-auto h-screen pb-20">
             <Header />
             <div className="flex flex-col lg:flex-row py-4 space-y-3 md:space-y-0 lg:space-x-3">
                 <div className="w-full  lg:max-w-[68%]">

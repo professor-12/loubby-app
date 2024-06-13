@@ -9,7 +9,7 @@ const ActiveTab = ({ data }: { data: any }) => {
     const { direction } = useStoreContext() as any;
     const jobs = data?.results;
     if (jobs?.length == 0) {
-        return <EmptyJob />;
+        return <EmptyJob title="No Jobs" message="Do not know yet" />;
     }
     return (
         <motion.div

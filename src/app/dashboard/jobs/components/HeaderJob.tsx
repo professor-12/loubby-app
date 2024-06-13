@@ -63,11 +63,11 @@ const NavList = [
     { name: "Draft", id: 3, Svg: draft },
 ];
 const HeaderJob = () => {
-    const { direction, setDirection } = useStoreContext() as any
+    const { direction, setDirection } = useStoreContext() as any;
 
     const router = useRouter();
     return (
-        <div className="bg-white min-h-32 p-5 pt-4 pb-0 space-y-7 flex flex-col justify-between sticky top-0 z-50">
+        <div className="bg-white min-h-32 p-5 pt-4 pb-0 space-y-7 flex flex-col justify-between">
             <div className="flex justify-between  items-end">
                 <div>
                     <h1 className="md:text-lg xl:text-xl font-medium">
@@ -129,11 +129,12 @@ export const TabLink = ({
     const value = navLink.find((item) => item.name == params.get("tab"))?.id;
 
     const handleChangeTab = () => {
-        console.log(id,value)
-        if (id === value) setDirection(null)
+        console.log(id, value);
+        if (id === value) setDirection(null);
         if (id > value) {
             setDirection("r");
-        } if (value > id) {
+        }
+        if (value > id) {
             setDirection("l");
         }
 

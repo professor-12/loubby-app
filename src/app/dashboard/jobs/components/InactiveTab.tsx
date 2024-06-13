@@ -8,7 +8,12 @@ const InactiveTab = ({ data }: { data: any }) => {
     const jobs = data?.results;
 
     if ((jobs?.length as number) == 0) {
-        return <EmptyJob />;
+        return (
+            <EmptyJob
+                title="You have not created any opening"
+                message="Create a job opening to easily find and manage candidates"
+            />
+        );
     }
     return (
         <motion.div
