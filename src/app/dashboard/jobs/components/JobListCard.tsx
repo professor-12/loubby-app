@@ -2,11 +2,12 @@ import Image from "next/image";
 import React from "react";
 
 const JobListCard = ({ data }: { data: any }) => {
-    
     return (
         <div className="bg-white p-3 py-6 pb-7 border border-[#eaecf0]  rounded-[0.7rem] md:space-y-3 space-y-1 md:text-sm text-xs shadow-sm">
             <div className="flex justify-between">
-                <p className="text-nowrap lg:text-sm text-xs">{data?.jobTitle}</p>
+                <p className="text-nowrap lg:text-sm text-xs">
+                    {data?.jobTitle}
+                </p>
                 <span className="rotate-90 tracking-wider font-semibold  text-slate-600 cursor-pointer select-none">
                     ...
                 </span>

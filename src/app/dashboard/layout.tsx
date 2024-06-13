@@ -22,7 +22,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
     return (
         <Provider store={store}>
-            <main className="min-h-screen overflow-y-auto bg-[#F9FAFB] flex">
+            <main className="min-h-screen overflow-y-hidden bg-[#F9FAFB] flex">
                 <AnimatePresence>
                     {openNavBar && <MobileSideBar setOpen={setOpenNavBar} />}
                 </AnimatePresence>
@@ -40,7 +40,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                         </nav>
                         <div className="w-fulll h-[0.3rem] bg-border" />
                     </div>
-                    <main className="max-h-screen overflow-y-auto h-full w-full bg-dashboard">
+                    <main className="max-h-screen overflow-y-hidden h-full w-full bg-dashboard">
                         {children}
                     </main>
                 </section>

@@ -1,7 +1,7 @@
 "use client";
 import React, { Suspense, useCallback, useEffect } from "react";
 import Header from "./components/Header";
-import "react-loading-skeleton/dist/skeleton.css";
+
 import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
 import dynamic from "next/dynamic";
 import { useDispatch, useSelector } from "react-redux";
@@ -69,7 +69,7 @@ const Page = () => {
     }, [dispatch, getJob, Interview]);
 
     return (
-        <div className="m-4">
+        <div className="p-4 w-full  overflow-y-auto h-screen pb-20">
             <Header />
             <div className="flex flex-col lg:flex-row py-4 space-y-3 md:space-y-0 lg:space-x-3">
                 <div className="w-full  lg:max-w-[68%]">

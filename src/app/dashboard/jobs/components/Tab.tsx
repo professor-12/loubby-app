@@ -18,6 +18,7 @@ const Tab = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            className="overflow-x-hidden"
         >
             <AnimatePresence mode="wait">
                 {mode === "Active" && (

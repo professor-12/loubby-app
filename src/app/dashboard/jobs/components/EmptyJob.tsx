@@ -4,7 +4,7 @@ import Image from "next/image";
 import Button from "@/app/onboarding/create-account/Button";
 import { motion } from "framer-motion";
 import { useStoreContext } from "./JobContextapi/store";
-const EmptyJob = () => {
+const EmptyJob = ({ title, message }: { title: string; message: string }) => {
     const { direction } = useStoreContext();
     return (
         <motion.div
@@ -19,16 +19,13 @@ const EmptyJob = () => {
                 alt="No Jobs Image"
             />
             <div className="text-center text-sm space-y-1">
-                <h1 className="font-semibold text-nowrap">
-                    You have not created any opening
-                </h1>
-                <p className="text-small-p-mute text-xs lg:text-sm">
-                    Create a job opening to easily find and <br /> manage
-                    candidates
+                <h1 className="font-semibold text-nowrap">{title}</h1>
+                <p className="text-small-p-mute text-xs lg:text-xs max-w-[80%] mx-auto">
+                    {message}
                 </p>
             </div>
             <Button
-                className="bg-blue-500 mt-4 rounded-md p-1 px-4 space-x-2 text-white cursor-pointer"
+                className="bg-blue-600 mt-3 rounded-md p-1 px-4 space-x-2 text-white cursor-pointer"
                 link="/dashboard/jobs/joblisting"
             >
                 <span className="text-md">+</span>
