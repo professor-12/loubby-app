@@ -15,6 +15,5 @@ export const helperFetch = async (url: string, token?: string, method?: string) 
         const respost = await request.json();
         return { status: request.status, message: respost.message };
     }
-
     return request.json();
 };

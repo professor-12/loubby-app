@@ -1,11 +1,10 @@
-import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 
 const Loading = () => {
     return (
         <div className="grid w-full xl:grid-cols-4 gap-12 justify-evenly lg:grid-cols-2 md:gird-cols-3 grid-cols-1">
-            {new Array(20).fill(null).map((_, i) => {
+            {new Array(10).fill(null).map((_, i) => {
                 return (
                     <div key={i} className="space-y-1">
                         {" "}
