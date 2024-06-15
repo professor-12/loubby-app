@@ -37,7 +37,6 @@ const LatestPost = () => {
             </div>
         );
     }
-
     return <div>LatestPost</div>;
 };
 
