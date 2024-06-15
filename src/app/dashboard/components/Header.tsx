@@ -1,30 +1,18 @@
 "use client";
+import useGetPartOfTheDay from "@/hooks/getPartOfTheDay";
 import React, { useEffect, useState } from "react";
 const Header = () => {
     const [user, setUser] = useState(null) as any;
-    const getPartofTheDay = () => {
-        const hour = new Date().getHours();
-        if (!hour) return "Day";
-        if (hour <= 12 && hour >= 0) return "Morning";
-        if (hour >= 13 && hour <= 18) return "Afternoon";
-        return "Evening";
-    };
     useEffect(() => {
         setUser(() => JSON.parse(localStorage.getItem("user") as any));
-        const time = setInterval(() => {
-            getPartofTheDay();
-        }, 1000 * 60 * 10);
-        return () => {
-            clearInterval(time);
-        };
     }, []);
-
+    const partofTheDay = useGetPartOfTheDay();
     return (
         <div className="bg-[url('/d.png')] header flex  bg-no-repeat bg-[-79rem]  min-h-[11rem]  overflow-hidden rounded-lg">
             <div className="bg-blue-600/50 w-full flex justify-between flex-col bg-opacity-65 p-6">
                 <div className="">
                     <h1 className="md:text-xl font-medium text-white">
-                        Good {getPartofTheDay()} {user?.last_name}!
+                        Good {partofTheDay} {user?.last_name}!
                     </h1>
                     <p className="text-xs md:text-sm text-white">
                         Welcome to your remote talent hiring dashboard

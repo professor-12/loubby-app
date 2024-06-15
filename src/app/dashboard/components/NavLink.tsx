@@ -14,7 +14,8 @@ const NavLink = ({
     name?: string;
 }) => {
     const pathName = usePathname();
-    const active = pathName.split("/")[2] === link.split("/")[2] ?? "dashboard";
+    const active =
+        pathName.split("/")[2].includes(link.split("/")[2]) ?? "dashboard";
     return (
         <li className={`hover:bg-active  rounded ${active && "bg-active"}`}>
             <div className="p-3 px-5">
@@ -25,7 +26,11 @@ const NavLink = ({
                     <span className="">
                         <Image src={svg} width={20} height={20} alt="" />
                     </span>
-                    <p className={`${active && "text-blue-500"} text-[0.85rem] text-slate-600 `}>
+                    <p
+                        className={`${
+                            active && "text-blue-500"
+                        } text-[0.85rem] text-slate-600 `}
+                    >
                         {name}
                     </p>
                 </Link>
