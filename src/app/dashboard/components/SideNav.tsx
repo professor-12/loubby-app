@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 import Image from "next/image";
-import { navLinks } from "@/lib/constants/BaseURL";
+import { navLinks } from "@/lib/constant";
 
 const SideNav = () => {
     const [open, setOpen] = useState(false);

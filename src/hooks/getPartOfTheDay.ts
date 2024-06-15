@@ -9,7 +9,6 @@ const useGetPartOfTheDay = () => {
         return "Evening";
     },[]);
     useEffect(() => {
-        
         const time = setInterval(() => {
             getPartofTheDay();
         }, 1000 * 60 * 10);
@@ -17,6 +16,7 @@ const useGetPartOfTheDay = () => {
             clearInterval(time);
         };
     }, [getPartofTheDay]);
+    return getPartofTheDay()
 }
 
 export default useGetPartOfTheDay

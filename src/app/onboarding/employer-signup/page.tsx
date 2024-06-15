@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import OpenEye from "../login/OpenEye";
 import ClosedEye from "../login/ClosedEye";
 import { InputType } from "@/types/auth";
-import { error_message } from "@/lib/constants/BaseURL";
+import { error_message } from "@/lib/constant";
 
 const Page = () => {
     const router = useRouter();
