@@ -8,7 +8,7 @@ import { list_of_data } from "@/lib/dialcode";
 import { signUpEmployer } from "@/helpers/employer-signup";
 import { FormatSignUpEmployee } from "@/helpers/format_data";
 import { useRouter } from "next/navigation";
-import { toast }  from "react-toastify";
+import { toast } from "react-toastify";
 import OpenEye from "../login/OpenEye";
 import ClosedEye from "../login/ClosedEye";
 import { InputType } from "@/types/auth";
@@ -20,7 +20,6 @@ const Page = () => {
         register,
         handleSubmit,
         watch,
-        reset,
         formState: { errors, isSubmitting },
     } = useForm<InputType>();
 

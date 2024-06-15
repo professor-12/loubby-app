@@ -11,7 +11,7 @@ const Page = () => {
                 <p className="text-sm text-slate-700">
                     Get access to lots of talent and more
                 </p>
-            </div> 
+            </div>
             <div className="space-y-4">
                 <Button
                     className="flex justify-between  w-full border text-slate-800 border-gray-200 p-4 py-6 cursor-pointer rounded-lg"

@@ -10,7 +10,7 @@ export const helperFetch = async (url: string, token?: string, method?: string) 
             headers: header,
             method: method ?? "GET",
         });
-    
+
     if (!request.ok) {
         const respost = await request.json();
         return { status: request.status, message: respost.message };
