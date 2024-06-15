@@ -6,7 +6,10 @@
     -webkit-appearance: none;
 }
 
-
+.borders > :not(:first-child) {
+    border-top: rgba(235, 235, 235, 0.746) solid 3.4px;
+    padding-top: 1rem;
+}
 
 .bg-gradient-animate {
     background-size: 200% 100%;
@@ -22,8 +25,7 @@
     background-position: 70% 0%;
 }
 
-
 .header {
     background-size: 100% 100%;
-    background-position: 100% 100%
+    background-position: 100% 100%;
 }

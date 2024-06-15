@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import OpenEye from "../login/OpenEye";
 import ClosedEye from "../login/ClosedEye";
 import { InputType } from "@/types/auth";
+import { error_message } from "@/lib/constant";
 
 const Page = () => {
     const router = useRouter();
@@ -31,9 +32,7 @@ const Page = () => {
 
     const submit: SubmitHandler<InputType> = async (data) => {
         const formatted_data = FormatSignUpEmployee(data);
-
         const res = await signUpEmployer(formatted_data);
-
         if (!res.ok) {
             const response = await res.json();
             return toast.error(response.message);
@@ -43,15 +42,6 @@ const Page = () => {
             toast.loading(response.message);
             return router.push("login");
         }
-    };
-
-    const error_message = {
-        password:
-            "Invalid Password! Should contain upper and lowercase letters and a number.",
-        required: "Required field, Please fill",
-        email: "Invalid email format, Please provide a valid email address",
-        phone_no: "Phone number is not valid",
-        confirm_password: "Please confirm your password",
     };
 
     return (
