@@ -1,9 +1,12 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { useSelector } from "react-redux";
+import Schedule from "./Schedule";
 const UpComingSchedule = () => {
-    return (
-        <div className="white bg-white p-4  flex-1   rounded-lg  shadow shadow-slate-200/40">
-            <p className="font-medium">Upcoming Schedule</p>
+    const { data } = useSelector((state: any) => state.interview);
+    if (data?.results.length === 0) {
+        return (
             <div className="my-12 py-8">
                 <div className="text-center space-y-1">
                     <div className="mx-auto p-3 px-7 w-full flex items-center justify-center">
@@ -21,8 +24,10 @@ const UpComingSchedule = () => {
                     </p>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+    return <Schedule />;
 };
 
 export default UpComingSchedule;

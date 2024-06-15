@@ -4,14 +4,16 @@ import Header from "./components/Header";
 
 import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
 import dynamic from "next/dynamic";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getUser } from "@/store/slices/userReducer";
 import { fetchJobs } from "@/store/slices/jobSlice";
 import { fetchInterView } from "@/store/slices/interviewSlice";
 import { helperFetch } from "@/lib/utils/helpFetch";
 import GoodForYou from "./components/goodfit/GoodForYou";
-import UpComingSchedule from "./components/UpComingSchedule";
+import UpComingSchedule from "./components/Schedule/UpComingSchedule";
 import PipeLineSummary from "./components/PipeLineSummary";
+import { getNextMonthDate } from "@/lib/utils/helpers";
+
 const LatestPosting = dynamic(
     () => import("./components/LatestPost/LatestPosting"),
     {
@@ -30,6 +32,7 @@ const Summary = dynamic(() => import("./components/Summary"), {
     ),
 });
 
+
 const Page = () => {
     const dispatch = useDispatch();
     const getJob = async () => {
@@ -43,7 +46,9 @@ const Page = () => {
     const Interview = async () => {
         const token = localStorage.getItem!("token") as string;
         return await helperFetch(
-            "https://api.loubby.ai/api/v1/shared/events/all",
+            `https://api.loubby.ai/api/v1/shared/events/all?start=${new Date().toISOString()}&end=${getNextMonthDate(
+                new Date()
+            ).toISOString()}`,
             token
         );
     };
@@ -56,7 +61,7 @@ const Page = () => {
         );
     };
 
-    const fetchSummary = async () => {
+    const fetchSummary = useCallback(async () => {
         const [a, b, c] = await Promise.all([
             fetchDetails(),
             Interview(),
@@ -65,17 +70,18 @@ const Page = () => {
         dispatch(fetchJobs(c));
         dispatch(fetchInterView(b));
         dispatch(getUser(a));
-    };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useEffect(() => {
         fetchSummary();
-    }, []);
+    }, [fetchSummary]);
 
     return (
-        <div className="p-4 w-full  overflow-y-auto h-screen pb-20">
+        <div className="p-4 w-full  overflow-y-auto overflow-x-hidden h-screen pb-20">
             <Header />
             <div className="flex flex-col lg:flex-row py-4 space-y-3 md:space-y-0 lg:space-x-3">
-                <div className="w-full  lg:max-w-[68%]">
+                <div className="w-full  lg:min-w-[69%]">
                     <div className="space-y-4">
                         <Summary />
                         <div className="col-span-3 space-y-4">
@@ -89,7 +95,11 @@ const Page = () => {
                     </div>
                 </div>
                 <div className="lg:flex  lg:max-w-[39%] flex-col space-y-3 flex-1 h-auto">
-                    <UpComingSchedule />
+                    <div className=" bg-white p-4  flex-1  rounded-lg  shadow shadow-slate-200/40 w-full min-h-[]">
+                        <p className="font-medium">Upcoming Schedule</p>         
+                            <UpComingSchedule />
+                    </div>
+
                     <PipeLineSummary />
                 </div>
             </div>
