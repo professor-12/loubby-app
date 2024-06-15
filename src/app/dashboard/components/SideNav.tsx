@@ -2,7 +2,73 @@
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 import Image from "next/image";
-import { navLinks } from "@/lib/constant";
+
+const navLinks = [
+    {
+        name: "General",
+        links: [
+            {
+                link: "/dashboard",
+                img: "/dashboard.svg",
+                color: "",
+                name: "Dashboard",
+            },
+            {
+                link: "/dashboard/jobs?tab=Active",
+                img: "/job.svg",
+                color: "",
+                name: "Jobs",
+            },
+            {
+                link: "/dashboard/conversations",
+                img: "/conversations.svg",
+                color: "",
+                name: "Conversations",
+            },
+            {
+                link: "/dashboard/onversations",
+                img: "/search.svg",
+                color: "",
+                name: "Talent Marketplace",
+            },
+            {
+                link: "/dashboard/nversations",
+                img: "/pipe.svg",
+                color: "",
+                name: "Pipeline",
+            },
+            {
+                link: "/dashboard/assessment",
+                img: "/clock.svg",
+                color: "",
+                name: "Assesment",
+            },
+            {
+                link: "/dashboard/schedule",
+                img: "/schedule.svg",
+                color: "",
+                name: "Schedule",
+            },
+        ],
+    },
+    {
+        name: "Support",
+        links: [
+            {
+                link: "/dashboard/settings",
+                img: "/settings.svg",
+                color: "",
+                name: "Settings",
+            },
+            {
+                link: "/dashboard/feedback",
+                img: "/feedback.svg",
+                color: "",
+                name: "Feedback",
+            },
+        ],
+    },
+];
 
 const SideNav = () => {
     const [open, setOpen] = useState(false);

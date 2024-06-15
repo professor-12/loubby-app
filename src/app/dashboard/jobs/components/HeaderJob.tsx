@@ -1,7 +1,8 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { ChildProcessWithoutNullStreams } from "child_process";
+import { AnimatePresence, animate, motion } from "framer-motion";
 import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { useStoreContext } from "./JobContextapi/store";
 
 const active = (
@@ -62,7 +63,7 @@ const NavList = [
     { name: "Draft", id: 3, Svg: draft },
 ];
 const HeaderJob = () => {
-    const {  setDirection } = useStoreContext() as any;
+    const { direction, setDirection } = useStoreContext() as any;
 
     const router = useRouter();
     return (

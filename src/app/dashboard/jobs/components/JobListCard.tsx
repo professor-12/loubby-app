@@ -18,7 +18,7 @@ const JobListCard = ({ data }: { data: any }) => {
                 </p>
             </div>
             <div className="space-y-2">
-                <span className="text-green-700 text-xs bg-[#ecfdf3] p-1  px-2 rounded-full">
+                <span className="text-[#027a48] text-xs bg-[#ecfdf3] p-1  px-2 rounded-full">
                     Open
                 </span>
                 <div className="flex space-x-2 text-sm">

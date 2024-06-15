@@ -4,7 +4,7 @@ import { getActiveJobs, getInactiveJobs } from "@/store/slices/jobListSlice";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import dynamic from "next/dynamic";
-import { BaseUrl } from "@/lib/constant";
+import { BaseUrl } from "@/lib/constants/BaseURL";
 import Loading from "./Loading";
 
 const DynamicTab = dynamic(() => import("./Tab"), {
