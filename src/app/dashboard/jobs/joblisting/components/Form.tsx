@@ -295,7 +295,7 @@ const Form = () => {
                         </button>
                         <div className="space-x-2">
                             <button
-                                onClick={(_) => push("/dashboard/jobs")}
+                                onClick={(_) => push("/dashboard/jobs?tab=Active")}
                                 type="button"
                                 className="border px-3 p-2 text-[#344054] rounded-lg"
                             >
