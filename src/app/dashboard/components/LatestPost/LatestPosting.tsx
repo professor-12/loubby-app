@@ -11,7 +11,7 @@ const LatestPosting = () => {
             <div className="flex items-center justify-between w-full">
                 <p className="font-medium text-clip">Latest Posting</p>
                 <p
-                    className="text-neutral-500 flex items-center text-sm space-x-1 cursor-pointer"
+                    className="text-blue-600 flex items-center text-sm space-x-1 cursor-pointer"
                     onClick={() => {
                         route.push("dashboard/jobs");
                     }}

@@ -1,11 +1,13 @@
+"use client";
 import React from "react";
 import SummaryCard from "./SummaryCard";
 import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+
 const detail = ["New Matches", "Jobs listed", "Upcoming interviews"];
-const Summary = async () => {
+const Summary = () => {
     const { data } = useSelector((state: any) => state.job);
     const { data: interview } = useSelector((state: any) => state.interview);
+
     return (
         <div className="grid w-full   md:grid-cols-3 gap-3">
             <SummaryCard

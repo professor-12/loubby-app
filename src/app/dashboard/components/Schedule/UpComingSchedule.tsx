@@ -1,43 +1,27 @@
 "use client";
-
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import ScheduleContainer from "./ScheduleContainer";
 import { LoadinBigCard } from "@/components/ui/LoadingCardSkeleton";
-import { getNextMonthDate } from "@/lib/utils/helpers";
-
-const fetchEvents = async (token: string) => {
-    const response = await fetch(
-        `https://api.loubby.ai/api/v1/shared/events/all?start=${new Date().toISOString()}&end=${getNextMonthDate(
-            new Date()
-        ).toISOString()}`,
-        {
-            headers: {
-                Authorization: "Bearer " + token,
-            },
-        }
-    );
-    const data = await response.json();
-    return data;
-};
+import { fetchEvents } from "@/lib/utils/lib";
 
 const UpComingSchedule = () => {
-    const [token, setToken] = useState<string | null>(null);
-
+    const [token, setToken] = useState<string>("");
     useEffect(() => {
         setToken(localStorage!.getItem!("token") as string);
     }, []);
-
-    const { isPending, error, data } = useQuery({
-        queryKey: ["test", token],
-        queryFn: () => fetchEvents(token),
-        enabled: !!token, // Only run the query if the token is available
+    const { isPending, data: response } = useQuery({
+        queryKey: ["test"],
+        queryFn: () => fetchEvents<string>(token),
+        enabled: !!token,
     });
 
     if (isPending) {
         return <LoadinBigCard />;
     }
+
+    const { data } = response;
 
     return (
         <div className="bg-white p-4 h-full pb-12 flex-1 rounded-lg shadow shadow-slate-200/40 w-full space-y-1">

@@ -1,13 +1,24 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { useSelector } from "react-redux";
 import { TbPlus } from "react-icons/tb";
 import { useRouter } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { fetchInterViews } from "@/lib/utils/lib";
+import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
 const LatestPost = () => {
     const route = useRouter();
-    const { data } = useSelector((state: any) => state.job);
-    const results = data?.results;
+    const { data, isPending  } = useQuery({
+        queryKey: ["latestpost"],
+        queryFn: () =>
+            fetchInterViews<string>(localStorage.getItem!("token") as string),
+    });
+
+    const results = data?.data?.results;
+
+    if (isPending) {
+        <LoadingCardSkeleton />;
+    }
     if (results?.length == 0) {
         return (
             <div className="w-full flex flex-col gap-6 items-center justify-center">

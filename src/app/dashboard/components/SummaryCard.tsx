@@ -21,7 +21,9 @@ const SummaryCard = async ({
                 >
                     <ThunderSvg color={color} />
                 </button>
-                <h1 className="text-xs text-small-p-mute text-nowrap">{title}</h1>
+                <h1 className="text-xs text-small-p-mute text-nowrap">
+                    {title}
+                </h1>
             </div>
             <p className="text-2xl font-bold">{amount}</p>
         </div>
@@ -29,4 +31,3 @@ const SummaryCard = async ({
 };
 
 export default SummaryCard;
-
