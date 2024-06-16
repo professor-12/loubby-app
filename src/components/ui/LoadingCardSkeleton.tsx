@@ -3,15 +3,15 @@ import Skeleton from "react-loading-skeleton";
 
 const LoadingCardSkeleton = () => {
     return (
-        <div className="white min-h-[8rem] bg-white flex-1   rounded-lg p-4 shadow shadow-slate-200/40 space-y-1">
+        <div className="white h-[8rem] bg-white flex-1   rounded-lg p-4 shadow shadow-slate-200/40 space-y-[0.1rem]">
             <div>
-                <Skeleton height={38} width={38} borderRadius={12} />
+                <Skeleton height={38} width={38} borderRadius={10} />
             </div>
             <div>
-                <Skeleton width={"60%"} />
+                <Skeleton width={"40%"} />
             </div>
             <div>
-                <Skeleton width={"80%"} />
+                <Skeleton width={"70%"} />
             </div>
         </div>
     );

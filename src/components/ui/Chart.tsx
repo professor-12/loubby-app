@@ -1,4 +1,5 @@
-import { Line, Pie, Doughnut } from "react-chartjs-2";
+"use client";
+import { Doughnut } from "react-chartjs-2";
 import {
     Chart as chartJS,
     Title,

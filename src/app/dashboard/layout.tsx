@@ -5,16 +5,11 @@ import TopNavBar from "./components/TopNav/TopNavBar";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import { redirect } from "next/navigation";
-import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
-
-const MobileSideBar = dynamic(() => import("./components/MobileSideNav"), {
-    ssr: false,
-});
+import { MobileSideBar } from "@/components/dynamicImports";
 
 const Layout = ({ children }: { children: ReactNode }) => {
     const [openNavBar, setOpenNavBar] = useState(!true);
-
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) redirect("/onboarding/login");

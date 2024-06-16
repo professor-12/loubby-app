@@ -1,14 +1,10 @@
-"use client";
 import Image from "next/image";
 import React from "react";
-import { useSelector } from "react-redux";
 import { TbPlus } from "react-icons/tb";
-import { useRouter } from "next/navigation";
-const LatestPost = () => {
-    const route = useRouter();
-    const { data } = useSelector((state: any) => state.job);
-    const results = data?.results;
-    if (results?.length == 0) {
+import Button from "@/app/onboarding/create-account/Button";
+
+const LatestPost = ({ results }: { results: any }) => {
+    if (results?.length == 0 || !results) {
         return (
             <div className="w-full flex flex-col gap-6 items-center justify-center">
                 <div className="text-center space-y-1">
@@ -27,13 +23,13 @@ const LatestPost = () => {
                         Create a job post to easily find and manage candidates
                     </p>
                 </div>
-                <button
-                    onClick={() => route.push("dashboard/jobs/joblisting")}
+                <Button
+                    link="dashboard/jobs/joblisting"
                     className="text-cener flex text-white space-x-1 bg-[#1A73E8] p-2 rounded-lg px-4"
                 >
                     <TbPlus className="text-xl" />{" "}
                     <span className="text-sm">Post a Job</span>{" "}
-                </button>
+                </Button>
             </div>
         );
     }
