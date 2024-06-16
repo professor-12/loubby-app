@@ -18,7 +18,7 @@ export const useGetJobListing = () => {
 };
 
 const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [currentStep, setcurrentStep] = useState<number | "done">(-7+8);
+    const [currentStep, setcurrentStep] = useState<number | "done">(-7 + 8);
 
     return (
         <store.Provider value={{ currentStep, setcurrentStep }}>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-loading-skeleton/dist/skeleton.css";
+import QueryProvider from "@/components/QueryProvider";
 
 const moserat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -22,7 +23,9 @@ export default function RootLayout({
                 className={`overflow-hidden ${moserat.className} overflow-x-hidden`}
             >
                 <div id="portal" className="lg:hidden"></div>
-                <main>{children}</main>
+                <main>
+                    <QueryProvider>{children}</QueryProvider>
+                </main>
                 <ToastContainer />
             </body>
         </html>
