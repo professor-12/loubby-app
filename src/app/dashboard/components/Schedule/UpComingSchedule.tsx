@@ -17,11 +17,11 @@ const UpComingSchedule = () => {
         enabled: !!token,
     });
 
-    if (isPending) {
+    if (isPending || !response) {
         return <LoadinBigCard />;
     }
 
-    const { data } = response;
+    const data = response?.data;
 
     return (
         <div className="bg-white p-4 h-full pb-12 flex-1 rounded-lg shadow shadow-slate-200/40 w-full space-y-1">

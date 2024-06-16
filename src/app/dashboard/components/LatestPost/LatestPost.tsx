@@ -1,25 +1,10 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import { TbPlus } from "react-icons/tb";
-import { useRouter } from "next/navigation";
-import { useQuery } from "@tanstack/react-query";
-import { fetchInterViews } from "@/lib/utils/lib";
-import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
-const LatestPost = () => {
-    const route = useRouter();
-    const { data, isPending  } = useQuery({
-        queryKey: ["latestpost"],
-        queryFn: () =>
-            fetchInterViews<string>(localStorage.getItem!("token") as string),
-    });
+import Button from "@/app/onboarding/create-account/Button";
 
-    const results = data?.data?.results;
-
-    if (isPending) {
-        <LoadingCardSkeleton />;
-    }
-    if (results?.length == 0) {
+const LatestPost = ({ results }: { results: any }) => {
+    if (results?.length == 0 || !results) {
         return (
             <div className="w-full flex flex-col gap-6 items-center justify-center">
                 <div className="text-center space-y-1">
@@ -38,13 +23,13 @@ const LatestPost = () => {
                         Create a job post to easily find and manage candidates
                     </p>
                 </div>
-                <button
-                    onClick={() => route.push("dashboard/jobs/joblisting")}
+                <Button
+                    link="dashboard/jobs/joblisting"
                     className="text-cener flex text-white space-x-1 bg-[#1A73E8] p-2 rounded-lg px-4"
                 >
                     <TbPlus className="text-xl" />{" "}
                     <span className="text-sm">Post a Job</span>{" "}
-                </button>
+                </Button>
             </div>
         );
     }

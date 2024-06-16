@@ -5,7 +5,6 @@ import React, {  useState } from "react";
 
 const HeaderButton = () => {
     const [openModal, setOpenModal] = useState(false);
-
     return (
         <button
             onBlur={(e) => {
