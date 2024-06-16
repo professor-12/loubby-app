@@ -3,8 +3,11 @@ import Header from "./components/Header";
 import GoodForYou from "./components/goodfit/GoodForYou";
 import PipeLineSummary from "./components/PipeLineSummary";
 
-import { LatestPosting, UpComingSchedule } from "@/components/dynamicImports";
-import Summary from "./components/Summary";
+import {
+    LatestPosting,
+    UpComingSchedule,
+    Summary,
+} from "@/components/dynamicImports";
 const Page = () => {
     return (
         <div className="p-4 w-full  overflow-y-auto overflow-x-hidden h-screen pb-20">

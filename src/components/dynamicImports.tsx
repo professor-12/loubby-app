@@ -38,3 +38,10 @@ export const Summary = dynamic(
         ),
     }
 );
+
+export const MobileSideBar = dynamic(
+    () => import("../app/dashboard/components/MobileSideNav"),
+    {
+        ssr: false,
+    }
+);

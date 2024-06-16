@@ -12,7 +12,7 @@ const UpComingSchedule = () => {
         setToken(localStorage!.getItem!("token") as string);
     }, []);
     const { isPending, data: response } = useQuery({
-        queryKey: ["test"],
+        queryKey: ["schedule"],
         queryFn: () => fetchEvents<string>(token),
         enabled: !!token,
     });

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { RxCaretRight } from "react-icons/rx";
 import LatestPost from "./LatestPost";
@@ -7,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import LoadingCardSkeleton from "@/components/ui/LoadingCardSkeleton";
 const LatestPosting = () => {
     const { data, isPending } = useQuery({
-        queryKey: ["latestpost"],
+        queryKey: ["job"],
         queryFn: () =>
             fetchInterViews<string>(localStorage.getItem!("token") as string),
     });
@@ -20,7 +21,7 @@ const LatestPosting = () => {
                 <p className="font-medium text-clip">Latest Posting</p>
                 <Button
                     className="text-blue-600 flex items-center text-sm space-x-1 cursor-pointer"
-                    link="dashboard/jobs"
+                    link="dashboard/jobs?tab=Active"
                 >
                     <span>See more</span>{" "}
                     <RxCaretRight className="text-blue-500 text-2xl" />
