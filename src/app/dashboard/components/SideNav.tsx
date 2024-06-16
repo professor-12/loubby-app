@@ -14,6 +14,7 @@ const SideNav = () => {
                     <ul className="">
                         {navLinks[0].links.map((link: any) => (
                             <NavLink
+                                setOpen={setOpen}
                                 key={link.link}
                                 svg={link.img}
                                 name={link.name}
