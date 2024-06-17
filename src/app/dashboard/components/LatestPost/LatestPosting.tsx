@@ -16,7 +16,7 @@ const LatestPosting = () => {
         return <LoadingCardSkeleton />;
     }
     return (
-        <div className="white gap-6 flex flex-col min-h-[8rem] bg-white flex-1   rounded-lg p-4 shadow shadow-slate-200/40 space-y-2">
+        <div className="white gap-7 flex flex-col min-h-[8rem] bg-white flex-1   rounded-lg p-4 shadow shadow-slate-200/40">
             <div className="flex items-center justify-between w-full">
                 <p className="font-medium text-clip">Latest Posting</p>
                 <Button
@@ -27,7 +27,7 @@ const LatestPosting = () => {
                     <RxCaretRight className="text-blue-500 text-2xl" />
                 </Button>
             </div>
-            <div className="pb-8 p-3">
+            <div className="">
                 <LatestPost results={data} />
             </div>
         </div>

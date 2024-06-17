@@ -21,7 +21,7 @@ const SideBar = ({ type, close }: { type?: "sm" | "lg"; close?(): any }) => {
                     : ""
             }`}
         >
-            <Link href={"/"}>
+            <Link href={"/dashboard"}>
                 <Image src={"/Logo.svg"} alt="" width={110} height={100} />
             </Link>
             <div
