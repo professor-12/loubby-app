@@ -57,7 +57,7 @@ md:grid-cols-5"
                     <div className="bg-[#eaf3ff] p-[0.31rem] rounded-md" />
                 </div>
             </div>
-            <div className="flex flex-col border-t-2 pb-6 pt-8 m-2 mt-5 md:flex-row gap-2 md:justify-between">
+            <div className="flex flex-col border-t-2 pb-6 pt-8 m-2 mt-5 md:flex-row gap-2 md:justify-between border-[#f2f4f7]">
                 <h1>Next step: Interview selected candidates</h1>
                 <Button
                     link=""
