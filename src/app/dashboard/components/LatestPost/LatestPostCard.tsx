@@ -61,7 +61,7 @@ md:grid-cols-5"
                 <h1>Next step: Interview selected candidates</h1>
                 <Button
                     link=""
-                    className="bg-blue-600 px-7 p-2 text-nowrap rounded-md text-white text-sm"
+                    className="bg-blue-600 px-7 p-2 text-nowrap rounded-md text-white text-sm cursor-pointer"
                 >
                     View Job
                 </Button>
