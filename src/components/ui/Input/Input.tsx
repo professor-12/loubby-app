@@ -86,7 +86,6 @@ export const CheckBox = (
 
 export const ToggleButton = () => {
     const [checked, setChecked] = useState(false);
-    console.log(checked);
     return (
         <motion.div
             onClick={(e) => setChecked((e) => !e)}

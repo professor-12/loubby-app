@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Schedule from "./Schedule";
 import Button from "@/app/onboarding/create-account/Button";

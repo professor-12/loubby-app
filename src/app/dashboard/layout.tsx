@@ -14,14 +14,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
         const token = localStorage.getItem("token");
         if (!token) redirect("/onboarding/login");
     }, []);
-
     return (
         <Provider store={store}>
             <main className="min-h-screen overflow-y-hidden bg-[#F9FAFB] flex">
                 <AnimatePresence>
                     {openNavBar && <MobileSideBar setOpen={setOpenNavBar} />}
                 </AnimatePresence>
-                {/* <MobileSideBar /> */}
                 <div className="flex">
                     <aside className="lg:inline-block h-full hidden  md:w-[16rem] p-[1rem]  bg-white">
                         <SideBar />

@@ -1,11 +1,4 @@
 import React from "react";
-import { MdFormatBold } from "react-icons/md";
-import { MdOutlineFormatItalic } from "react-icons/md";
-import { MdFormatUnderlined } from "react-icons/md";
-import { MdLink } from "react-icons/md";
-import { LiaUnlinkSolid } from "react-icons/lia";
-import { AiOutlineUnorderedList } from "react-icons/ai";
-import { VscListOrdered } from "react-icons/vsc";
 
 const ToolBar = () => {
     return (
