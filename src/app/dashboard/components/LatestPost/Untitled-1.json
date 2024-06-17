@@ -1,0 +1,343 @@
+{
+  "_id": "66688c28913b9dd6c713372a",
+  "jobTitle": "Academic Researcher",
+  "jobDescription": "{\"blocks\":[{\"key\":\"ckl9u\",\"text\":\"RELATIONSHIP BETWEEN INSTRUCTIONAL RESOURCES AND ACADEMIC PERFORMANCE OF BUSINESS STUDIES STUDENTS IN PUBLIC JUNIOR SECONDARY SCHOOLS, ABEOKUTA SOUTH LOCAL GOVERNMENT AREA, OGUN STATE, NIGERIA\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":192,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"4ecgn\",\"text\":\"BY\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":2,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"a1aq9\",\"text\":\"OLAIYA BOLAJI DORCAS\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"2jp9p\",\"text\":\"MATRIC NUMBER: (NOU173042895)\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":29,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"apm2a\",\"text\":\"A project submitted to the Faculty of Management Science, National Open University of Nigeria, Abuja, in partial fulfilment of the requirement for the award of Bachelor of Science Degree (B.Sc.) in Business Education\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":216,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"a054a\",\"text\":\"MARCH, 2023\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"d3t61\",\"text\":\"CHAPTER ONE\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"14bkq\",\"text\":\"INTRODUCTION\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":12,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"ajcd2\",\"text\":\"1.1 Background to the Study\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":3,\"style\":\"BOLD\"},{\"offset\":4,\"length\":23,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"6df8t\",\"text\":\"The study titled, \\\"Relationship between Instructional Resources and Academic Performance of Business Studies Students in Public Junior Secondary Schools, Abeokuta South Local Government Area, Ogun State, Nigeria\\\" aims to investigate the extent to which instructional resources impact the academic performance of business studies students in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"408b7\",\"text\":\"For realization of good performance in a school, teaching and learning resources must be put in place and used effectively in classroom practice. According to Omambe as cited in Ajoke (2017), asserts that instructional materials are central in the teaching and learning of pupils because they are used to compliment efficiency of a teacher and effectiveness in lesson development. The study seeks to provide insights into the relationship between instructional resources and academic performance, which can help policymakers and educators to develop effective strategies to improve the quality of education.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3vo5s\",\"text\":\"Onuoha and Ezeudu (2021) found that instructional resources significantly influence the academic performance of secondary school students in Nigeria. Another study by Abdu-Raheem et al. (2021) investigated the effect of instructional resources on the academic performance of students in Mathematics and Science subjects in Nigerian secondary schools and found that adequate provision of instructional resources positively affects academic performance of students. Oluwagbohunmi and Abdu-Raheem as cited in Ajoke (2017) acknowledged that teaching and learning resources are such materials used by teachers to aid explanations and make learning of subject matter understandable to students during teaching and learning process.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bngf9\",\"text\":\"The influence of instructional resources in promoting students’ good academic performance in Business Studies in junior secondary schools is indisputable. The materials used by teachers to teach and drive home their subject points at the junior secondary school levels of our education system is incontrovertibly a paramount issue in practical classroom interaction and successful transfer of knowledge from the teacher to the learners. As earlier mentioned, instructional resources are materials which assist teachers to make their lessons explicit to learners. They are also used to transmit information, ideas and notes to learners.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"u60j\",\"text\":\"Business studies is offered at the junior secondary levels where pre-vocational and vocational subjects are offered. At this level, students offer business studies as an integrated subject, while at the senior secondary level, subjects such as Bookkeeping/Accounting, Economics, Store Keeping, Commerce, Typewriting/Keyboarding, Computer Studies, Shorthand, Office Practice and Marketing are offered as Business Education. According to Obidile and Eze (2018), Business studies is a subject designed to equip the learners with the necessary competencies needed for exposure into the world of business. The authors maintained that the subject exposes the students to business practices so that they could respond positively to economic realities. It equips the students with the administrative and managerial competencies needed to adapt to the economic situations. If the objectives of Business studies are to be maximally achieved, the school system should integrate instructional materials in the teaching and learning of Business studies. Factors such as adequacy, availability and utilization of instructional materials should be properly addressed. It is expected that students who had offered Business studies should be able to demonstrate to a reasonable degree the skills needed for self-employment.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"7hjo8\",\"text\":\"It is worrisome that some of the students of business studies could not demonstrate the required skills needed to perform well in their terminal results and also for self-employment. This could mean that the teachers’ roles in the classroom might have failed to equip the learners with the expected skills. This could be probably due to non-use of instructional materials in the teaching of Business studies. Instructional materials, no matter their nature and composition, constitute important and relevant components of successful teaching and learning.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"enre\",\"text\":\"To make the teaching process effectual in public junior secondary schools in\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"ck45i\",\"text\":\"Abeokuta South Local Government Area of Ogun State, so many resources should be made available. These resources are also known as teaching and learning aids. According to Oladapo (2021), the resources can be categorised in different ways as: traditional teaching and learning resources and modern teaching and learning resources. The classifications can be further broken down as follows:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"5gbf4\",\"text\":\"Traditional and Modern Instructional Resources: This categorization divides instructional resources into two categories: traditional resources, which have been used for a long time, and modern resources, which are relatively new. Examples of traditional resources include textbooks, chalkboards, and paper-based materials, while modern resources include computers, multimedia tools, and online resources. Oladapo (2021).\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4ci7e\",\"text\":\"According to Lawrence (2017), audio resources include lectures, speeches, and podcasts; visual resources include images, charts, diagrams, and videos, and audio-visual resources include multimedia presentations and animations.Audio, Visual, and Audio-Visual Instructional Resources: This categorization divides instructional resources based on their modality.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"7668r\",\"text\":\"Human and Non-Human Instructional Resources: This categorization divides instructional resources into two categories: human resources, which include teachers and other human instructors, and non-human resources, which include materials, technology, and equipment, Ambogo (2012).\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"29maa\",\"text\":\"Conventional and Non-Conventional Instructional Resources: According to Shikha (2018), this categorization divides instructional resources into two categories: conventional resources, which are commonly used in schools, and non-conventional resources, which are not commonly used in schools. Examples of conventional resources include textbooks and chalkboards, while examples of non-conventional resources include simulations and games.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6v6n9\",\"text\":\"Effective teaching of business studies in junior secondary schools is critical for the development of a skilled workforce that can contribute to the economic growth of the nation. Instructional resources such as textbooks, computers, internet, and audio-visual aids can enhance teaching and learning experiences, but the availability and utilization of these resources in public junior secondary schools in Abeokuta South Local Government Area of Ogun State is unclear.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"amp7a\",\"text\":\"Some factors have been identified as enhancers to effective teaching in the context of the relationship between instructional resources and effective teaching of business studies in public junior secondary schools in Abeokuta South Local Government Area of Ogun State. Here are some of them:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"68r93\",\"text\":\"Availability and adequacy of instructional resources: The availability and adequacy of instructional resources can enhance effective teaching. According to Ogundele and Ogunyemi (2018), instructional resources are important for teaching and learning. They help to create an enabling environment for effective teaching and enhance the learning outcomes of students. Therefore, the provision of adequate and appropriate instructional resources such as textbooks, computers, projectors, and other teaching aids can facilitate effective teaching.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4qp03\",\"text\":\"According to Akinola and Aremu (2021), instructional resources refer to materials or tools used in teaching and learning. The availability of adequate instructional resources such as textbooks, computers, projectors, and other relevant materials can enhance effective teaching.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9fer2\",\"text\":\"Teacher competence: Teacher competence is another factor that can enhance effective teaching. Teachers who are knowledgeable and skilled in their subject matter can deliver quality instruction and promote effective learning. According to Oyebola and Adeoye (2020), teacher competence is crucial for effective teaching. They argue that teachers who are competent in their subject matter are more likely to use instructional resources effectively.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"cp571\",\"text\":\"According to Adeleke (2021), The competence of teachers in the subject matter and pedagogy is another factor that can enhance effective teaching. Teachers who are competent in the subject matter can deliver the content effectively to their students.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"8ja31\",\"text\":\"The Use of technology: The use of technology can enhance effective teaching. According to Olaleye and Adetunji (2019), technology can be used to enhance the teaching and learning process. They argue that technology can help to create an interactive and engaging learning environment. The use of technology such as multimedia presentations, educational software, and online resources can help to improve the effectiveness of teaching.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"c1aqm\",\"text\":\"The use of technology in teaching can also enhance effective teaching. According to (Adetunji et al., 2021), the use of technology such as multimedia resources and educational software can make learning more engaging and interactive.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"c7l7k\",\"text\":\"Teacher training and professional development: Teacher training and professional development can enhance effective teaching. According to Adekunle and Adu (2021), teacher training and professional development are important for improving the quality of teaching. They argue that training can help teachers to acquire new knowledge and skills, and to use instructional resources effectively.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9rshl\",\"text\":\"The use of effective teaching methods such as inquiry-based learning and cooperative learning can enhance effective teaching. According to a study by (Adedeji et al., 2021), the use of inquiry-based learning had a significant effect on the effective teaching of business studies in secondary schools in Nigeria.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3lp65\",\"text\":\"Student engagement: Student engagement is another factor that can enhance effective teaching. According to Adeyemi and Oyekanmi (2018), student engagement is important for effective teaching and learning. They argue that teachers who engage students in the learning process are more likely to promote effective learning outcomes.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e7kin\",\"text\":\"The relationship between teachers and students can impact effective teaching. According to (Babalola et al., 2021), a positive teacher-student relationship can enhance the motivation and engagement of students in the learning process.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1vffd\",\"text\":\"For realization of good academic performance in business studies, teaching and learning resources must be put in place and used effectively in classroom practice. According to Ballotpedia (2022) Academic performance is the measurement of student’s achievement across various academic subjects. Teachers and education officials typically measure achievement using classroom performance, graduation rates and results from standardized tests.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3j6n3\",\"text\":\"In the last 5 years (2018, 2019, 2020, 2021 and 2022), the level of academic performance of students in the junior secondary schools in Abeokuta South Local Government Area of Ogun state had dropped significantly due to inadequacy and ineffective use of teaching and learning resources as shown in Table 1.1 and Figure 1.1. It is in reference to this level of    performance that this research aims to find out the relationship between teaching and learning resources and students’ academic performance in\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6qsl2\",\"text\":\"Abeokuta South Local Government Area of Ogun State with a view to improving the adequacy and usage of teaching and learning resources in schools and addressing the disparity in academic performance in the Local Government Area.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1ubbc\",\"text\":\"Table 1.1: Academic performance of public secondary school students in\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":10,\"style\":\"BOLD\"},{\"offset\":11,\"length\":59,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"7fh52\",\"text\":\"Basic Education Certificate Examination (BECE) in the last 5 years in Abeokuta South Local Government Area of Ogun State.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":121,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"7okek\",\"text\":\"Years\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":5,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"e4osl\",\"text\":\"2018\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"98id6\",\"text\":\"2019\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"dtend\",\"text\":\"2020\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"4sijs\",\"text\":\"2021\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"4n0rd\",\"text\":\"2022\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"c96a\",\"text\":\"Pass rate (%)\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"dev9d\",\"text\":\"52\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3a15l\",\"text\":\"63\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dateq\",\"text\":\"48\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1r2c7\",\"text\":\"45\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"2loap\",\"text\":\"44\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"cd9o5\",\"text\":\"Figure 1.1:\\tAcademic Performance Chart\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":38,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9ne7q\",\"text\":\"Teaching and learning resources are the most visible components of educational provision, and their absence or under-utilization is often noted by stakeholders. Several studies on related topic have been carried out in the past but the same problem of ineffective teaching and poor academic performances of students in the subject is still predominant. This study therefore, sought to investigate the relationship between instructional resources and academic performance of business studies students in public junior secondary schools, Abeokuta South Local Government Area, Ogun State, Nigeria.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"ac3b9\",\"text\":\"1.2\\tStatement of the Problem\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":28,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"buuqt\",\"text\":\"Since the inception of the National Junior Secondary School Business Studies Curriculum in Nigeria, few studies have been devoted to evaluating the utilization of instructional materials and resources in the teaching of business studies in Junior Secondary Schools. At the threshold of the new millennium, business studies teachers face both old and new challenges and needed to develop strategies to engage learners in activities that are active, meaningful and challenging.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"27p12\",\"text\":\"One of the major problems facing easy assimilation of lessons taught in business studies is the inadequacy of teaching and learning resources. The poor performance of junior secondary school students in the subject has become a matter of concern for researchers, educators and all education stake-holders over the years. It was observed that the students usually fail in examinations owing to improper teaching methods and lack of essential teaching aids for instructional delivery.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fltni\",\"text\":\"Teaching and learning resources contribute positively to the educational achievements of students generally in all subjects. However, there is insufficient and inadequate supply of resources such as:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"f81td\",\"text\":\"Lack of preparation: Teachers who are unprepared for their lessons may struggle to engage students and communicate effectively.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"emolv\",\"text\":\"Poor classroom management: If a teacher cannot maintain discipline or control over the classroom, it can be difficult for students to focus and learn.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"5jjra\",\"text\":\"Ineffective communication: Teachers who are unable to communicate clearly or use appropriate language may struggle to convey their message to students.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"c4s5q\",\"text\":\"Limited engagement: If teachers fail to engage students and create a positive learning environment, students may become disinterested and uninvolved in the lesson.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"5ql3b\",\"text\":\"Lack of motivation: Teachers who lack motivation or enthusiasm for their subject matter may struggle to inspire students to learn.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3ef79\",\"text\":\"Inadequate resources: Teachers who lack the resources they need to teach effectively, such as textbooks, technology, or materials, may struggle to engage students and teach effectively.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"5hfai\",\"text\":\"Inadequate training: Teachers who have not received adequate training or professional development may struggle to develop effective teaching strategies and techniques.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"7htcm\",\"text\":\"This inadequacy of instructional resources may hinder effective teaching and learning of business studies in public junior secondary schools in the area, thereby leading to poor academic performance of students in the subject. Therefore, the problem of this study is to investigate the relationship between instructional resources and effective teaching of business studies in public junior secondary schools in Abeokuta South Local Government Area of Ogun State.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9hui3\",\"text\":\"1.3\\tPurpose of the Study\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":24,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"aaqo4\",\"text\":\"The purpose of this study is to examine the relationship between instructional resources and effective teaching of Business studies in public junior secondary schools in Abeokuta South Local Government area of Ogun State.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"cpkqn\",\"text\":\"The specific objectives are as follows:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"10i68\",\"text\":\"To shed light on what instructional resources are.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"d1j6k\",\"text\":\"in public junior secondary schools in Abeokuta South Local Government Area of Ogun State.To investigate the types of instructional resources available for use\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1pgrr\",\"text\":\"Abeokuta South Local Government Area of Ogun State.Toexamine the level of utilization of instructional resources in public junior secondary schools in\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1ujkj\",\"text\":\"Abeokuta South Local Government Area of Ogun State.To identify the barriers that affect students’ academic performance in\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"ao45g\",\"text\":\"To compare the level of academic performance of students in the last 5 years in Abeokuta South Local Government Area of Ogun State.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bb2un\",\"text\":\"To identify methods to improve the use of instructional materials in the teaching of Business studies.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"51fh9\",\"text\":\"1.4\\tResearch Questions\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":22,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"5ms1i\",\"text\":\"The following research questions were formulated to guide the study:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fr8o\",\"text\":\"What instructional resources are available for teaching Business Studies in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria?\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dqul9\",\"text\":\"What is the academic performance of Business Studies students in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria?\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dhs90\",\"text\":\"Is there a significant relationship between the availability and utilization of instructional resources and the academic performance of Business Studies students in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria?\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"anovl\",\"text\":\"What factors contribute to the availability and utilization of instructional resources for teaching Business Studies in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria?\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e6ar6\",\"text\":\"1.5\\tSignificance of the Study\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":29,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"5ev8l\",\"text\":\"The significance of the study on the relationship between instructional resources and academic performance of Business Studies students in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria, can be enumerated as follows:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fmmvm\",\"text\":\"Educational policymakers and curriculum developers can use the findings of this study to identify the instructional resources needed to improve the academic performance of Business Studies students in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3q0hc\",\"text\":\"The study can provide insights to teachers on how to use the available instructional resources effectively to enhance the academic performance of their students in Business Studies classes.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"acape\",\"text\":\"The study can help students to be aware of the role instructional resources play in their academic performance, thereby encouraging them to take advantage of the resources available to them to improve their academic performance.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"ap58o\",\"text\":\"The study can also serve as a reference point for further research on the relationship between instructional resources and academic performance in other subject areas and educational levels.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"782h6\",\"text\":\"Finally, the study can contribute to the body of knowledge on education and curriculum development in Nigeria and can guide educational policymakers and curriculum developers to make informed decisions on instructional resources for teaching and learning in public junior secondary schools\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e4c7i\",\"text\":\"1.6\\tScope of the Study\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":22,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"bvbc7\",\"text\":\"The scope of the study on \\\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6j8bt\",\"text\":\"Relationship Between Instructional Resources and Academic Performance of Business Studies Students\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"829tb\",\"text\":\"in Public Junior Secondary Schools, Abeokuta South Local Government Area, Ogun State, Nigeria\\\" includes the following:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"8729p\",\"text\":\"Geographic Scope: The study will be conducted in Abeokuta South Local Government Area of Ogun State, Nigeria.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"b6l13\",\"text\":\"Target Population: The study will focus on Business Studies students in public junior secondary schools in Abeokuta South Local Government Area, Ogun State, Nigeria.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"anvht\",\"text\":\"Variables: The study will examine the relationship between instructional resources and academic performance in Business Studies. The instructional resources that will be considered include textbooks, audio-visual aids, laboratory equipment, and teacher training. The academic performance will be measured using the students' scores in their Business Studies Basic Education Certificate Examination (BECE) within the last 5 academic sessions of 2018, 2019, 2020, 2021 and 2022.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"5s1bu\",\"text\":\"The study will utilize a quantitative research approach, where data will be collected using a questionnaire and analyzed using statistical tools. The sample size will be determined using a random sampling technique.Research Methodology:\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3irt6\",\"text\":\"Limitations: The study will be limited to public junior secondary schools in Abeokuta South Local Government Area of Ogun State, Nigeria. Also, the study is limited to the availability and utilization of instructional resources, and other factors such as socio-economic status and teacher experience and qualification may also influence academic performance.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"brcss\",\"text\":\"1.7\\tOperational Definition of Terms\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":35,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"c76kj\",\"text\":\"Instructional Resources: These are teaching aids and materials used by teachers to facilitate learning. In this study, instructional resources refer to textbooks, audio-visual aids, laboratory equipment, and teacher training.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":24,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"dspl1\",\"text\":\"Academic Performance: Academic performance in this study refers to the achievement of Business Studies students in public junior secondary schools, as measured by their scores in their Business Studies examinations.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":21,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"1p8ta\",\"text\":\"Business Studies: Business Studies is a subject taught in public junior secondary schools that covers topics related to business and commerce, such as accounting, economics, marketing, and entrepreneurship.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":17,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"6hl4h\",\"text\":\"Public Junior Secondary Schools: In this study, public junior secondary schools refer to government-owned schools that offer education to students in Junior Secondary Schools (JSS I-III).\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":32,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"a16d3\",\"text\":\"Abeokuta South Local Government Area: Abeokuta South Local Government Area is a local government area in Ogun State, Nigeria, which includes several public junior secondary schools.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":37,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"37a07\",\"text\":\"Ogun State: Ogun State is a state in southwestern Nigeria with a population of over six million people.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"aa3hc\",\"text\":\"Relationship: This refers to the connection or association between two or more variables. In this study, the relationship between instructional resources and academic performance of Business Studies students in public junior secondary schools will be examined.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"4ifqd\",\"text\":\"Utilization: This refers to the effective use of instructional resources by teachers to facilitate learning.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":12,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9cuh4\",\"text\":\"Teacher Training: This refers to the professional development programs provided for teachers to improve their teaching skills and knowledge. In this study, teacher training refers to the programs aimed at improving teachers' skills in teaching Business Studies.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":17,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+  "applicationDeadline": "2024-09-11T00:00:00.000Z",
+  "jobType": "Contract",
+  "jobCategory": "Human Resources",
+  "experienceLevel": [
+    "middleLevel",
+    "seniorLevel"
+  ],
+  "jobLocation": [
+    "Nigeria"
+  ],
+  "openToRemote": false,
+  "jobSalary": "Negotiable",
+  "jobSalaryMin": "",
+  "jobSalaryMax": "",
+  "matches": 71,
+  "jobRate": "Monthly",
+  "rateCurrency": "",
+  "jobSkills": [
+    "Research",
+    "Data Analysis",
+    "Instructional Design",
+    "Report Writing",
+    "Quantitative Research",
+    "Survey Design"
+  ],
+  "approval": {
+    "dueDate": "2024-06-11T00:00:00.000Z",
+    "enableApproval": false,
+    "oneApproval": true,
+    "approveInOrder": false
+  },
+  "perks": {
+    "bonusTarget": false,
+    "medicalInsurance": false,
+    "dentalInsurance": false,
+    "visionInsurance": false,
+    "disabilityInsurance": false,
+    "stockOptions": false,
+    "fourZeroOnek": false
+  },
+  "otherPerks": "",
+  "isPerkPublic": true,
+  "numberOfPositions": 1,
+  "averageTimeToHire": "2 weeks",
+  "numberOfInterviews": 1,
+  "interviewStages": [
+    {
+      "id": "1983545c-f156-49a7-a2a8-01c0b68a2a45",
+      "order": 0,
+      "selectedStageName": "phone_interview",
+      "selectedType": "calendar",
+      "selectedTypeValue": "",
+      "type": {
+        "id": "phone_interview",
+        "name": "Phone Interview",
+        "subs": [
+          {
+            "id": "calendar",
+            "text": "Calendar",
+            "emailMessage": "the phone interview stage which would require a scheduled time for the call"
+          }
+        ]
+      },
+      "_id": "66688c28913b9dd6c713372b"
+    },
+    {
+      "id": "036f19a0-4c52-4f9a-9f5c-8e2a546c1338",
+      "order": 1,
+      "selectedStageName": "first_round",
+      "selectedType": "live_video",
+      "selectedTypeValue": "",
+      "type": {
+        "id": "first_round",
+        "name": "First Round",
+        "subs": [
+          {
+            "id": "live_video",
+            "text": "Live Video",
+            "emailMessage": "the first round, this stage would require a live video in order to move to the next stage"
+          },
+          {
+            "id": "one_way_video",
+            "text": "One Way Video",
+            "emailMessage": "the first round, this stage which would require you to perform a one way video which would be used to move you to the next stage"
+          },
+          {
+            "id": "calendar",
+            "text": "Calendar",
+            "emailMessage": "the first round, this stage which would require you to create a scheduled time to move to the next stage"
+          },
+          {
+            "id": "ai_interview",
+            "text": "AI Interview",
+            "emailMessage": "the first round, this stage which would require a live interview with an AI which would be used to move you to the next stage"
+          }
+        ]
+      },
+      "_id": "66688c28913b9dd6c713372c"
+    },
+    {
+      "id": "56c68748-8759-4e0b-9029-44e2228c1535",
+      "order": 2,
+      "selectedStageName": "hiring_manager",
+      "selectedType": "live_video",
+      "selectedTypeValue": "",
+      "type": {
+        "id": "hiring_manager",
+        "name": "Hiring Manager",
+        "subs": [
+          {
+            "id": "live_video",
+            "text": "Live Video",
+            "emailMessage": "The hiring manager stage, this stage would require a live video with the hiring manager"
+          },
+          {
+            "id": "one_way_video",
+            "text": "One Way Video",
+            "emailMessage": "The hiring manager stage, this stage which would require you to perform a one way video with hiring manager"
+          },
+          {
+            "id": "calendar",
+            "text": "Calendar",
+            "emailMessage": "The hiring manager stage, this stage which would require you to create a scheduled time with hiring manager"
+          }
+        ]
+      },
+      "_id": "66688c28913b9dd6c713372d"
+    }
+  ],
+  "prepMaterials": "",
+  "prepFiles": [],
+  "additionalInformation": "",
+  "creator": "661e9a5084f434d5613d537c",
+  "jobCreator": "661e9a5084f434d5613d5380",
+  "orderedAt": null,
+  "applicationForm": {
+    "applicationData": [
+      {
+        "label": "First Name",
+        "type": "Short text",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c713372f"
+      },
+      {
+        "label": "Last Name",
+        "type": "Short text",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c7133730"
+      },
+      {
+        "label": "Headline",
+        "type": "Short text",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c7133731"
+      },
+      {
+        "label": "Email Address",
+        "type": "Short text",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c7133732"
+      },
+      {
+        "label": "Phone Number",
+        "type": "Number",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c7133733"
+      },
+      {
+        "label": "Location",
+        "type": "Address",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c7133734"
+      }
+    ],
+    "isCustom": false,
+    "mustBeLoggedIn": false,
+    "_id": "66688c28913b9dd6c713372e"
+  },
+  "scorecard": {
+    "scorecardData": [
+      {
+        "name": "Communication Skills",
+        "values": [
+          "How easily is the candidate able to articulate complex ideas?",
+          "How well is the candidate able to understand and respond to complex questions?",
+          "Did the candidate ask clarifying and quality questions when necessary?"
+        ],
+        "id": "2848c7da-5579-4819-905d-b8f3c475ccae",
+        "_id": "66688c28913b9dd6c7133736",
+        "createdAt": "2024-06-11T17:40:56.670Z",
+        "updatedAt": "2024-06-11T17:40:56.670Z"
+      },
+      {
+        "name": "Relevant Experience",
+        "values": [
+          "How relevant is the candidate’s past experience to the role?",
+          "Has the candidate done projects in the past that are related to the role?",
+          "How in-depth is the candidate’s technical know-how?"
+        ],
+        "id": "077597dd-ab58-4319-8f7d-0d21f47d88d9",
+        "_id": "66688c28913b9dd6c7133737",
+        "createdAt": "2024-06-11T17:40:56.670Z",
+        "updatedAt": "2024-06-11T17:40:56.670Z"
+      },
+      {
+        "name": "Culture Fit",
+        "values": [
+          "Is the candidate open to learning new things (with proven track record)?",
+          "How well does the candidate know about the company?",
+          "Would you be excited to have this candidate on your team?"
+        ],
+        "id": "ab41b2b1-97ad-4f2c-853b-dc898c3feb5b",
+        "_id": "66688c28913b9dd6c7133738",
+        "createdAt": "2024-06-11T17:40:56.670Z",
+        "updatedAt": "2024-06-11T17:40:56.670Z"
+      }
+    ],
+    "enableScorecard": true,
+    "_id": "66688c28913b9dd6c7133735"
+  },
+  "reference": {
+    "referenceData": [
+      {
+        "label": "Email Address",
+        "type": "Short text",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c713373a"
+      },
+      {
+        "label": "Full Name",
+        "type": "Short text",
+        "required": true,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c713373b"
+      },
+      {
+        "label": "Job Title",
+        "type": "Short text",
+        "required": false,
+        "enabled": true,
+        "_id": "66688c28913b9dd6c713373c"
+      }
+    ],
+    "enableReference": true,
+    "numberOfRef": 1,
+    "referenceMessage": "Hello {{Full Name}}, Hope you're doing great. {{Candidate Name}} is applying for a role at {{Company Name}} and he picked you as a referral. How was your previous experience working with him. It would be great if you could say a few thing. Thanks",
+    "_id": "66688c28913b9dd6c7133739"
+  },
+  "is3p": false,
+  "isClaimed": true,
+  "isRejected": false,
+  "_disabled": false,
+  "status": "open",
+  "createdAt": "2024-06-11T17:40:56.670Z",
+  "updatedAt": "2024-06-15T15:45:35.728Z",
+  "__v": 0,
+  "JobApplications": [
+    {
+      "_id": "6668c1a6a6080c99bcf4ca54",
+      "applicationData": {
+        "First Name": "Chukwuemeka",
+        "Last Name": "Francis",
+        "Headline": "ASSISTANT MANAGER",
+        "Email Address": "udefrancis812@gmail.com",
+        "Phone Number": "7026714082",
+        "Location": "Nigeria",
+        "scorecard": [],
+        "_id": "6667a1d8b1784659810883f9",
+        "reference": [
+          {
+            "Email Address": "fabianokechi3@gmail.com",
+            "Full Name": "Fabian Okeke Okechi",
+            "Job Title": "Head of Department (Humanities)"
+          }
+        ]
+      },
+      "employer_id": "661e9a5084f434d5613d537c",
+      "applicant_id": [
+        {
+          "_id": "6667a1d8b1784659810883f9",
+          "first_name": "Chukwuemeka",
+          "last_name": "Francis",
+          "phone_number": "7026714082",
+          "phone_country": {
+            "name": "Nigeria",
+            "flag": "🇳🇬",
+            "code": "NG",
+            "dial_code": "+234",
+            "_id": "6667a1d8b1784659810883fa"
+          },
+          "email_address": "udefrancis812@gmail.com",
+          "referral_id": "LAi-678769E",
+          "password": "$2b$10$YByS2TKu839eWSOWPhbLCe4DFT7k4VQY1hNlMkvlBrw4vU07so8e6",
+          "is_verified": true,
+          "loubby_verified": false,
+          "showEmail": true,
+          "showDob": false,
+          "showPhone_number": false,
+          "customer_id": "cus_QGqmnFOKeYLteM",
+          "paystack_customer_id": "CUS_nxht9xyssc9f442",
+          "is_employee": false,
+          "signedOfferLetter": false,
+          "completedEmployeeProfile": false,
+          "name_slug": "chukwuemeka-francis-b6e5983a",
+          "is_online": false,
+          "isSuperAdmin": false,
+          "is3p": false,
+          "_disabled": false,
+          "createdAt": "2024-06-11T01:01:12.005Z",
+          "updatedAt": "2024-06-13T01:24:32.357Z",
+          "__v": 0,
+          "last_login": "2024-06-11T01:02:12.828Z",
+          "logo_url": "https://dnq8p28ep9cut.cloudfront.net/profile/6667a1d8b1784659810883f9/IMG_20230826_203038-0dadd39b-6fd3-4db4-8287-fc8960be5444.jpg",
+          "banner_url": "",
+          "bio": "<p>Native Igbo Speaker</p>\n",
+          "country": "Nigeria",
+          "website": ""
+        }
+      ],
+      "job_id": "66688c28913b9dd6c713372a",
+      "stage": "Applied",
+      "isDisqualified": false,
+      "fromEmployer": false,
+      "tag": "unassigned",
+      "status": "Pending",
+      "createdAt": "2024-06-11T21:29:10.996Z",
+      "updatedAt": "2024-06-11T21:29:10.996Z",
+      "__v": 0
+    }
+  ],
+  "job_match": []
+}
