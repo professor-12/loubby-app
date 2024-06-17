@@ -1,5 +1,4 @@
 import React from "react";
-
 const Schedule = ({ item }: { item: any }) => {
     const formatEndDate = new Date(item?.endDate).toLocaleDateString("em-US", {
         month: "long",
