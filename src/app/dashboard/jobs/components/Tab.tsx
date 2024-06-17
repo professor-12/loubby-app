@@ -16,26 +16,17 @@ const Tab = ({ data }: { data: any }) => {
     const style = {
         transform: `translateX(${x}%)`,
     };
-    const className = "w-full transition-all duration-700 shrink-0"
+    const className = "w-full transition-all duration-700 shrink-0";
     return (
         <div className="overflow-x-hidden flex">
-            <div
-                style={style}
-                className={className}
-            >
+            <div style={style} className={className}>
                 <ActiveTab data={active} />
             </div>
-            <div
-                style={style}
-                className={className}
-            >
+            <div style={style} className={className}>
                 <InactiveTab data={inactive} />
             </div>
 
-            <div
-                style={style}
-                className={className}
-            >
+            <div style={style} className={className}>
                 <Draft />
             </div>
         </div>
