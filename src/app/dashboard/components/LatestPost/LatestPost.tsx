@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { TbPlus } from "react-icons/tb";
 import Button from "@/app/onboarding/create-account/Button";
+import LatestPostCard from "./LatestPostCard";
 
 const LatestPost = ({ results }: { results: any }) => {
     if (results?.length == 0 || !results) {
@@ -34,7 +35,7 @@ const LatestPost = ({ results }: { results: any }) => {
         );
     }
 
-    return <div>LatestPost</div>;
+    return <LatestPostCard />;
 };
 
 export default LatestPost;
