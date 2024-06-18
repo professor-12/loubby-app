@@ -21,9 +21,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                     {openNavBar && <MobileSideBar setOpen={setOpenNavBar} />}
                 </AnimatePresence>
                 <div className="flex">
-                    <aside className="lg:inline-block h-full hidden  md:w-[16rem] p-[1rem]  bg-white">
-                        <SideBar />
-                    </aside>
+                    <SideBar />
                     <div className="h-fulll w-[0.3rem] bg-border" />
                 </div>
                 <section className="flex flex-col w-full min-h-screen">
