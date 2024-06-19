@@ -12,7 +12,7 @@ const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
     const expandClass = expand ? "md:w-[16rem]" : "md:w-[5rem]";
     return (
         <aside
-            className={`lg:inline-block h-full ${type === "sm" : "" ? "hidden"}  p-[1rem]  bg-white ${expandClass}`}
+            className={`lg:inline-block h-full ${type === "sm" ? "" : "hidden"}  p-[1rem]  bg-white ${expandClass}`}
         >
             <motion.div
                 animate={{
