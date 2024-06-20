@@ -11,7 +11,7 @@ const Profile = ({
 }) => {
     return (
         <div
-            className={`border-t flex items absolute bottom-0 gap-3 items-center pt-3  justify-between text-[0.78rem] ${
+            className={`border-t flex bottom-0 gap-3 items-center pt-3  justify-between text-[0.78rem] ${
                 !expand && "flex-col-reverse"
             }`}
         >

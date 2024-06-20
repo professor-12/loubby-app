@@ -20,7 +20,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`overflow-hidden ${moserat.className} overflow-x-hidden`}
+                className={`${moserat.className} overflow-x-hidden`}
             >
                 <div id="portal" className="lg:hidden"></div>
                 <main>

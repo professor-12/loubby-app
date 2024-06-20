@@ -10,22 +10,20 @@ const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
     const [dropDown, setDropDown] = useState(false);
     const [expand, setExpand] = useState(!true);
     const expandClass = expand ? "md:w-[16rem]" : "md:w-[5rem]";
+    const show =
+        type == "sm"
+            ? "fixed top-0 z-[100000] overflow-y-auto  p-4 md:p-3  bg-white bottom-0"
+            : "hidden  p-[1rem]";
     return (
-        <aside
-            className={`lg:inline-block h-full hidden p-[1rem]  bg-white ${expandClass}`}
+        <motion.aside
+            animate={{
+                x: type == "sm" ? [-200, 0] : 0,
+                transition: { type: "just" },
+            }}
+            exit={{ x: -270 }}
+            className={`lg:inline-block ${show} overflow-hidden   bg-white ${expandClass}`}
         >
-            <motion.div
-                animate={{
-                    x: type == "sm" ? [-200, 0] : 0,
-                    transition: { type: "just" },
-                }}
-                exit={{ x: -270 }}
-                className={`${
-                    type === "sm"
-                        ? "fixed top-0 z-[100000] p-4 md:p-3  bg-white bottom-0 sm:w-[33%]"
-                        : "min-w-full"
-                }`}
-            >
+            <div className="h-full">
                 <Link href={"/dashboard"}>
                     <Image
                         src={expand ? `/Logo.svg` : "/SmallLogo.svg"}
@@ -116,11 +114,11 @@ const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
                         )}
                     </div>
                 )}
-                <div>
+                <div className="h-full pb-8">
                     <SideNav setExpand={setExpand} expand={expand} />
                 </div>
-            </motion.div>
-        </aside>
+            </div>
+        </motion.aside>
     );
 };
 
