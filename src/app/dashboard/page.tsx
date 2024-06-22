@@ -26,7 +26,7 @@ const Page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:flex  lg:min-w-[30%] flex-col space-y-3 flex-1 min-h-[56rem]">
+                <div className="lg:flex  lg:min-w-[30%] flex-col space-y-3 flex-1">
                     <UpComingSchedule />
                     <PipeLineSummary />
                 </div>
