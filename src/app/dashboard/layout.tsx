@@ -17,21 +17,25 @@ const Layout = ({ children }: { children: ReactNode }) => {
     return (
         <Provider store={store}>
             <main className="max-h-screen overflow-y-auto bg-[#F9FAFB] flex">
-                <AnimatePresence>
-                    {openNavBar && <MobileSideBar setOpen={setOpenNavBar} />}
-                </AnimatePresence>
-                <div className="flex">
-                    <SideBar />
-                    <div className="h-fulll w-[0.3rem] bg-border" />
+                <div>
+                    <AnimatePresence>
+                        {openNavBar && (
+                            <MobileSideBar setOpen={setOpenNavBar} />
+                        )}
+                    </AnimatePresence>
+                    <div className="flex">
+                        <SideBar />
+                        <div className="h-fulll w-[0.3rem] bg-border" />
+                    </div>
                 </div>
-                <section className="flex flex-col w-full min-h-screen">
+                <section className="flex flex-col w-full h-screen">
                     <div>
                         <nav className="bg-white flex items-center h-14 w-full sticky top-0">
                             <TopNavBar setOpen={setOpenNavBar} />
                         </nav>
                         <div className="w-fulll h-[0.3rem] bg-border" />
                     </div>
-                    <main className="max-h-screen overflow-y-hidden h-full w-full bg-dashboard">
+                    <main className="max-h-screen overflow-y-hidden h-full w-full">
                         {children}
                     </main>
                 </section>
