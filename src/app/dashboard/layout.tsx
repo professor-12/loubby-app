@@ -23,7 +23,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                             <MobileSideBar setOpen={setOpenNavBar} />
                         )}
                     </AnimatePresence>
-                    <div className="flex">
+                    <div className="flex min-h-screen">
                         <SideBar />
                         <div className="h-fulll w-[0.3rem] bg-border" />
                     </div>
