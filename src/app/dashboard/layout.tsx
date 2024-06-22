@@ -16,11 +16,11 @@ const Layout = ({ children }: { children: ReactNode }) => {
     }, []);
     return (
         <Provider store={store}>
-            <main className="h-screen overflow-y-hidden bg-[#F9FAFB] flex">
+            <main className="max-h-screen overflow-y-auto bg-[#F9FAFB] flex">
                 <AnimatePresence>
                     {openNavBar && <MobileSideBar setOpen={setOpenNavBar} />}
                 </AnimatePresence>
-                <div className="flex h-full bg-red-300">
+                <div className="flex">
                     <SideBar />
                     <div className="h-fulll w-[0.3rem] bg-border" />
                 </div>

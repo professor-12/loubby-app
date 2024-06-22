@@ -21,9 +21,9 @@ const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
                 transition: { type: "just" },
             }}
             exit={{ x: -270 }}
-            className={`lg:inline-block ${show} overflow-hidden   bg-white ${expandClass}`}
+            className={`lg:inline-block  ${show} overflow-hidden   bg-white ${expandClass}`}
         >
-            <div className="h-full">
+            <div className="min-h-full">
                 <Link href={"/dashboard"}>
                     <Image
                         src={expand ? `/Logo.svg` : "/SmallLogo.svg"}
