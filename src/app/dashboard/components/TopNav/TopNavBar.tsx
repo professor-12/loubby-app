@@ -23,12 +23,12 @@ const TopNavBar = ({ setOpen }: { setOpen: any }) => {
             <Search className="border" />
             <div className="space-x-3 items-center flex">
                 <div className="flex space-x-5">
-                    <motion.button className="text-nowrap hidden lg:flex font-medium   rounded-lg p-2 text-sm px-3  text-center  text-white  bg-gradient-animate">
+                    <button className="text-nowrap hidden lg:flex font-medium   rounded-lg p-2 text-sm px-3  text-center  text-white  bg-gradient-animate">
                         Refer a Company
-                    </motion.button>
+                    </button>
                     <HeaderButton />
                 </div>
-                <ProfileOptionMenu /> {/* Do not forget */}
+                <ProfileOptionMenu /> {/*TODO Do not forget */}
                 <div className="relative">
                     <Image
                         src={"/Notification.svg"}

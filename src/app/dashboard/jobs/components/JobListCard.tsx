@@ -1,16 +1,18 @@
 import Image from "next/image";
 import React from "react";
+import { JobListCardMore } from "./JobListCardMore";
+import { daysBetweenDates } from "@/helpers/getNulberofDays";
 
 const JobListCard = ({ data }: { data: any }) => {
+    const d = daysBetweenDates(data?.createdAt, new Date().toDateString());
+
     return (
-        <div className="bg-white p-3 py-6 pb-7 border border-[#eaecf0]  rounded-[0.7rem] md:space-y-3 space-y-1 md:text-sm text-xs shadow-sm">
+        <div className="bg-white relative p-3 py-6 pb-7 border border-[#eaecf0]  rounded-[0.7rem] md:space-y-3 space-y-1 md:text-sm text-xs shadow-sm">
             <div className="flex justify-between">
                 <p className="text-nowrap lg:text-sm text-xs">
                     {data?.jobTitle}
                 </p>
-                <span className="rotate-90 tracking-wider font-semibold  text-slate-600 cursor-pointer select-none">
-                    ...
-                </span>
+                <JobListCardMore id={data._id} />
             </div>
             <div>
                 <p className="lg:text-md text-slate-500">
@@ -43,7 +45,9 @@ const JobListCard = ({ data }: { data: any }) => {
                             alt="ApplicantImage"
                         />
                     </span>
-                    <span className="text-neutral-500">Today</span>
+                    <span className="text-neutral-500">
+                        {d == 0 ? "Today" : `${d} days ago`}{" "}
+                    </span>
                 </div>
                 <div className="p-2 text-[#dc6803] font-medium">0 matches</div>
             </div>

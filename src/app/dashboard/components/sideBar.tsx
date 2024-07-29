@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { RxCaretDown } from "react-icons/rx";
@@ -6,46 +7,55 @@ import { IoMdCheckmark } from "react-icons/io";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import SideNav from "./SideNav";
-const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
+
+type SideBarProps = {
+    type?: "sm" | "lg";
+    close?: () => void;
+};
+
+const SideBar: React.FC<SideBarProps> = ({ type = "lg", close }) => {
     const [dropDown, setDropDown] = useState(false);
-    const [expand, setExpand] = useState(!true);
+    const [expand, setExpand] = useState(true);
+
     const expandClass = expand ? "md:w-[16rem]" : "md:w-[5rem]";
     const show =
-        type == "sm"
-            ? "fixed top-0 z-[100000] overflow-y-auto  p-4 md:p-3  bg-white bottom-0"
-            : "hidden  p-[1rem]";
+        type === "sm"
+            ? "fixed top-0 z-[100000] overflow-y-auto p-4 md:p-3 bg-white bottom-0"
+            : "hidden p-[1rem]";
+
     return (
         <motion.aside
             animate={{
-                x: type == "sm" ? [-200, 0] : 0,
+                x: type === "sm" ? [-200, 0] : 0,
                 transition: { type: "just" },
             }}
             exit={{ x: -270 }}
-            className={`lg:inline-block  ${show} overflow-hidden   bg-white ${expandClass}`}
+            className={`lg:inline-block ${show} overflow-hidden bg-white ${expandClass}`}
         >
             <div className="min-h-full">
-                <Link href={"/dashboard"}>
+                <Link href="/dashboard">
                     <Image
-                        src={expand ? `/Logo.svg` : "/SmallLogo.svg"}
-                        alt=""
+                        src={expand ? "/Logo.svg" : "/SmallLogo.svg"}
+                        alt="Logo"
                         width={expand ? 110 : 35}
                         height={expand ? 100 : 50}
                     />
                 </Link>
+
                 {expand && (
                     <div
                         onClick={(e) => {
                             e.stopPropagation();
-                            setExpand(!false);
+                            setExpand(!expand);
                             setDropDown((prev) => !prev);
                         }}
-                        className="bg-dashboard w-full space-y-1 cursor-pointer  border mt-12 mb-6 rounded-lg overflow-hidden"
+                        className="bg-dashboard w-full space-y-1 cursor-pointer border mt-12 mb-6 rounded-lg overflow-hidden"
                     >
-                        <div className="flex  justify-between space-x-2 bg-white p-4 w-full">
-                            <div className="space-x-2 flex items-center">
+                        <div className="flex justify-between space-x-2 bg-white p-4 w-full">
+                            <div className="flex items-center space-x-2">
                                 <Image
-                                    src={"/dropdown.svg"}
-                                    alt=""
+                                    src="/dropdown.svg"
+                                    alt="Dropdown Icon"
                                     width={40}
                                     height={40}
                                 />
@@ -58,20 +68,19 @@ const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex  justify-self-end">
-                                <RxCaretDown className="text-2xl" />
-                            </div>
+                            <RxCaretDown className="text-2xl" />
                         </div>
+
                         {dropDown && (
-                            <div className="bg-dashboard w-full gap-2 cursor-pointer  border  shadow-md rounded-lg overflow-hidden">
+                            <div className="bg-dashboard w-full gap-2 cursor-pointer border shadow-md rounded-lg overflow-hidden">
                                 <div
                                     onClick={(e) => e.stopPropagation()}
-                                    className="flex  justify-between space-x-2 items-center hover:bg-primary-light-blue bg-white p-3 px-3 w-full"
+                                    className="flex justify-between space-x-2 items-center hover:bg-primary-light-blue bg-white p-3 w-full"
                                 >
-                                    <div className="space-x-2 flex  items-center">
+                                    <div className="flex items-center space-x-2">
                                         <Image
-                                            src={"/recuits.svg"}
-                                            alt=""
+                                            src="/recuits.svg"
+                                            alt="Recuit Icon"
                                             width={40}
                                             height={40}
                                         />
@@ -84,19 +93,17 @@ const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="flex  justify-self-end">
-                                        <IoMdCheckmark className="text-xl" />
-                                    </div>
+                                    <IoMdCheckmark className="text-xl" />
                                 </div>
 
                                 <div
                                     onClick={(e) => e.stopPropagation()}
-                                    className="flex   justify-between space-x-2 hover:bg-primary-light-blue bg-white p-3 px-3 w-full"
+                                    className="flex justify-between space-x-2 hover:bg-primary-light-blue bg-white p-3 w-full"
                                 >
-                                    <div className="space-x-2 flex items-center">
+                                    <div className="flex items-center space-x-2">
                                         <Image
-                                            src={"/manage.svg"}
-                                            alt=""
+                                            src="/manage.svg"
+                                            alt="Manage Icon"
                                             width={40}
                                             height={40}
                                         />
@@ -114,6 +121,7 @@ const SideBar = ({ type }: { type?: "sm" | "lg"; close?(): any }) => {
                         )}
                     </div>
                 )}
+
                 <div className="h-full pb-8">
                     <SideNav setExpand={setExpand} expand={expand} />
                 </div>

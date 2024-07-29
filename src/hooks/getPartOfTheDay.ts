@@ -1,22 +1,31 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react';
 
 const useGetPartOfTheDay = () => {
-       const getPartofTheDay = useCallback(() => {
+    const [partOfTheDay, setPartOfTheDay] = useState('');
+
+    const getPartofTheDay = useCallback(() => {
         const hour = new Date().getHours();
-        if (!hour) return "Day";
-        if (hour <= 12 && hour >= 0) return "Morning";
-        if (hour >= 13 && hour <= 18) return "Afternoon";
+        if (hour >= 0 && hour < 12) return "Morning";
+        if (hour >= 12 && hour < 18) return "Afternoon";
         return "Evening";
-    },[]);
+    }, []);
+
     useEffect(() => {
+        const updatePartOfTheDay = () => {
+            setPartOfTheDay(getPartofTheDay());
+        };
+        updatePartOfTheDay();
+
         const time = setInterval(() => {
-            getPartofTheDay();
-        }, 1000 * 60 * 10);
+            updatePartOfTheDay();
+        }, 1000 * 60 * 10); // Update every 10 minutes
+
         return () => {
             clearInterval(time);
         };
     }, [getPartofTheDay]);
-    return getPartofTheDay()
-}
 
-export default useGetPartOfTheDay
+    return partOfTheDay;
+};
+
+export default useGetPartOfTheDay;
