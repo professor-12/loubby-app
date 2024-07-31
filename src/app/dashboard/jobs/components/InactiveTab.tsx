@@ -12,9 +12,7 @@ const InactiveTab = ({ data }: { data: any }) => {
         );
     }
     return (
-        <div
-            className="grid gap-4 md:gap-6 xl:grid-cols-5 md:grid-cols-3  grid-cols-1 overflow-y-auto"
-        >
+        <div className="grid gap-4 md:gap-6 xl:grid-cols-5 md:grid-cols-3  grid-cols-1 overflow-y-auto">
             {jobs?.map((job: any) => {
                 return <JobListCard data={job} key={job.id} />;
             })}

@@ -9,7 +9,11 @@ const Loading = () => {
                     <div key={i} className="space-y-1">
                         {" "}
                         <div>
-                            <Skeleton height={30} width={"40%"} borderRadius={8} />
+                            <Skeleton
+                                height={30}
+                                width={"40%"}
+                                borderRadius={8}
+                            />
                         </div>
                         <div>
                             <Skeleton
