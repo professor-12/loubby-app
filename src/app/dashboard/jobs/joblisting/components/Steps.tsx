@@ -41,10 +41,9 @@ const Step = ({
         >
             <div className={`flex items-center space-x-2`}>
                 <span
-                    className={`${
-                        !active ? "bg-[#F2F4F7]" : "bg-[#eaf3ff]" 
-                    }  ${stepCompleted
-                        && "bg-blue-700/70 text-white"} text-xs flex   xl:w-6  xl:h-6 w-3 h-3 p-[0.55rem] rounded-full items-center justify-center text-center`}
+                    className={`${!active ? "bg-[#F2F4F7]" : "bg-[#eaf3ff]"}  ${
+                        stepCompleted && "bg-blue-700/70 text-white"
+                    } text-xs flex   xl:w-6  xl:h-6 w-3 h-3 p-[0.55rem] rounded-full items-center justify-center text-center`}
                 >
                     {index + 1}
                 </span>

@@ -5,6 +5,7 @@ import JobDetails from "./components/JobDetails";
 import JobListingForm from "./components/JobListingForm";
 import { motion } from "framer-motion";
 import Provider from "./ContextApi/Provider";
+import FormDataProvider from "./ContextApi/FormDataProvider";
 const page = () => {
     const steps = [
         { name: "Job Details", step: 1 },
@@ -34,7 +35,9 @@ const page = () => {
                     <JobDetails />
                 </div>
                 <div className="xl:w-[52%] container mx-auto  p-3 md:p-6 bg-white rounded-md overflow-y-clip">
-                    <JobListingForm />
+                    <FormDataProvider>
+                        <JobListingForm />
+                    </FormDataProvider>
                 </div>
             </motion.div>
         </Provider>

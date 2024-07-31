@@ -13,8 +13,9 @@ import DragndDropInput from "./DragndDropInput";
 import SkillsInput from "./SkillsInput";
 import { useRouter } from "next/navigation";
 import { experience, otherFields } from "@/lib/utils";
-import { useForm, SubmitHandler } from "react-hook-form";
-import readFileContent from "@/helpers/writeFille";
+import { useForm } from "react-hook-form";
+import FormNavigation from "./FormNavigation";
+import { useGetJobListing } from "../ContextApi/Provider";
 
 interface Inputs {
     jobTitle: string;
@@ -38,7 +39,6 @@ const validation = {
 };
 const Form = () => {
     const [nameofFile, setNanmeofFile] = useState<string>("");
-    const { push } = useRouter();
     const onDrop = useCallback((acceptedFiles: any) => {
         setNanmeofFile!(acceptedFiles[0].name);
         if (acceptedFiles[0]) {
@@ -55,7 +55,6 @@ const Form = () => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm<Inputs>();
 
@@ -285,28 +284,7 @@ const Form = () => {
                         </div>
                     </InputWrapper>
                 </div>
-                <div>
-                    <div className="border-t py-4 flex justify-between items-center my-4 mt-8">
-                        <button
-                            type="button"
-                            className="text-[#344054] border rounded-lg p-3 py-2"
-                        >
-                            Save to draft
-                        </button>
-                        <div className="space-x-2">
-                            <button
-                                onClick={(_) => push("/dashboard/jobs?tab=Active")}
-                                type="button"
-                                className="border px-3 p-2 text-[#344054] rounded-lg"
-                            >
-                                Cancel
-                            </button>
-                            <button className="rounded-lg p-3 bg-blue-600 py-2 text-white font-medium">
-                                Next
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <FormNavigation />
             </div>
         </form>
     );
