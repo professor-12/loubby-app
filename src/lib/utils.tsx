@@ -321,3 +321,111 @@ export const ProfileLinks = [
         link: "",
     },
 ] as const;
+
+export const JobDetailTabs = [
+    {
+        name: "Job Details",
+        svg: (
+            <svg
+                className="font-light"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="18"
+                viewBox="0 0 20 18"
+                fill="none"
+            >
+                <path
+                    d="M13.3327 16.5V3.16667C13.3327 2.72464 13.1571 2.30072 12.8445 1.98816C12.532 1.67559 12.108 1.5 11.666 1.5H8.33268C7.89066 1.5 7.46673 1.67559 7.15417 1.98816C6.84161 2.30072 6.66602 2.72464 6.66602 3.16667V16.5M3.33268 4.83333H16.666C17.5865 4.83333 18.3327 5.57953 18.3327 6.5V14.8333C18.3327 15.7538 17.5865 16.5 16.666 16.5H3.33268C2.41221 16.5 1.66602 15.7538 1.66602 14.8333V6.5C1.66602 5.57953 2.41221 4.83333 3.33268 4.83333Z"
+                    stroke="#EC4A0A"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        name: "Pipeline",
+        svg: (
+            <svg
+                className="font-light"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+            >
+                <path
+                    d="M11.5 14C11.5 15.3807 12.6193 16.5 14 16.5C15.3807 16.5 16.5 15.3807 16.5 14C16.5 12.6193 15.3807 11.5 14 11.5C12.6193 11.5 11.5 12.6193 11.5 14ZM11.5 14C9.51088 14 7.60322 13.2098 6.1967 11.8033C4.79018 10.3968 4 8.48912 4 6.5M4 6.5C5.38071 6.5 6.5 5.38071 6.5 4C6.5 2.61929 5.38071 1.5 4 1.5C2.61929 1.5 1.5 2.61929 1.5 4C1.5 5.38071 2.61929 6.5 4 6.5ZM4 6.5V16.5"
+                    stroke="#444CE7"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        name: "Applicants",
+        svg: (
+            <svg
+                className="font-light"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="18"
+                viewBox="0 0 16 18"
+                fill="none"
+            >
+                <path
+                    d="M14.6673 16.5V14.8333C14.6673 13.9493 14.3161 13.1014 13.691 12.4763C13.0659 11.8512 12.218 11.5 11.334 11.5H4.66732C3.78326 11.5 2.93542 11.8512 2.31029 12.4763C1.68517 13.1014 1.33398 13.9493 1.33398 14.8333V16.5M11.334 4.83333C11.334 6.67428 9.8416 8.16667 8.00065 8.16667C6.1597 8.16667 4.66732 6.67428 4.66732 4.83333C4.66732 2.99238 6.1597 1.5 8.00065 1.5C9.8416 1.5 11.334 2.99238 11.334 4.83333Z"
+                    stroke="#039855"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        name: "Matches",
+        svg: (
+            <svg
+                className="font-light"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="18"
+                viewBox="0 0 16 18"
+                fill="none"
+            >
+                <path
+                    d="M14.6673 16.5V14.8333C14.6673 13.9493 14.3161 13.1014 13.691 12.4763C13.0659 11.8512 12.218 11.5 11.334 11.5H4.66732C3.78326 11.5 2.93542 11.8512 2.31029 12.4763C1.68517 13.1014 1.33398 13.9493 1.33398 14.8333V16.5M11.334 4.83333C11.334 6.67428 9.8416 8.16667 8.00065 8.16667C6.1597 8.16667 4.66732 6.67428 4.66732 4.83333C4.66732 2.99238 6.1597 1.5 8.00065 1.5C9.8416 1.5 11.334 2.99238 11.334 4.83333Z"
+                    stroke="#039855"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        name: "Insights",
+        svg: (
+            <svg
+                className="font-light"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="20"
+                viewBox="0 0 18 20"
+                fill="none"
+            >
+                <path
+                    d="M9.83333 1.66663L1.5 11.6666H9L8.16667 18.3333L16.5 8.33329H9L9.83333 1.66663Z"
+                    stroke="#1A73E8"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+        ),
+    },
+] as const;

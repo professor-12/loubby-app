@@ -6,6 +6,7 @@ import JobListingForm from "./components/JobListingForm";
 import { motion } from "framer-motion";
 import Provider from "./ContextApi/Provider";
 import FormDataProvider from "./ContextApi/FormDataProvider";
+
 const page = () => {
     const steps = [
         { name: "Job Details", step: 1 },

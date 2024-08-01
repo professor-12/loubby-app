@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, createContext, useContext} from "react";
+import React, { useState, createContext, useContext } from "react";
 
 const Store = createContext({ direction: null, x: 0 });
 

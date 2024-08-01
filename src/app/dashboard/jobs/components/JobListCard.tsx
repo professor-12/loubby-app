@@ -54,9 +54,9 @@ const JobListCard = ({ data }: { data: any }) => {
                 </div>
                 <div className="p-2 text-[#dc6803] font-medium">0 matches</div>
             </div>
-            <button className="text-white text-center  rounded-md w-full bg-blue-600/90">
+            <button className="text-white  min-h-[1.9rem]  rounded-md w-full bg-blue-600/90">
                 <Link
-                    className="w-full lg:p-[0.36rem] p-[0.35rem]"
+                    className="w-full flex justify-center  lg:p-[0.36rem]  p-[0.35rem]"
                     href={`jobs/${data?._id}`}
                 >
                     View
