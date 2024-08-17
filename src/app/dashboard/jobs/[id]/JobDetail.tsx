@@ -4,7 +4,7 @@ import RoleDetail from "./RoleDetail";
 
 const JobDetail = () => {
     return (
-        <div className="py-[2.5rem] pb-[14rem] md:gap-[2rem] flex px-[1.5rem]">
+        <div className="pt-[2.5rem]  h-[70vh] w-full shrink-0   overflow-y-auto  md:gap-[2rem] flex px-[1.5rem]">
             <div className="flex-[2] space-y-4">
                 <div className="space-y-2">
                     <h1 className="text-xl">
@@ -48,7 +48,7 @@ const JobDetail = () => {
                         </p>
                     </div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3 pb-5">
                     <Card>
                         <p className="text-[#667085] text-sm text-wrap leading-5">
                             {P}
@@ -89,9 +89,9 @@ const JobDetail = () => {
                         </div>
                     </Card>
                     <Card>
-                        <p className="text-[#667085] text-sm text-wrap leading-8">
+                        <p className="text-[#667085] text-xs text-wrap">
                             There will be 1 interview(s), the number of open
-                            position(s) is 1. Remote: no
+                            position(s) is 1. <br /> Remote: no
                         </p>
                     </Card>
                 </div>
@@ -102,8 +102,6 @@ const JobDetail = () => {
         </div>
     );
 };
-
-
 
 export default JobDetail;
 

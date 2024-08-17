@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-
-import { useSelector } from "react-redux";
 import ActiveTab from "./ActiveTab";
 import InactiveTab from "./InactiveTab";
 

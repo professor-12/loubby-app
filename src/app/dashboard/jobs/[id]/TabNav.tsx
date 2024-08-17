@@ -1,8 +1,9 @@
 "use client";
 import { JobDetailTabs } from "@/lib/utils";
 import { useSearchParams, useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useJobDetailStore } from "./contextApi";
 const TabNav = () => {
     const tab = useSearchParams().get("tab") ?? "Job Details";
     const { push } = useRouter();

@@ -1,8 +1,19 @@
 import React, { PropsWithChildren } from "react";
 
-const Card: React.FC<PropsWithChildren> = ({ children }) => {
+type CardPRops = {
+    children: React.ReactNode;
+    shadowVariant?: boolean;
+};
+
+const Card: React.FC<CardPRops> = ({ children, shadowVariant }) => {
     return (
-        <div className="p-[1rem] bg-white rounded-lg shadow">{children}</div>
+        <div
+            className={`p-[1rem] bg-white rounded-lg ${
+                !shadowVariant ? "shadow-[#f2f4f7]" : "shadow"
+            }`}
+        >
+            {children}
+        </div>
     );
 };
 

@@ -6,10 +6,10 @@ import Tab from "./Tab";
 const JobDetails: FC<{ params: { id: string } }> = ({ params }) => {
     return (
         <JobDetailProvider>
-            <div className="bg-[#F2F4F7]">
-                <JobDetailsHeader />
-            </div>
-            <div>
+            <div className=" bg-[#F2F4F7]  max-w-full max-h-svh flex flex-col overflow-hidden">
+                <div className="">
+                    <JobDetailsHeader />
+                </div>
                 <Tab />
             </div>
         </JobDetailProvider>

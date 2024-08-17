@@ -8,13 +8,12 @@ import React, {
 } from "react";
 
 interface StoreType<T> {
-    position: Number;
-    setPosition?: React.Dispatch<React.SetStateAction<T>>;
+    x: Number;
+    setX?: React.Dispatch<React.SetStateAction<T>>;
 }
 
 const initialStore = {
-    active: "",
-    position: 0,
+    x: 0,
 };
 const Store = createContext<StoreType<number>>(initialStore);
 
@@ -29,13 +28,9 @@ export const useJobDetailStore = () => {
     return context;
 };
 const JobDetailProvider = ({ children }: PropsWithChildren) => {
-    const [position, setPosition] = useState(initialStore.position);
+    const [x, setX] = useState(initialStore.x);
 
-    return (
-        <Store.Provider value={{ position, setPosition }}>
-            {children}
-        </Store.Provider>
-    );
+    return <Store.Provider value={{ x, setX }}>{children}</Store.Provider>;
 };
 
 export default JobDetailProvider;
