@@ -8,15 +8,13 @@ import AiMatches from "./AiMatches";
 
 const Tab = () => {
     return (
-        <div className="overflow-hidden">
-            <SlideWrapper>
-                <JobDetail />
-                <PipeLine />
-                <Applicants />
-                <AiMatches />
-                <Insights />
-            </SlideWrapper>
-        </div>
+        <SlideWrapper>
+            <JobDetail />
+            <PipeLine />
+            <Applicants />
+            <AiMatches />
+            <Insights />
+        </SlideWrapper>
     );
 };
 

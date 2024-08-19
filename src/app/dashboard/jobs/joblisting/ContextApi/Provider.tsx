@@ -20,7 +20,7 @@ export const useGetJobListing = () => {
 };
 
 const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [currentStep, setcurrentStep] = useState<number | "done">(2);
+    const [currentStep, setcurrentStep] = useState<number | "done">(1);
     const handleIncreaseSteps = () => {
         if ((currentStep as number) >= 6) return;
         setcurrentStep((prev) => {

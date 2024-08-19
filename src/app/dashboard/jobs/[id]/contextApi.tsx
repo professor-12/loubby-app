@@ -1,9 +1,12 @@
 "use client";
 
+import { JobDetailTabs } from "@/lib/utils";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, {
     createContext,
     PropsWithChildren,
     useContext,
+    useEffect,
     useState,
 } from "react";
 
@@ -29,6 +32,15 @@ export const useJobDetailStore = () => {
 };
 const JobDetailProvider = ({ children }: PropsWithChildren) => {
     const [x, setX] = useState(initialStore.x);
+    const param = useSearchParams();
+    const _id = JobDetailTabs.findIndex(
+        ({ name }) => name === param.get("tab")
+    ) ?? 0;
+    const router = useRouter();
+
+    useEffect(() => {
+        setX(_id);
+    }, [_id]);
 
     return <Store.Provider value={{ x, setX }}>{children}</Store.Provider>;
 };

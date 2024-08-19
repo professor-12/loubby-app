@@ -16,15 +16,14 @@ const Tab = ({ data }: { data: any }) => {
     };
     const className = "w-full transition-all duration-700 shrink-0";
     return (
-        <div className="overflow-x-hidden flex">
-            <div style={style} className={className}>
+        <div style={style} className="flex transition-all duration-700">
+            <div className={className}>
                 <ActiveTab data={active} />
             </div>
-            <div style={style} className={className}>
+            <div className={className}>
                 <InactiveTab data={inactive} />
             </div>
-
-            <div style={style} className={className}>
+            <div className={className}>
                 <Draft />
             </div>
         </div>
