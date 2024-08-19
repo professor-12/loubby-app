@@ -29,3 +29,8 @@
     background-size: 100% 100%;
     background-position: 100% 100%;
 }
+
+.Toastify__toast {
+    font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
+    font-style: normal;
+}

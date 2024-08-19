@@ -29,7 +29,7 @@ const PipeLine = () => {
         e.preventDefault();
     }
     return (
-        <div className="h-[70vh] w-full shrink-0 overflow-hidden  text-sm font-medium text-black">
+        <div className="h-[70vh] overflow-hidden  text-sm font-medium text-black">
             <div className="px-[2.5rem] p-3 flex   overflow-hidden">
                 <div className="space-x-2 items-center flex">
                     <span>Applied</span>

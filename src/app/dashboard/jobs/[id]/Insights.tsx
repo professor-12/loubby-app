@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const Insights = () => {
     return (
-        <div className="p-[1.5rem] w-full shrink-0">
+        <div className="p-[1.5rem]">
             <div className="grid gap-[20px]  grid-cols-2 md:grid-cols-3">
                 <Card shadowVariant>
                     <div className="p-3 space-y-1">

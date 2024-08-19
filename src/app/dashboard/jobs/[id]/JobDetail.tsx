@@ -4,7 +4,7 @@ import RoleDetail from "./RoleDetail";
 
 const JobDetail = () => {
     return (
-        <div className="pt-[2.5rem]  h-[70vh] w-full shrink-0   overflow-y-auto  md:gap-[2rem] flex px-[1.5rem]">
+        <div className="pt-[2.5rem]  h-[70vh]  shrink-0   overflow-y-auto  md:gap-[2rem] flex px-[1.5rem]">
             <div className="flex-[2] space-y-4">
                 <div className="space-y-2">
                     <h1 className="text-xl">

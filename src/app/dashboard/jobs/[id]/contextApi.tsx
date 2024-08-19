@@ -33,9 +33,8 @@ export const useJobDetailStore = () => {
 const JobDetailProvider = ({ children }: PropsWithChildren) => {
     const [x, setX] = useState(initialStore.x);
     const param = useSearchParams();
-    const _id = JobDetailTabs.findIndex(
-        ({ name }) => name === param.get("tab")
-    ) ?? 0;
+    const _id =
+        JobDetailTabs.findIndex(({ name }) => name === param.get("tab")) ?? 0;
     const router = useRouter();
 
     useEffect(() => {

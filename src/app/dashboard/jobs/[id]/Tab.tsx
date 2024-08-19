@@ -7,15 +7,7 @@ import SlideWrapper from "./SlideWrapper";
 import AiMatches from "./AiMatches";
 
 const Tab = () => {
-    return (
-        <SlideWrapper>
-            <JobDetail />
-            <PipeLine />
-            <Applicants />
-            <AiMatches />
-            <Insights />
-        </SlideWrapper>
-    );
+    return <SlideWrapper></SlideWrapper>;
 };
 
 export default Tab;

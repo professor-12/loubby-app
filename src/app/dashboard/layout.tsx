@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     }, []);
     return (
         <Provider store={store}>
-            <main className="max-h-screen flex-shrink-0 overflow-x-clip overflow-y-auto bg-[#F9FAFB] flex">
+            <main className="max-h-screen overflow-y-auto bg-[#F9FAFB] flex max-w-full overflow-x-hidden">
                 <div>
                     <AnimatePresence>
                         {openNavBar && (
@@ -35,7 +35,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                         </nav>
                         <div className="w-full h-[0.3rem] bg-border" />
                     </div>
-                    <div className="max-h-screen overflow-y-auto h-full">
+                    <div className="max-h-screen max-w-full overflow-y-auto h-full">
                         {children}
                     </div>
                 </section>
