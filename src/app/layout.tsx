@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import QueryProvider from "@/components/QueryProvider";
-
+import CustomToastContainer from "./dashboard/jobs/components/CustomToastContainer";
 const moserat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Loubby App",
@@ -19,12 +17,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${moserat.className} overflow-x-hidden`}>
+            <body
+                className={`${moserat.className} max-w-full overflow-x-hidden`}
+            >
                 <div id="portal" className="lg:hidden"></div>
-                <main>
+                <main className="">
                     <QueryProvider>{children}</QueryProvider>
                 </main>
-                <ToastContainer />
+                <CustomToastContainer />
             </body>
         </html>
     );
